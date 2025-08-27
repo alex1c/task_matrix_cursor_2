@@ -1,0 +1,293 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Базовые стили */
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+		'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+		'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Темы */
+.theme-standard {
+	--bg-primary: #f8fafc;
+	--bg-secondary: #ffffff;
+	--text-primary: #1e293b;
+	--text-secondary: #64748b;
+	--border-color: #e2e8f0;
+}
+
+.theme-standard.dark {
+	--bg-primary: #0f172a;
+	--bg-secondary: #1e293b;
+	--text-primary: #f1f5f9;
+	--text-secondary: #94a3b8;
+	--border-color: #334155;
+}
+
+.theme-retro {
+	--bg-primary: #c0c0c0;
+	--bg-secondary: #ffffff;
+	--text-primary: #000000;
+	--text-secondary: #404040;
+	--border-color: #808080;
+}
+
+.theme-retro.dark {
+	--bg-primary: #404040;
+	--bg-secondary: #808080;
+	--text-primary: #ffffff;
+	--text-secondary: #c0c0c0;
+	--border-color: #000000;
+}
+
+.theme-neon {
+	--bg-primary: #0a0a0a;
+	--bg-secondary: #1a1a1a;
+	--text-primary: #ffffff;
+	--text-secondary: #888888;
+	--border-color: #333333;
+}
+
+.theme-neon.dark {
+	--bg-primary: #000000;
+	--bg-secondary: #0a0a0a;
+	--text-primary: #ffffff;
+	--text-secondary: #666666;
+	--border-color: #222222;
+}
+
+/* Квадранты */
+.quadrant-urgent-important {
+	background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+	border-color: #fecaca;
+}
+
+.quadrant-important-not-urgent {
+	background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+	border-color: #bbf7d0;
+}
+
+.quadrant-urgent-not-important {
+	background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
+	border-color: #fde68a;
+}
+
+.quadrant-not-urgent-not-important {
+	background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+	border-color: #cbd5e1;
+}
+
+/* Темные темы для квадрантов */
+.dark .quadrant-urgent-important {
+	background: linear-gradient(135deg, #450a0a 0%, #7f1d1d 100%);
+	border-color: #dc2626;
+}
+
+.dark .quadrant-important-not-urgent {
+	background: linear-gradient(135deg, #052e16 0%, #14532d 100%);
+	border-color: #16a34a;
+}
+
+.dark .quadrant-urgent-not-important {
+	background: linear-gradient(135deg, #451a03 0%, #78350f 100%);
+	border-color: #d97706;
+}
+
+.dark .quadrant-not-urgent-not-important {
+	background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+	border-color: #475569;
+}
+
+/* Приоритеты */
+.priority-high {
+	border-left: 4px solid #ef4444;
+}
+
+.priority-medium {
+	border-left: 4px solid #f59e0b;
+}
+
+.priority-low {
+	border-left: 4px solid #10b981;
+}
+
+/* Выполненные задачи */
+.task-completed {
+	opacity: 0.6;
+	text-decoration: line-through;
+}
+
+.task-completed .task-title {
+	text-decoration: line-through;
+}
+
+/* Drag and Drop */
+.drop-zone-active {
+	background: rgba(59, 130, 246, 0.1);
+	border-color: #3b82f6;
+	transform: scale(1.02);
+}
+
+.drag-preview {
+	opacity: 0.8;
+	transform: rotate(5deg) scale(1.05);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Анимации */
+@keyframes fade-in {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slide-in {
+	from {
+		transform: translateX(-100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes bounce-in {
+	0% {
+		transform: scale(0.3);
+		opacity: 0;
+	}
+	50% {
+		transform: scale(1.05);
+	}
+	70% {
+		transform: scale(0.9);
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes pulse-slow {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.7;
+	}
+}
+
+/* Утилиты */
+.animate-fade-in {
+	animation: fade-in 0.3s ease-out;
+}
+
+.animate-slide-in {
+	animation: slide-in 0.3s ease-out;
+}
+
+.animate-bounce-in {
+	animation: bounce-in 0.6s ease-out;
+}
+
+.animate-pulse-slow {
+	animation: pulse-slow 2s ease-in-out infinite;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+	.matrix-grid {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	.quadrant {
+		min-height: 250px;
+	}
+
+	.task-card {
+		margin-bottom: 0.75rem;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+	.matrix-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+	}
+}
+
+@media (min-width: 1025px) {
+	.matrix-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem;
+	}
+}
+
+/* Специфичные стили для тем */
+.theme-retro .task-card {
+	border: 2px solid var(--border-color);
+	box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.theme-retro .quadrant {
+	border: 3px solid var(--border-color);
+	box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.theme-neon .task-card {
+	border: 1px solid #00ff00;
+	box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.theme-neon .quadrant {
+	border: 2px solid #00ffff;
+	box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+/* Улучшения для доступности */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+/* Фокус для клавиатурной навигации */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 2px solid #3b82f6;
+	outline-offset: 2px;
+}
+
+/* Скрытие скроллбаров для webkit браузеров */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
