@@ -224,3 +224,20 @@ MIT License
 -   Сообщество React и Express за отличные инструменты
 -   Tailwind CSS за прекрасную систему стилей
 
+Обновление приложения
+
+cd /var/www/eisenhower-matrix
+git pull
+cd frontend && npm run build && cd ..
+pm2 restart eisenhower-backend
+
+
+Просмотр логов
+
+pm2 logs eisenhower-backend
+sudo tail -f /var/log/apache2/error.log
+
+Мониторинг
+
+pm2 monit
+sudo systemctl status apache2
