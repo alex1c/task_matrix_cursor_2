@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  eisenhower-app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    volumes:
+      - ./backend/database.sqlite:/app/backend/database.sqlite
+    restart: unless-stopped
+    networks:
+      - eisenhower-network
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./frontend/dist:/var/www/eisenhower-matrix/frontend/dist
+    depends_on:
+      - eisenhower-app
+    restart: unless-stopped
+    networks:
+      - eisenhower-network
+
+networks:
+  eisenhower-network:
+    driver: bridge
