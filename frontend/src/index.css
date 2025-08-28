@@ -140,6 +140,39 @@ body {
 	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* Мобильная поддержка drag & drop */
+@media (max-width: 768px) {
+	.task-card {
+		touch-action: none;
+		user-select: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+	}
+
+	.task-card:active {
+		transform: scale(1.02);
+		transition: transform 0.1s ease;
+	}
+
+	/* Увеличиваем область для touch */
+	.task-card {
+		min-height: 60px;
+		padding: 12px;
+	}
+
+	/* Улучшаем визуальную обратную связь */
+	.drag-preview {
+		transform: rotate(3deg) scale(1.03);
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+	}
+
+	.drop-zone-active {
+		transform: scale(1.01);
+		background: rgba(59, 130, 246, 0.15);
+	}
+}
+
 /* Анимации */
 @keyframes fade-in {
 	from {

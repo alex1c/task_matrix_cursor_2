@@ -5,6 +5,7 @@ import {
 	useSensors,
 	useSensor,
 	PointerSensor,
+	TouchSensor,
 	KeyboardSensor,
 	closestCenter,
 } from '@dnd-kit/core';
@@ -24,6 +25,12 @@ const Matrix = () => {
 		useSensor(PointerSensor, {
 			activationConstraint: {
 				distance: 8,
+			},
+		}),
+		useSensor(TouchSensor, {
+			activationConstraint: {
+				delay: 250,
+				tolerance: 5,
 			},
 		}),
 		useSensor(KeyboardSensor)
@@ -73,8 +80,8 @@ const Matrix = () => {
 		// Проверяем, перетаскиваем ли мы задачу над квадрантом
 		if (over.id.startsWith('quadrant-')) {
 			const targetQuadrant = over.id.replace('quadrant-', '');
-			const activeTask = tasks.find(task => task.id === active.id);
-			
+			const activeTask = tasks.find((task) => task.id === active.id);
+
 			if (activeTask && activeTask.quadrant !== targetQuadrant) {
 				try {
 					await moveTask(active.id, targetQuadrant);
@@ -93,8 +100,8 @@ const Matrix = () => {
 		// Проверяем, перетаскиваем ли мы задачу над квадрантом
 		if (over.id.startsWith('quadrant-')) {
 			const targetQuadrant = over.id.replace('quadrant-', '');
-			const activeTask = tasks.find(task => task.id === active.id);
-			
+			const activeTask = tasks.find((task) => task.id === active.id);
+
 			if (activeTask && activeTask.quadrant !== targetQuadrant) {
 				try {
 					await moveTask(active.id, targetQuadrant);
@@ -125,7 +132,7 @@ const Matrix = () => {
 						return (
 							<SortableContext
 								key={quadrant.id}
-								items={quadrantTasks.map(task => task.id)}
+								items={quadrantTasks.map((task) => task.id)}
 								strategy={verticalListSortingStrategy}
 							>
 								<Quadrant
@@ -142,9 +149,12 @@ const Matrix = () => {
 				</div>
 				<DragOverlay>
 					{activeId ? (
-						<div className="bg-white dark:bg-gray-800 rounded-lg p-3 shadow-lg border opacity-90 transform rotate-3">
-							<div className="font-medium text-sm">
-								{tasks.find(task => task.id === activeId)?.title}
+						<div className='bg-white dark:bg-gray-800 rounded-lg p-3 shadow-lg border opacity-90 transform rotate-3'>
+							<div className='font-medium text-sm'>
+								{
+									tasks.find((task) => task.id === activeId)
+										?.title
+								}
 							</div>
 						</div>
 					) : null}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import {
@@ -8,20 +8,38 @@ import {
 	Flag,
 	CheckCircle,
 	Circle,
+	Move,
+	ChevronDown,
 } from 'lucide-react';
 import { format } from 'date-fns';
 import { ru } from 'date-fns/locale';
 import { useTasks } from '../context/TaskContext';
 
 const TaskCard = ({ task, index }) => {
-	const { updateTask, deleteTask } = useTasks();
+	const { updateTask, deleteTask, moveTask } = useTasks();
 	const [isEditing, setIsEditing] = useState(false);
+	const [showMoveMenu, setShowMoveMenu] = useState(false);
+	const menuRef = useRef(null);
 	const [editData, setEditData] = useState({
 		title: task.title,
 		description: task.description || '',
 		priority: task.priority,
 		dueDate: task.dueDate || '',
 	});
+
+	// Закрытие меню при клике вне его
+	useEffect(() => {
+		const handleClickOutside = (event) => {
+			if (menuRef.current && !menuRef.current.contains(event.target)) {
+				setShowMoveMenu(false);
+			}
+		};
+
+		document.addEventListener('mousedown', handleClickOutside);
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside);
+		};
+	}, []);
 
 	const {
 		attributes,
@@ -49,6 +67,13 @@ const TaskCard = ({ task, index }) => {
 		low: 'Низкий',
 	};
 
+	const quadrantLabels = {
+		'urgent-important': 'Важно и Срочно',
+		'important-not-urgent': 'Важно, но не Срочно',
+		'urgent-not-important': 'Срочно, но не Важно',
+		'not-urgent-not-important': 'Не Важно и не Срочно',
+	};
+
 	const handleToggleComplete = async () => {
 		try {
 			await updateTask(task.id, { completed: !task.completed });
@@ -73,6 +98,15 @@ const TaskCard = ({ task, index }) => {
 			} catch (error) {
 				console.error('Error deleting task:', error);
 			}
+		}
+	};
+
+	const handleMoveTask = async (newQuadrant) => {
+		try {
+			await moveTask(task.id, newQuadrant);
+			setShowMoveMenu(false);
+		} catch (error) {
+			console.error('Error moving task:', error);
 		}
 	};
 
@@ -174,14 +208,17 @@ const TaskCard = ({ task, index }) => {
 	return (
 		<div
 			ref={setNodeRef}
-			style={style}
 			{...attributes}
 			{...listeners}
-			className={`task-card bg-white dark:bg-gray-800 rounded-lg p-3 mb-3 shadow-md border transition-all duration-200 hover:shadow-lg cursor-grab active:cursor-grabbing ${
+			className={`task-card bg-white dark:bg-gray-800 rounded-lg p-3 mb-3 shadow-md border transition-all duration-200 hover:shadow-lg cursor-grab active:cursor-grabbing touch-manipulation ${
 				isDragging ? 'drag-preview' : ''
 			} ${task.completed ? 'task-completed' : ''} priority-${
 				task.priority
 			}`}
+			style={{
+				...style,
+				touchAction: 'none', // Важно для мобильных устройств
+			}}
 		>
 			{/* Заголовок и кнопки */}
 			<div className='flex items-start justify-between mb-2'>
@@ -214,6 +251,42 @@ const TaskCard = ({ task, index }) => {
 				</div>
 
 				<div className='flex items-center gap-1 flex-shrink-0'>
+					{/* Мобильное меню перемещения */}
+					<div
+						className='relative md:hidden'
+						ref={menuRef}
+					>
+						<button
+							onClick={() => setShowMoveMenu(!showMoveMenu)}
+							className='p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition-colors'
+							title='Переместить'
+						>
+							<Move size={12} />
+						</button>
+
+						{showMoveMenu && (
+							<div className='absolute right-0 top-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 min-w-48'>
+								<div className='p-2 text-xs text-gray-500 dark:text-gray-400 border-b border-gray-200 dark:border-gray-700'>
+									Переместить в:
+								</div>
+								{Object.entries(quadrantLabels).map(
+									([quadrantId, label]) =>
+										quadrantId !== task.quadrant && (
+											<button
+												key={quadrantId}
+												onClick={() =>
+													handleMoveTask(quadrantId)
+												}
+												className='w-full text-left px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors'
+											>
+												{label}
+											</button>
+										)
+								)}
+							</div>
+						)}
+					</div>
+
 					<button
 						onClick={() => setIsEditing(true)}
 						className='p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition-colors'
