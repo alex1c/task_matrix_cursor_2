@@ -20,10 +20,16 @@ const TaskCard = ({ task, index }) => {
 	const [isEditing, setIsEditing] = useState(false);
 	const [showMoveMenu, setShowMoveMenu] = useState(false);
 	const menuRef = useRef(null);
+
+	// Защита от некорректных данных
+	if (!task || !task.id) {
+		return null;
+	}
+
 	const [editData, setEditData] = useState({
-		title: task.title,
+		title: task.title || '',
 		description: task.description || '',
-		priority: task.priority,
+		priority: task.priority || 'medium',
 		dueDate: task.dueDate || '',
 	});
 
@@ -48,7 +54,10 @@ const TaskCard = ({ task, index }) => {
 		transform,
 		transition,
 		isDragging,
-	} = useSortable({ id: task.id });
+	} = useSortable({
+		id: task.id,
+		disabled: false, // Сортировка всегда включена
+	});
 
 	const style = {
 		transform: CSS.Transform.toString(transform),
@@ -76,6 +85,10 @@ const TaskCard = ({ task, index }) => {
 
 	const handleToggleComplete = async () => {
 		try {
+			if (!task || !task.id) {
+				console.error('Invalid task data for toggle completion');
+				return;
+			}
 			await updateTask(task.id, { completed: !task.completed });
 		} catch (error) {
 			console.error('Error toggling task completion:', error);
@@ -84,6 +97,10 @@ const TaskCard = ({ task, index }) => {
 
 	const handleSave = async () => {
 		try {
+			if (!task || !task.id) {
+				console.error('Invalid task data for save');
+				return;
+			}
 			await updateTask(task.id, editData);
 			setIsEditing(false);
 		} catch (error) {
@@ -92,6 +109,10 @@ const TaskCard = ({ task, index }) => {
 	};
 
 	const handleDelete = async () => {
+		if (!task || !task.id) {
+			console.error('Invalid task data for delete');
+			return;
+		}
 		if (window.confirm('Вы уверены, что хотите удалить эту задачу?')) {
 			try {
 				await deleteTask(task.id);
@@ -103,6 +124,10 @@ const TaskCard = ({ task, index }) => {
 
 	const handleMoveTask = async (newQuadrant) => {
 		try {
+			if (!task || !task.id) {
+				console.error('Invalid task data for move');
+				return;
+			}
 			await moveTask(task.id, newQuadrant);
 			setShowMoveMenu(false);
 		} catch (error) {

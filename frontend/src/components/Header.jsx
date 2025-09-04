@@ -7,8 +7,6 @@ import {
 	Palette,
 	Download,
 	Filter,
-	Eye,
-	EyeOff,
 	SortAsc,
 	SortDesc,
 } from 'lucide-react';
@@ -20,8 +18,8 @@ const Header = () => {
 	const {
 		sortBy,
 		setSortBy,
-		showCompleted,
-		setShowCompleted,
+		filterStatus,
+		setFilterStatus,
 		filterPriority,
 		setFilterPriority,
 		exportToCSV,
@@ -189,25 +187,24 @@ const Header = () => {
 							</select>
 						</div>
 
-						{/* Показать/скрыть выполненные */}
+						{/* Фильтр по статусу задач */}
 						<div className='flex items-end'>
-							<button
-								onClick={() => setShowCompleted(!showCompleted)}
-								className={`flex items-center gap-3 px-6 py-3 rounded-xl transition-all duration-300 font-medium shadow-soft hover:shadow-medium ${
-									showCompleted
-										? 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800'
-										: 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600'
-								}`}
+							<label className='block text-sm font-semibold mb-3 text-gray-700 dark:text-gray-200'>
+								Статус задач
+							</label>
+							<select
+								value={filterStatus}
+								onChange={(e) =>
+									setFilterStatus(e.target.value)
+								}
+								className='w-full p-3 rounded-xl border border-gray-200 dark:border-gray-600 shadow-soft focus:shadow-medium font-medium bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300'
 							>
-								{showCompleted ? (
-									<Eye size={16} />
-								) : (
-									<EyeOff size={16} />
-								)}
-								{showCompleted
-									? 'Показаны выполненные'
-									: 'Скрыты выполненные'}
-							</button>
+								<option value='incomplete'>
+									Не выполненные
+								</option>
+								<option value='completed'>Выполненные</option>
+								<option value='all'>Все задачи</option>
+							</select>
 						</div>
 					</div>
 				</div>

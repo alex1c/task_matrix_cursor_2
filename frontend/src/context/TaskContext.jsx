@@ -15,7 +15,7 @@ export const TaskProvider = ({ children }) => {
 	const [tasks, setTasks] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [sortBy, setSortBy] = useState('priority'); // priority, date, name
-	const [showCompleted, setShowCompleted] = useState(true);
+	const [filterStatus, setFilterStatus] = useState('incomplete'); // all, completed, incomplete
 	const [filterPriority, setFilterPriority] = useState('all'); // all, high, medium, low
 
 	// Группировка задач по квадрантам
@@ -176,37 +176,71 @@ export const TaskProvider = ({ children }) => {
 
 	// Сортировка задач
 	const getSortedTasks = (taskList) => {
-		let sorted = [...taskList];
+		try {
+			// Защита от некорректных данных
+			if (!Array.isArray(taskList)) {
+				return [];
+			}
 
-		if (!showCompleted) {
-			sorted = sorted.filter((task) => !task.completed);
-		}
+			let sorted = [...taskList].filter((task) => task && task.id);
 
-		if (filterPriority !== 'all') {
-			sorted = sorted.filter((task) => task.priority === filterPriority);
-		}
+			// Фильтрация по статусу задач
+			switch (filterStatus) {
+				case 'completed':
+					sorted = sorted.filter((task) => task.completed);
+					break;
+				case 'incomplete':
+					sorted = sorted.filter((task) => !task.completed);
+					break;
+				case 'all':
+				default:
+					// Показываем все задачи
+					break;
+			}
 
-		switch (sortBy) {
-			case 'priority':
-				const priorityOrder = { high: 3, medium: 2, low: 1 };
-				sorted.sort(
-					(a, b) =>
-						priorityOrder[b.priority] - priorityOrder[a.priority]
+			if (filterPriority !== 'all') {
+				sorted = sorted.filter(
+					(task) => task.priority === filterPriority
 				);
-				break;
-			case 'date':
-				sorted.sort(
-					(a, b) => new Date(a.dueDate) - new Date(b.dueDate)
-				);
-				break;
-			case 'name':
-				sorted.sort((a, b) => a.title.localeCompare(b.title));
-				break;
-			default:
-				break;
-		}
+			}
 
-		return sorted;
+			switch (sortBy) {
+				case 'priority':
+					const priorityOrder = { high: 3, medium: 2, low: 1 };
+					sorted.sort(
+						(a, b) =>
+							(priorityOrder[b.priority] || 0) -
+							(priorityOrder[a.priority] || 0)
+					);
+					break;
+				case 'date':
+					sorted.sort((a, b) => {
+						const dateA = a.dueDate
+							? new Date(a.dueDate)
+							: new Date('9999-12-31');
+						const dateB = b.dueDate
+							? new Date(b.dueDate)
+							: new Date('9999-12-31');
+						return dateA - dateB;
+					});
+					break;
+				case 'name':
+					sorted.sort((a, b) => {
+						const titleA = a.title || '';
+						const titleB = b.title || '';
+						return titleA.localeCompare(titleB);
+					});
+					break;
+				default:
+					break;
+			}
+
+			return sorted;
+		} catch (error) {
+			console.error('Error in getSortedTasks:', error);
+			// Возвращаем исходный список в случае ошибки
+			return taskList || [];
+		}
 	};
 
 	// Загрузка задач при монтировании компонента
@@ -219,8 +253,8 @@ export const TaskProvider = ({ children }) => {
 		loading,
 		sortBy,
 		setSortBy,
-		showCompleted,
-		setShowCompleted,
+		filterStatus,
+		setFilterStatus,
 		filterPriority,
 		setFilterPriority,
 		getTasksByQuadrant,
@@ -237,4 +271,3 @@ export const TaskProvider = ({ children }) => {
 		<TaskContext.Provider value={value}>{children}</TaskContext.Provider>
 	);
 };
-

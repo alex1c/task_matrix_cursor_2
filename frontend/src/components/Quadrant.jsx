@@ -4,7 +4,15 @@ import TaskCard from './TaskCard';
 import { Plus } from 'lucide-react';
 import { useTasks } from '../context/TaskContext';
 
-const Quadrant = ({ id, title, subtitle, color, icon, tasks }) => {
+const Quadrant = ({
+	id,
+	title,
+	subtitle,
+	color,
+	icon,
+	tasks,
+	isDragging = false,
+}) => {
 	const { createTask } = useTasks();
 	const { setNodeRef, isOver } = useDroppable({
 		id: `quadrant-${id}`,
@@ -77,13 +85,15 @@ const Quadrant = ({ id, title, subtitle, color, icon, tasks }) => {
 						</div>
 					</div>
 				) : (
-					tasks.map((task, index) => (
-						<TaskCard
-							key={task.id}
-							task={task}
-							index={index}
-						/>
-					))
+					tasks
+						.filter((task) => task && task.id) // Фильтруем некорректные задачи
+						.map((task, index) => (
+							<TaskCard
+								key={task.id}
+								task={task}
+								index={index}
+							/>
+						))
 				)}
 			</div>
 		</div>

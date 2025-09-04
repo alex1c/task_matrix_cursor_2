@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
 	DndContext,
 	DragOverlay,
@@ -20,6 +20,7 @@ import { useTasks } from '../context/TaskContext';
 const Matrix = () => {
 	const { tasks, moveTask, getSortedTasks } = useTasks();
 	const [activeId, setActiveId] = React.useState(null);
+	const [isDragging, setIsDragging] = React.useState(false);
 
 	const sensors = useSensors(
 		useSensor(PointerSensor, {
@@ -69,11 +70,13 @@ const Matrix = () => {
 
 	const handleDragStart = (event) => {
 		setActiveId(event.active.id);
+		setIsDragging(true);
 	};
 
 	const handleDragEnd = async (event) => {
 		const { active, over } = event;
 		setActiveId(null);
+		setIsDragging(false);
 
 		if (!over) return;
 
@@ -123,16 +126,47 @@ const Matrix = () => {
 			>
 				<div className='matrix-grid grid gap-6 lg:gap-8'>
 					{quadrants.map((quadrant) => {
-						const quadrantTasks = getSortedTasks(
-							tasks.filter(
-								(task) => task.quadrant === quadrant.id
-							)
-						);
+						// Используем useMemo для стабилизации списка задач
+						const quadrantTasks = useMemo(() => {
+							try {
+								const rawTasks = tasks.filter(
+									(task) =>
+										task &&
+										task.id &&
+										task.quadrant === quadrant.id
+								);
+
+								// Применяем сортировку только если не происходит перетаскивание
+								if (isDragging) {
+									return rawTasks;
+								}
+
+								// Безопасное применение сортировки
+								const sortedTasks = getSortedTasks(rawTasks);
+								return Array.isArray(sortedTasks)
+									? sortedTasks
+									: rawTasks;
+							} catch (error) {
+								console.error(
+									`Error processing tasks for quadrant ${quadrant.id}:`,
+									error
+								);
+								return [];
+							}
+						}, [tasks, quadrant.id, isDragging, getSortedTasks]);
+
+						// Создаем стабильные ключи для SortableContext
+						const stableItems = useMemo(() => {
+							return quadrantTasks
+								.map((task) => task.id)
+								.filter(Boolean)
+								.sort();
+						}, [quadrantTasks]);
 
 						return (
 							<SortableContext
 								key={quadrant.id}
-								items={quadrantTasks.map((task) => task.id)}
+								items={stableItems}
 								strategy={verticalListSortingStrategy}
 							>
 								<Quadrant
@@ -142,6 +176,7 @@ const Matrix = () => {
 									color={quadrant.color}
 									icon={quadrant.icon}
 									tasks={quadrantTasks}
+									isDragging={isDragging}
 								/>
 							</SortableContext>
 						);
