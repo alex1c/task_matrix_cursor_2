@@ -121,7 +121,7 @@ const Matrix = () => {
 				onDragEnd={handleDragEnd}
 				onDragOver={handleDragOver}
 			>
-				<div className='matrix-grid grid gap-4 lg:gap-6'>
+				<div className='matrix-grid grid gap-6 lg:gap-8'>
 					{quadrants.map((quadrant) => {
 						const quadrantTasks = getSortedTasks(
 							tasks.filter(
@@ -149,8 +149,8 @@ const Matrix = () => {
 				</div>
 				<DragOverlay>
 					{activeId ? (
-						<div className='bg-white dark:bg-gray-800 rounded-lg p-3 shadow-lg border opacity-90 transform rotate-3'>
-							<div className='font-medium text-sm'>
+						<div className='bg-white dark:bg-gray-800 rounded-xl p-4 shadow-large border opacity-90 transform rotate-3 scale-105'>
+							<div className='font-semibold text-sm'>
 								{
 									tasks.find((task) => task.id === activeId)
 										?.title

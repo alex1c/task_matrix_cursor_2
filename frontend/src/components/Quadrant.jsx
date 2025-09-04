@@ -24,30 +24,37 @@ const Quadrant = ({ id, title, subtitle, color, icon, tasks }) => {
 	return (
 		<div
 			ref={setNodeRef}
-			className={`quadrant ${color} rounded-lg border-2 p-4 min-h-[300px] transition-all duration-200 hover:shadow-lg ${
+			className={`quadrant ${color} rounded-2xl border-2 p-6 min-h-[350px] transition-all duration-300 hover:shadow-large ${
 				isOver ? 'drop-zone-active' : ''
 			}`}
 		>
 			{/* Заголовок квадранта */}
-			<div className='flex items-center justify-between mb-4'>
-				<div className='flex items-center gap-2'>
-					<span className='text-2xl'>{icon}</span>
+			<div className='flex items-center justify-between mb-6'>
+				<div className='flex items-center gap-3'>
+					<span className='text-3xl'>{icon}</span>
 					<div>
-						<h3 className='font-bold text-lg'>{title}</h3>
-						<p className='text-sm opacity-75'>{subtitle}</p>
+						<h3 className='font-bold text-xl leading-tight'>
+							{title}
+						</h3>
+						<p className='text-sm opacity-75 font-medium'>
+							{subtitle}
+						</p>
 					</div>
 				</div>
 				<button
 					onClick={handleAddTask}
-					className='p-2 rounded-full bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-800 transition-all duration-200 shadow-sm'
+					className='p-3 rounded-xl bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 shadow-soft hover:shadow-medium hover:scale-110'
 					title='Добавить задачу'
 				>
-					<Plus size={16} />
+					<Plus
+						size={18}
+						className='text-primary-600'
+					/>
 				</button>
 			</div>
 
 			{/* Счетчик задач */}
-			<div className='text-sm opacity-75 mb-3'>
+			<div className='text-sm opacity-75 mb-4 font-medium'>
 				{tasks.length}{' '}
 				{tasks.length === 1
 					? 'задача'
@@ -57,14 +64,13 @@ const Quadrant = ({ id, title, subtitle, color, icon, tasks }) => {
 			</div>
 
 			{/* Зона для задач */}
-			<div className='min-h-[200px] transition-all duration-200'>
+			<div className='min-h-[220px] transition-all duration-300'>
 				{tasks.length === 0 ? (
-					<div className='flex items-center justify-center h-32 text-center opacity-50'>
+					<div className='flex items-center justify-center h-36 text-center opacity-60'>
 						<div>
-							<p className='text-sm'>Нет задач</p>
-							<p className='text-xs'>
-								Перетащите задачу сюда или создайте
-								новую
+							<p className='text-sm font-medium'>Нет задач</p>
+							<p className='text-xs mt-1'>
+								Перетащите задачу сюда или создайте новую
 							</p>
 						</div>
 					</div>

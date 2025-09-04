@@ -124,7 +124,7 @@ const TaskCard = ({ task, index }) => {
 			<div
 				ref={setNodeRef}
 				style={style}
-				className={`task-card bg-white dark:bg-gray-800 rounded-lg p-3 mb-3 shadow-md border ${
+				className={`task-card bg-white dark:bg-gray-800 rounded-xl p-4 mb-4 shadow-soft border ${
 					isDragging ? 'drag-preview' : ''
 				} ${task.completed ? 'task-completed' : ''} priority-${
 					task.priority
@@ -140,7 +140,7 @@ const TaskCard = ({ task, index }) => {
 								title: e.target.value,
 							})
 						}
-						className='w-full p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700'
+						className='w-full p-3 border border-gray-200 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 shadow-soft focus:shadow-medium transition-all duration-200 font-medium'
 						placeholder='Название задачи'
 					/>
 
@@ -152,12 +152,12 @@ const TaskCard = ({ task, index }) => {
 								description: e.target.value,
 							})
 						}
-						className='w-full p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 resize-none'
+						className='w-full p-3 border border-gray-200 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 resize-none shadow-soft focus:shadow-medium transition-all duration-200 font-medium'
 						placeholder='Описание (необязательно)'
 						rows='2'
 					/>
 
-					<div className='flex gap-2'>
+					<div className='flex gap-3'>
 						<select
 							value={editData.priority}
 							onChange={(e) =>
@@ -166,7 +166,7 @@ const TaskCard = ({ task, index }) => {
 									priority: e.target.value,
 								})
 							}
-							className='flex-1 p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700'
+							className='flex-1 p-3 border border-gray-200 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 shadow-soft focus:shadow-medium transition-all duration-200 font-medium'
 						>
 							<option value='high'>Высокий</option>
 							<option value='medium'>Средний</option>
@@ -182,20 +182,20 @@ const TaskCard = ({ task, index }) => {
 									dueDate: e.target.value,
 								})
 							}
-							className='flex-1 p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700'
+							className='flex-1 p-3 border border-gray-200 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 shadow-soft focus:shadow-medium transition-all duration-200 font-medium'
 						/>
 					</div>
 
-					<div className='flex gap-2'>
+					<div className='flex gap-3'>
 						<button
 							onClick={handleSave}
-							className='flex-1 px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition-colors'
+							className='flex-1 px-4 py-3 bg-green-500 text-white rounded-xl hover:bg-green-600 transition-all duration-200 font-medium shadow-soft hover:shadow-medium'
 						>
 							Сохранить
 						</button>
 						<button
 							onClick={() => setIsEditing(false)}
-							className='flex-1 px-3 py-1 bg-gray-500 text-white rounded hover:bg-gray-600 transition-colors'
+							className='flex-1 px-4 py-3 bg-gray-500 text-white rounded-xl hover:bg-gray-600 transition-all duration-200 font-medium shadow-soft hover:shadow-medium'
 						>
 							Отмена
 						</button>
@@ -210,7 +210,7 @@ const TaskCard = ({ task, index }) => {
 			ref={setNodeRef}
 			{...attributes}
 			{...listeners}
-			className={`task-card bg-white dark:bg-gray-800 rounded-lg p-3 mb-3 shadow-md border transition-all duration-200 hover:shadow-lg cursor-grab active:cursor-grabbing touch-manipulation ${
+			className={`task-card bg-white dark:bg-gray-800 rounded-xl p-4 mb-4 shadow-soft border transition-all duration-300 hover:shadow-medium cursor-grab active:cursor-grabbing touch-manipulation ${
 				isDragging ? 'drag-preview' : ''
 			} ${task.completed ? 'task-completed' : ''} priority-${
 				task.priority
@@ -245,7 +245,7 @@ const TaskCard = ({ task, index }) => {
 						)}
 					</button>
 
-					<h4 className='font-medium text-sm flex-1 line-clamp-2'>
+					<h4 className='font-semibold text-sm flex-1 line-clamp-2 leading-relaxed'>
 						{task.title}
 					</h4>
 				</div>
@@ -289,18 +289,21 @@ const TaskCard = ({ task, index }) => {
 
 					<button
 						onClick={() => setIsEditing(true)}
-						className='p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition-colors'
+						className='p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-all duration-200 hover:scale-110'
 						title='Редактировать'
 					>
-						<Edit size={12} />
+						<Edit
+							size={14}
+							className='text-blue-500'
+						/>
 					</button>
 					<button
 						onClick={handleDelete}
-						className='p-1 hover:bg-red-100 dark:hover:bg-red-900/20 rounded transition-colors'
+						className='p-2 hover:bg-red-100 dark:hover:bg-red-900/20 rounded-lg transition-all duration-200 hover:scale-110'
 						title='Удалить'
 					>
 						<Trash2
-							size={12}
+							size={14}
 							className='text-red-500'
 						/>
 					</button>
@@ -309,28 +312,37 @@ const TaskCard = ({ task, index }) => {
 
 			{/* Описание */}
 			{task.description && (
-				<p className='text-xs text-gray-600 dark:text-gray-400 mb-2 line-clamp-2'>
+				<p className='text-xs text-gray-600 dark:text-gray-400 mb-3 line-clamp-2 leading-relaxed'>
 					{task.description}
 				</p>
 			)}
 
 			{/* Метаданные */}
 			<div className='flex items-center justify-between text-xs text-gray-500 dark:text-gray-400'>
-				<div className='flex items-center gap-2'>
-					<div className='flex items-center gap-1'>
+				<div className='flex items-center gap-3'>
+					<div className='flex items-center gap-1.5'>
 						<Flag
-							size={10}
+							size={12}
 							className={priorityColors[task.priority]}
 						/>
-						<span className={priorityColors[task.priority]}>
+						<span
+							className={`${
+								priorityColors[task.priority]
+							} font-medium`}
+						>
 							{priorityLabels[task.priority]}
 						</span>
 					</div>
 
 					{task.dueDate && (
-						<div className='flex items-center gap-1'>
-							<Calendar size={10} />
-							<span>{formatDate(task.dueDate)}</span>
+						<div className='flex items-center gap-1.5'>
+							<Calendar
+								size={12}
+								className='text-gray-400'
+							/>
+							<span className='font-mono'>
+								{formatDate(task.dueDate)}
+							</span>
 						</div>
 					)}
 				</div>

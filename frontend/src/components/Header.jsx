@@ -53,10 +53,10 @@ const Header = () => {
 			<div className='flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4'>
 				{/* Заголовок */}
 				<div className='text-center lg:text-left'>
-					<h1 className='text-3xl lg:text-4xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent'>
+					<h1 className='text-3xl lg:text-4xl font-bold bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 bg-clip-text text-transparent leading-tight'>
 						Матрица Эйзенхауэра
 					</h1>
-					<p className='text-sm text-gray-600 dark:text-gray-400 mt-1'>
+					<p className='text-sm text-gray-600 dark:text-gray-400 mt-2 font-medium'>
 						Управляйте своими задачами эффективно
 					</p>
 				</div>
@@ -66,14 +66,24 @@ const Header = () => {
 					{/* Переключатель темной темы */}
 					<button
 						onClick={toggleDarkMode}
-						className='p-2 rounded-lg bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all duration-200'
+						className='p-3 rounded-xl bg-white dark:bg-gray-800 shadow-soft hover:shadow-medium transition-all duration-300 hover:scale-105 border border-gray-200 dark:border-gray-700'
 						title={
 							isDark
 								? 'Переключить на светлую тему'
 								: 'Переключить на темную тему'
 						}
 					>
-						{isDark ? <Sun size={20} /> : <Moon size={20} />}
+						{isDark ? (
+							<Sun
+								size={20}
+								className='text-amber-500'
+							/>
+						) : (
+							<Moon
+								size={20}
+								className='text-slate-600'
+							/>
+						)}
 					</button>
 
 					{/* Выбор стиля темы */}
@@ -81,7 +91,7 @@ const Header = () => {
 						<select
 							value={theme}
 							onChange={(e) => changeTheme(e.target.value)}
-							className='p-2 rounded-lg bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all duration-200 appearance-none pr-8 cursor-pointer'
+							className='p-3 rounded-xl bg-white dark:bg-gray-800 shadow-soft hover:shadow-medium transition-all duration-300 appearance-none pr-10 cursor-pointer border border-gray-200 dark:border-gray-700 font-medium'
 						>
 							{themes.map((themeOption) => {
 								const Icon = themeOption.icon;
@@ -97,43 +107,53 @@ const Header = () => {
 						</select>
 						<Palette
 							size={16}
-							className='absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none'
+							className='absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-primary-500'
 						/>
 					</div>
 
 					{/* Фильтры и сортировка */}
 					<button
 						onClick={() => setShowFilters(!showFilters)}
-						className='p-2 rounded-lg bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all duration-200'
+						className={`p-3 rounded-xl bg-white dark:bg-gray-800 shadow-soft hover:shadow-medium transition-all duration-300 hover:scale-105 border border-gray-200 dark:border-gray-700 ${
+							showFilters
+								? 'ring-2 ring-primary-500 ring-opacity-50'
+								: ''
+						}`}
 						title='Фильтры и сортировка'
 					>
-						<Filter size={20} />
+						<Filter
+							size={20}
+							className='text-primary-600'
+						/>
 					</button>
 
 					{/* Экспорт */}
 					<button
 						onClick={exportToCSV}
-						className='p-2 rounded-lg bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all duration-200'
+						className='p-3 rounded-xl bg-white dark:bg-gray-800 shadow-soft hover:shadow-medium transition-all duration-300 hover:scale-105 border border-gray-200 dark:border-gray-700'
 						title='Экспорт в CSV'
 					>
-						<Download size={20} />
+						<Download
+							size={20}
+							className='text-green-600'
+						/>
 					</button>
 				</div>
 			</div>
 
 			{/* Панель фильтров */}
 			{showFilters && (
-				<div className='mt-4 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md animate-fade-in'>
-					<div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+				<div className='mt-6 p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-medium animate-fade-in border border-gray-200 dark:border-gray-700'>
+					<div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
 						{/* Сортировка */}
 						<div>
-							<label className='block text-sm font-medium mb-2'>
+							<label className='block text-sm font-semibold mb-3 text-gray-700 dark:text-gray-300'>
 								Сортировка
 							</label>
 							<select
 								value={sortBy}
 								onChange={(e) => setSortBy(e.target.value)}
-								className='w-full p-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700'
+								className='w-full p-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 shadow-soft focus:shadow-medium transition-all duration-200 font-medium'
 							>
 								{sortOptions.map((option) => (
 									<option
@@ -148,7 +168,7 @@ const Header = () => {
 
 						{/* Фильтр по приоритету */}
 						<div>
-							<label className='block text-sm font-medium mb-2'>
+							<label className='block text-sm font-semibold mb-3 text-gray-700 dark:text-gray-300'>
 								Приоритет
 							</label>
 							<select
@@ -156,7 +176,7 @@ const Header = () => {
 								onChange={(e) =>
 									setFilterPriority(e.target.value)
 								}
-								className='w-full p-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700'
+								className='w-full p-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 shadow-soft focus:shadow-medium transition-all duration-200 font-medium'
 							>
 								{priorityOptions.map((option) => (
 									<option
@@ -170,13 +190,13 @@ const Header = () => {
 						</div>
 
 						{/* Показать/скрыть выполненные */}
-						<div className='flex items-center'>
+						<div className='flex items-end'>
 							<button
 								onClick={() => setShowCompleted(!showCompleted)}
-								className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 ${
+								className={`flex items-center gap-3 px-6 py-3 rounded-xl transition-all duration-300 font-medium shadow-soft hover:shadow-medium ${
 									showCompleted
-										? 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400'
-										: 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
+										? 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800'
+										: 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600'
 								}`}
 							>
 								{showCompleted ? (
@@ -197,4 +217,3 @@ const Header = () => {
 };
 
 export default Header;
-
