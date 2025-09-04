@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест шрифтов - Матрица Эйзенхауэра</title>
+    
+    <!-- Локальные шрифты -->
+    <link rel="stylesheet" href="frontend/public/fonts/fonts.css">
+    
+    <!-- Альтернативный способ -->
+    <!-- <link rel="stylesheet" href="frontend/public/fonts/google-fonts-fallback.css"> -->
+    
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f8fafc;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .font-test {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+        
+        .font-name {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        
+        .font-sample {
+            font-size: 18px;
+            color: #475569;
+        }
+        
+        .font-mono {
+            font-family: 'JetBrains Mono', 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+            background: #f1f5f9;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        
+        .status {
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+        
+        .status.success {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+        
+        .status.error {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+        
+        .status.warning {
+            background: #fef3c7;
+            color: #d97706;
+            border: 1px solid #fed7aa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔤 Тест шрифтов для Матрицы Эйзенхауэра</h1>
+        
+        <div id="font-status" class="status warning">
+            Проверяем загрузку шрифтов...
+        </div>
+        
+        <div class="font-test">
+            <div class="font-name">Inter Light (300)</div>
+            <div class="font-sample" style="font-weight: 300;">
+                Матрица Эйзенхауэра - эффективное планирование задач
+            </div>
+        </div>
+        
+        <div class="font-test">
+            <div class="font-name">Inter Regular (400)</div>
+            <div class="font-sample" style="font-weight: 400;">
+                Матрица Эйзенхауэра - эффективное планирование задач
+            </div>
+        </div>
+        
+        <div class="font-test">
+            <div class="font-name">Inter Medium (500)</div>
+            <div class="font-sample" style="font-weight: 500;">
+                Матрица Эйзенхауэра - эффективное планирование задач
+            </div>
+        </div>
+        
+        <div class="font-test">
+            <div class="font-name">Inter SemiBold (600)</div>
+            <div class="font-sample" style="font-weight: 600;">
+                Матрица Эйзенхауэра - эффективное планирование задач
+            </div>
+        </div>
+        
+        <div class="font-test">
+            <div class="font-name">Inter Bold (700)</div>
+            <div class="font-sample" style="font-weight: 700;">
+                Матрица Эйзенхауэра - эффективное планирование задач
+            </div>
+        </div>
+        
+        <div class="font-test">
+            <div class="font-name">Inter ExtraBold (800)</div>
+            <div class="font-sample" style="font-weight: 800;">
+                Матрица Эйзенхауэра - эффективное планирование задач
+            </div>
+        </div>
+        
+        <div class="font-test">
+            <div class="font-name">JetBrains Mono Regular</div>
+            <div class="font-sample font-mono">
+                const tasks = ['Важно и срочно', 'Важно, но не срочно'];
+            </div>
+        </div>
+        
+        <div class="font-test">
+            <div class="font-name">JetBrains Mono Medium</div>
+            <div class="font-sample font-mono" style="font-weight: 500;">
+                const tasks = ['Важно и срочно', 'Важно, но не срочно'];
+            </div>
+        </div>
+        
+        <div class="font-test">
+            <div class="font-name">JetBrains Mono SemiBold</div>
+            <div class="font-sample font-mono" style="font-weight: 600;">
+                const tasks = ['Важно и срочно', 'Важно, но не срочно'];
+            </div>
+        </div>
+        
+        <h2>📊 Информация о шрифтах</h2>
+        <div id="font-info"></div>
+    </div>
+    
+    <script>
+        // Проверка загрузки шрифтов
+        function checkFonts() {
+            const statusEl = document.getElementById('font-status');
+            const infoEl = document.getElementById('font-info');
+            
+            // Проверяем доступность шрифтов
+            const fonts = [
+                'Inter',
+                'JetBrains Mono',
+                'system-ui',
+                'Segoe UI',
+                'Roboto',
+                'Helvetica Neue',
+                'Arial'
+            ];
+            
+            let availableFonts = [];
+            let unavailableFonts = [];
+            
+            fonts.forEach(font => {
+                if (document.fonts.check(`16px "${font}"`)) {
+                    availableFonts.push(font);
+                } else {
+                    unavailableFonts.push(font);
+                }
+            });
+            
+            // Обновляем статус
+            if (availableFonts.includes('Inter') && availableFonts.includes('JetBrains Mono')) {
+                statusEl.className = 'status success';
+                statusEl.textContent = '✅ Все основные шрифты загружены успешно!';
+            } else if (availableFonts.includes('Inter') || availableFonts.includes('JetBrains Mono')) {
+                statusEl.className = 'status warning';
+                statusEl.textContent = '⚠️ Некоторые шрифты загружены, используются fallback шрифты';
+            } else {
+                statusEl.className = 'status error';
+                statusEl.textContent = '❌ Основные шрифты не загружены, используются системные шрифты';
+            }
+            
+            // Показываем информацию о шрифтах
+            infoEl.innerHTML = `
+                <div class="font-test">
+                    <div class="font-name">Доступные шрифты:</div>
+                    <div class="font-sample">${availableFonts.join(', ')}</div>
+                </div>
+                ${unavailableFonts.length > 0 ? `
+                <div class="font-test">
+                    <div class="font-name">Недоступные шрифты:</div>
+                    <div class="font-sample">${unavailableFonts.join(', ')}</div>
+                </div>
+                ` : ''}
+                <div class="font-test">
+                    <div class="font-name">Текущий основной шрифт:</div>
+                    <div class="font-sample">${getComputedStyle(document.body).fontFamily}</div>
+                </div>
+            `;
+        }
+        
+        // Проверяем шрифты после загрузки
+        if (document.fonts) {
+            document.fonts.ready.then(checkFonts);
+        } else {
+            // Fallback для старых браузеров
+            setTimeout(checkFonts, 1000);
+        }
+        
+        // Дополнительная проверка через 3 секунды
+        setTimeout(checkFonts, 3000);
+    </script>
+</body>
+</html>

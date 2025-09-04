@@ -4,11 +4,10 @@ export default {
 	darkMode: 'class',
 	theme: {
 		extend: {
-			// Современные шрифты
+			// Надежные системные шрифты
 			fontFamily: {
 				sans: [
 					'Inter',
-					'ui-sans-serif',
 					'system-ui',
 					'-apple-system',
 					'BlinkMacSystemFont',
@@ -16,14 +15,11 @@ export default {
 					'Roboto',
 					'Helvetica Neue',
 					'Arial',
-					'Noto Sans',
 					'sans-serif',
 				],
 				mono: [
 					'JetBrains Mono',
-					'ui-monospace',
-					'SFMono-Regular',
-					'Menlo',
+					'SF Mono',
 					'Monaco',
 					'Consolas',
 					'Liberation Mono',
