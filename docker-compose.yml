@@ -1,33 +1,41 @@
 version: '3.8'
 
 services:
-  eisenhower-app:
-    build: .
+  eisenhower-matrix:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: eisenhower-matrix:latest
+    container_name: eisenhower-matrix-app
     ports:
       - "3000:3000"
+    volumes:
+      # Постоянное хранение базы данных
+      - eisenhower_data:/app/data
+      # Логи приложения
+      - ./logs:/app/logs
     environment:
       - NODE_ENV=production
       - PORT=3000
-    volumes:
-      - ./backend/database.sqlite:/app/backend/database.sqlite
+      - DB_PATH=/app/data/database.sqlite
     restart: unless-stopped
-    networks:
-      - eisenhower-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.eisenhower-matrix.rule=Host(`eisenhower-matrix.ru`)"
+      - "traefik.http.routers.eisenhower-matrix.tls=true"
+      - "traefik.http.routers.eisenhower-matrix.tls.certresolver=letsencrypt"
+      - "traefik.http.services.eisenhower-matrix.loadbalancer.server.port=3000"
 
-  nginx:
-    image: nginx:alpine
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
-      - ./frontend/dist:/var/www/eisenhower-matrix/frontend/dist
-    depends_on:
-      - eisenhower-app
-    restart: unless-stopped
-    networks:
-      - eisenhower-network
+volumes:
+  eisenhower_data:
+    driver: local
 
 networks:
-  eisenhower-network:
-    driver: bridge
+  default:
+    name: eisenhower-network
