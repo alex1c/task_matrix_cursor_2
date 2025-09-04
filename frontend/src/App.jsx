@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
-import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
 import Matrix from './components/Matrix';
 import Statistics from './components/Statistics';
 import TaskModal from './components/TaskModal';
 import ShareBlock from './components/ShareBlock';
 import AuthorContact from './components/AuthorContact';
-import SEOHead from './components/SEOHead';
 import SemanticStructure from './components/SemanticStructure';
 import { TaskProvider } from './context/TaskContext';
 import { ThemeProvider } from './context/ThemeContext';
@@ -18,7 +16,6 @@ function AppContent() {
 
 	return (
 		<>
-			<SEOHead />
 			<SemanticStructure />
 			<div
 				className={`min-h-screen transition-all duration-300 theme-${theme}`}
@@ -38,13 +35,11 @@ function AppContent() {
 
 function App() {
 	return (
-		<HelmetProvider>
-			<ThemeProvider>
-				<TaskProvider>
-					<AppContent />
-				</TaskProvider>
-			</ThemeProvider>
-		</HelmetProvider>
+		<ThemeProvider>
+			<TaskProvider>
+				<AppContent />
+			</TaskProvider>
+		</ThemeProvider>
 	);
 }
 

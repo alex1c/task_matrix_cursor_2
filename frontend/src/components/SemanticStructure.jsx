@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const SemanticStructure = () => {
+	// Обновляем title страницы
+	useEffect(() => {
+		document.title =
+			'Матрица Эйзенхауэра - Управление задачами и приоритетами | Бесплатный планировщик';
+	}, []);
+
 	return (
 		<>
 			{/* Скрытые семантические элементы для SEO */}
