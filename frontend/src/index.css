@@ -124,21 +124,59 @@ pre,
 .dark .quadrant-urgent-important {
 	background: linear-gradient(135deg, #450a0a 0%, #7f1d1d 100%);
 	border-color: #dc2626;
+	color: #f1f5f9;
 }
 
 .dark .quadrant-important-not-urgent {
 	background: linear-gradient(135deg, #052e16 0%, #14532d 100%);
 	border-color: #16a34a;
+	color: #f1f5f9;
 }
 
 .dark .quadrant-urgent-not-important {
 	background: linear-gradient(135deg, #451a03 0%, #78350f 100%);
 	border-color: #d97706;
+	color: #f1f5f9;
 }
 
 .dark .quadrant-not-urgent-not-important {
 	background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 	border-color: #475569;
+	color: #f1f5f9;
+}
+
+/* Исправление цветов текста в квадрантах для темной темы */
+.dark .quadrant h3 {
+	color: #f1f5f9 !important;
+}
+
+.dark .quadrant p {
+	color: #cbd5e1 !important;
+}
+
+.dark .quadrant .opacity-75 {
+	color: #94a3b8 !important;
+}
+
+/* Дополнительные исправления для квадрантов в темной теме */
+.dark .quadrant .text-gray-300 {
+	color: #cbd5e1 !important;
+}
+
+.dark .quadrant .text-gray-200 {
+	color: #e2e8f0 !important;
+}
+
+.dark .quadrant .text-gray-100 {
+	color: #f1f5f9 !important;
+}
+
+.dark .quadrant .text-gray-400 {
+	color: #94a3b8 !important;
+}
+
+.dark .quadrant .text-gray-500 {
+	color: #64748b !important;
 }
 
 /* Улучшенные стили приоритетов */
@@ -208,6 +246,7 @@ pre,
 .dark .task-card {
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	background: rgba(30, 41, 59, 0.8);
+	color: #f1f5f9; /* Светлый текст для темной темы */
 }
 
 .dark .task-card::before {
@@ -217,6 +256,53 @@ pre,
 		rgba(255, 255, 255, 0.2),
 		transparent
 	);
+}
+
+/* Исправление цветов текста в темной теме */
+.dark .task-card h4 {
+	color: #f1f5f9 !important;
+}
+
+.dark .task-card p {
+	color: #cbd5e1 !important;
+}
+
+.dark .task-card .text-gray-600 {
+	color: #94a3b8 !important;
+}
+
+.dark .task-card .text-gray-500 {
+	color: #64748b !important;
+}
+
+.dark .task-card .text-gray-400 {
+	color: #94a3b8 !important;
+}
+
+/* Дополнительные исправления для темной темы */
+.dark .task-card .text-gray-300 {
+	color: #cbd5e1 !important;
+}
+
+.dark .task-card .text-gray-200 {
+	color: #e2e8f0 !important;
+}
+
+.dark .task-card .text-gray-100 {
+	color: #f1f5f9 !important;
+}
+
+/* Исправление цветов для иконок в темной теме */
+.dark .task-card .text-blue-500 {
+	color: #60a5fa !important;
+}
+
+.dark .task-card .text-red-500 {
+	color: #f87171 !important;
+}
+
+.dark .task-card .text-green-500 {
+	color: #4ade80 !important;
 }
 
 /* Выполненные задачи */
@@ -481,6 +567,7 @@ select,
 textarea {
 	transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 	border: 1px solid rgba(0, 0, 0, 0.1);
+	color: #1e293b;
 }
 
 input:focus,
@@ -495,6 +582,8 @@ textarea:focus {
 .dark select,
 .dark textarea {
 	border-color: rgba(255, 255, 255, 0.1);
+	background-color: #374151;
+	color: #f1f5f9;
 }
 
 .dark input:focus,
@@ -502,6 +591,11 @@ textarea:focus {
 .dark textarea:focus {
 	border-color: #3b82f6;
 	box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+	color: #9ca3af;
 }
 
 /* Фокус для клавиатурной навигации */

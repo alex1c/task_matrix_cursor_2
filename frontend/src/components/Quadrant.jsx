@@ -33,10 +33,10 @@ const Quadrant = ({ id, title, subtitle, color, icon, tasks }) => {
 				<div className='flex items-center gap-3'>
 					<span className='text-3xl'>{icon}</span>
 					<div>
-						<h3 className='font-bold text-xl leading-tight'>
+						<h3 className='font-bold text-xl leading-tight text-gray-900 dark:text-gray-100'>
 							{title}
 						</h3>
-						<p className='text-sm opacity-75 font-medium'>
+						<p className='text-sm opacity-75 font-medium text-gray-700 dark:text-gray-300'>
 							{subtitle}
 						</p>
 					</div>
@@ -54,7 +54,7 @@ const Quadrant = ({ id, title, subtitle, color, icon, tasks }) => {
 			</div>
 
 			{/* Счетчик задач */}
-			<div className='text-sm opacity-75 mb-4 font-medium'>
+			<div className='text-sm opacity-75 mb-4 font-medium text-gray-700 dark:text-gray-300'>
 				{tasks.length}{' '}
 				{tasks.length === 1
 					? 'задача'
@@ -68,8 +68,10 @@ const Quadrant = ({ id, title, subtitle, color, icon, tasks }) => {
 				{tasks.length === 0 ? (
 					<div className='flex items-center justify-center h-36 text-center opacity-60'>
 						<div>
-							<p className='text-sm font-medium'>Нет задач</p>
-							<p className='text-xs mt-1'>
+							<p className='text-sm font-medium text-gray-600 dark:text-gray-400'>
+								Нет задач
+							</p>
+							<p className='text-xs mt-1 text-gray-500 dark:text-gray-500'>
 								Перетащите задачу сюда или создайте новую
 							</p>
 						</div>

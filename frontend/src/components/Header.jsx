@@ -56,7 +56,7 @@ const Header = () => {
 					<h1 className='text-3xl lg:text-4xl font-bold bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 bg-clip-text text-transparent leading-tight'>
 						Матрица Эйзенхауэра
 					</h1>
-					<p className='text-sm text-gray-600 dark:text-gray-400 mt-2 font-medium'>
+					<p className='text-sm text-gray-600 dark:text-gray-300 mt-2 font-medium'>
 						Управляйте своими задачами эффективно
 					</p>
 				</div>
@@ -147,7 +147,7 @@ const Header = () => {
 					<div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
 						{/* Сортировка */}
 						<div>
-							<label className='block text-sm font-semibold mb-3 text-gray-700 dark:text-gray-300'>
+							<label className='block text-sm font-semibold mb-3 text-gray-700 dark:text-gray-200'>
 								Сортировка
 							</label>
 							<select
@@ -168,7 +168,7 @@ const Header = () => {
 
 						{/* Фильтр по приоритету */}
 						<div>
-							<label className='block text-sm font-semibold mb-3 text-gray-700 dark:text-gray-300'>
+							<label className='block text-sm font-semibold mb-3 text-gray-700 dark:text-gray-200'>
 								Приоритет
 							</label>
 							<select

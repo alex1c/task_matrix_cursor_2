@@ -245,7 +245,7 @@ const TaskCard = ({ task, index }) => {
 						)}
 					</button>
 
-					<h4 className='font-semibold text-sm flex-1 line-clamp-2 leading-relaxed'>
+					<h4 className='font-semibold text-sm flex-1 line-clamp-2 leading-relaxed text-gray-900 dark:text-gray-100'>
 						{task.title}
 					</h4>
 				</div>
@@ -312,7 +312,7 @@ const TaskCard = ({ task, index }) => {
 
 			{/* Описание */}
 			{task.description && (
-				<p className='text-xs text-gray-600 dark:text-gray-400 mb-3 line-clamp-2 leading-relaxed'>
+				<p className='text-xs text-gray-600 dark:text-gray-300 mb-3 line-clamp-2 leading-relaxed'>
 					{task.description}
 				</p>
 			)}
@@ -338,9 +338,9 @@ const TaskCard = ({ task, index }) => {
 						<div className='flex items-center gap-1.5'>
 							<Calendar
 								size={12}
-								className='text-gray-400'
+								className='text-gray-400 dark:text-gray-500'
 							/>
-							<span className='font-mono'>
+							<span className='font-mono text-gray-500 dark:text-gray-400'>
 								{formatDate(task.dueDate)}
 							</span>
 						</div>
