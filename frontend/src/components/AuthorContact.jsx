@@ -123,40 +123,7 @@ const AuthorContact = () => {
 						</div>
 
 						{/* Альтернативные способы получения email */}
-						<div className='space-y-3'>
-							<h4 className='text-sm font-medium text-gray-700 dark:text-gray-300'>
-								Альтернативные способы:
-							</h4>
-
-							{/* Base64 кодированный email */}
-							<div>
-								<label className='block text-xs text-gray-500 dark:text-gray-400 mb-1'>
-									Base64 (декодируйте онлайн):
-								</label>
-								<code className='block p-2 bg-gray-50 dark:bg-gray-700 rounded text-xs font-mono break-all'>
-									{encodedEmail}
-								</code>
-							</div>
-
-							{/* ROT13 кодированный email */}
-							<div>
-								<label className='block text-xs text-gray-500 dark:text-gray-400 mb-1'>
-									ROT13 (примените ROT13 дважды):
-								</label>
-								<code className='block p-2 bg-gray-50 dark:bg-gray-700 rounded text-xs font-mono'>
-									{rot13Email}
-								</code>
-							</div>
-						</div>
-
-						{/* JavaScript декодирование */}
-						<div className='p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg'>
-							<p className='text-xs text-blue-800 dark:text-blue-200'>
-								<strong>Для разработчиков:</strong> Email
-								доступен в консоли браузера как{' '}
-								<code>window.decodedAuthorEmail</code>
-							</p>
-						</div>
+						
 					</div>
 				</div>
 
