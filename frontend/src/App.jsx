@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Matrix from './components/Matrix';
 import Statistics from './components/Statistics';
 import TaskModal from './components/TaskModal';
+import ShareBlock from './components/ShareBlock';
 import { TaskProvider } from './context/TaskContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { useTheme } from './context/ThemeContext';
@@ -19,6 +20,7 @@ function AppContent() {
 				<Header />
 				<Matrix />
 				<Statistics />
+				<ShareBlock />
 			</div>
 			<TaskModal />
 		</div>
