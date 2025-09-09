@@ -150,6 +150,49 @@
     "feature3": "Modi: alle, abgeschlossen, unvollständig",
     "feature4": "Cookies zur Identifikation — nur Sie sehen Ihre Aufgaben"
   },
+  "seo": {
+    "title": "Eisenhower-Matrix - Aufgabenmanagement und Prioritäten",
+    "subtitle": "Effektive Aufgabenplanung",
+    "whatIs": "Was ist die Eisenhower-Matrix?",
+    "description": "Die Eisenhower-Matrix ist ein Zeitmanagement-Tool, das hilft, Aufgaben in vier Kategorien nach Wichtigkeit und Dringlichkeit zu unterteilen: wichtig und dringend, wichtig aber nicht dringend, dringend aber nicht wichtig, nicht wichtig und nicht dringend.",
+    "benefits": "Vorteile der Eisenhower-Matrix",
+    "benefit1": "Erhöhte Produktivität",
+    "benefit2": "Effektives Zeitmanagement",
+    "benefit3": "Richtige Prioritätensetzung",
+    "benefit4": "Reduzierter Stress durch Aufgabenüberlastung",
+    "benefit5": "Verbesserte Entscheidungsqualität",
+    "howToUse": "Wie man die Eisenhower-Matrix verwendet",
+    "step1": "Schreiben Sie alle Ihre Aufgaben auf",
+    "step2": "Bestimmen Sie die Wichtigkeit jeder Aufgabe",
+    "step3": "Bestimmen Sie die Dringlichkeit jeder Aufgabe",
+    "step4": "Platzieren Sie Aufgaben in entsprechenden Quadranten",
+    "step5": "Beginnen Sie mit Aufgaben aus dem ersten Quadranten",
+    "quadrants": "Eisenhower-Matrix Quadranten",
+    "quadrant1": "Quadrant 1: Wichtig und dringend",
+    "quadrant1Desc": "Krisen, dringende Probleme, Aufgaben mit Fristen.",
+    "quadrant2": "Quadrant 2: Wichtig, aber nicht dringend",
+    "quadrant2Desc": "Planung, Entwicklung, Prävention, Lernen.",
+    "quadrant3": "Quadrant 3: Dringend, aber nicht wichtig",
+    "quadrant3Desc": "Ablenkungen, einige Anrufe, einige Meetings.",
+    "quadrant4": "Quadrant 4: Nicht wichtig und nicht dringend",
+    "quadrant4Desc": "Zeitverschwendung, übermäßige Unterhaltung.",
+    "keywords": "SEO-Schlüsselwörter",
+    "keywordsList": "eisenhower-matrix, aufgabenmanagement, planung, prioritäten, produktivität, zeitmanagement, aufgabenplaner, wichtige aufgaben, dringende aufgaben, effizienz, zeitorganisation, zeitmanagement, planer, aufgabenorganisator, prioritätensystem, prioritätenmatrix, eisenhower-quadranten, eisenhower-methode, produktivitätstools",
+    "author": "Eisenhower-Matrix",
+    "section": "Produktivität",
+    "faq1": {
+      "question": "Was ist die Eisenhower-Matrix?",
+      "answer": "Die Eisenhower-Matrix ist ein Zeitmanagement-Tool, das hilft, Aufgaben in vier Kategorien nach Wichtigkeit und Dringlichkeit zu unterteilen."
+    },
+    "faq2": {
+      "question": "Wie verwendet man die Eisenhower-Matrix?",
+      "answer": "Schreiben Sie alle Aufgaben auf, bestimmen Sie ihre Wichtigkeit und Dringlichkeit, platzieren Sie sie in entsprechenden Quadranten und beginnen Sie mit wichtigen und dringenden Aufgaben."
+    },
+    "faq3": {
+      "question": "Welche Vorteile bietet die Eisenhower-Matrix?",
+      "answer": "Erhöhte Produktivität, effektives Zeitmanagement, richtige Prioritätensetzung, reduzierter Stress und verbesserte Entscheidungsqualität."
+    }
+  },
   "errors": {
     "taskCreationFailed": "Fehler beim Erstellen der Aufgabe",
     "taskUpdateFailed": "Fehler beim Aktualisieren der Aufgabe",

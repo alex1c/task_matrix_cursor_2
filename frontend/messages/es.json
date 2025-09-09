@@ -150,6 +150,49 @@
     "feature3": "Modos: todas, completadas, incompletas",
     "feature4": "Cookies para identificación — solo usted ve sus tareas"
   },
+  "seo": {
+    "title": "Matriz de Eisenhower - Gestión de Tareas y Prioridades",
+    "subtitle": "Planificación efectiva de tareas",
+    "whatIs": "¿Qué es la Matriz de Eisenhower?",
+    "description": "La Matriz de Eisenhower es una herramienta de gestión del tiempo que ayuda a dividir las tareas en cuatro categorías por importancia y urgencia: importantes y urgentes, importantes pero no urgentes, urgentes pero no importantes, no importantes y no urgentes.",
+    "benefits": "Beneficios de usar la Matriz de Eisenhower",
+    "benefit1": "Mayor productividad",
+    "benefit2": "Gestión efectiva del tiempo",
+    "benefit3": "Establecimiento correcto de prioridades",
+    "benefit4": "Reducción del estrés por sobrecarga de tareas",
+    "benefit5": "Mejor calidad en la toma de decisiones",
+    "howToUse": "Cómo usar la Matriz de Eisenhower",
+    "step1": "Escriba todas sus tareas",
+    "step2": "Determine la importancia de cada tarea",
+    "step3": "Determine la urgencia de cada tarea",
+    "step4": "Coloque las tareas en los cuadrantes apropiados",
+    "step5": "Comience con las tareas del primer cuadrante",
+    "quadrants": "Cuadrantes de la Matriz de Eisenhower",
+    "quadrant1": "Cuadrante 1: Importante y urgente",
+    "quadrant1Desc": "Crisis, problemas urgentes, tareas con plazos.",
+    "quadrant2": "Cuadrante 2: Importante pero no urgente",
+    "quadrant2Desc": "Planificación, desarrollo, prevención, aprendizaje.",
+    "quadrant3": "Cuadrante 3: Urgente pero no importante",
+    "quadrant3Desc": "Distracciones, algunas llamadas, algunas reuniones.",
+    "quadrant4": "Cuadrante 4: No importante y no urgente",
+    "quadrant4Desc": "Pérdida de tiempo, entretenimiento excesivo.",
+    "keywords": "Palabras clave SEO",
+    "keywordsList": "matriz de eisenhower, gestión de tareas, planificación, prioridades, productividad, gestión del tiempo, planificador de tareas, tareas importantes, tareas urgentes, eficiencia, organización del tiempo, gestión del tiempo, planificador, organizador de tareas, sistema de prioridades, matriz de prioridades, cuadrantes de eisenhower, método de eisenhower, herramientas de productividad",
+    "author": "Matriz de Eisenhower",
+    "section": "Productividad",
+    "faq1": {
+      "question": "¿Qué es la Matriz de Eisenhower?",
+      "answer": "La Matriz de Eisenhower es una herramienta de gestión del tiempo que ayuda a dividir las tareas en cuatro categorías por importancia y urgencia."
+    },
+    "faq2": {
+      "question": "¿Cómo usar la Matriz de Eisenhower?",
+      "answer": "Escriba todas las tareas, determine su importancia y urgencia, colóquelas en los cuadrantes apropiados y comience con las tareas importantes y urgentes."
+    },
+    "faq3": {
+      "question": "¿Qué beneficios proporciona la Matriz de Eisenhower?",
+      "answer": "Mayor productividad, gestión efectiva del tiempo, establecimiento correcto de prioridades, reducción del estrés y mejor calidad en la toma de decisiones."
+    }
+  },
   "errors": {
     "taskCreationFailed": "Error al crear la tarea",
     "taskUpdateFailed": "Error al actualizar la tarea",

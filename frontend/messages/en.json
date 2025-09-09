@@ -150,6 +150,49 @@
     "feature3": "Modes: all, completed, incomplete",
     "feature4": "Cookies for identification — only you see your tasks"
   },
+  "seo": {
+    "title": "Eisenhower Matrix - Task Management and Priorities",
+    "subtitle": "Effective task planning",
+    "whatIs": "What is the Eisenhower Matrix?",
+    "description": "The Eisenhower Matrix is a time management tool that helps divide tasks into four categories by importance and urgency: important and urgent, important but not urgent, urgent but not important, not important and not urgent.",
+    "benefits": "Benefits of using the Eisenhower Matrix",
+    "benefit1": "Increased productivity",
+    "benefit2": "Effective time management",
+    "benefit3": "Proper priority setting",
+    "benefit4": "Reduced stress from task overload",
+    "benefit5": "Improved decision-making quality",
+    "howToUse": "How to use the Eisenhower Matrix",
+    "step1": "Write down all your tasks",
+    "step2": "Determine the importance of each task",
+    "step3": "Determine the urgency of each task",
+    "step4": "Place tasks in appropriate quadrants",
+    "step5": "Start with tasks from the first quadrant",
+    "quadrants": "Eisenhower Matrix quadrants",
+    "quadrant1": "Quadrant 1: Important and urgent",
+    "quadrant1Desc": "Crises, urgent problems, tasks with deadlines.",
+    "quadrant2": "Quadrant 2: Important but not urgent",
+    "quadrant2Desc": "Planning, development, prevention, learning.",
+    "quadrant3": "Quadrant 3: Urgent but not important",
+    "quadrant3Desc": "Distractions, some calls, some meetings.",
+    "quadrant4": "Quadrant 4: Not important and not urgent",
+    "quadrant4Desc": "Time wasters, excessive entertainment.",
+    "keywords": "SEO Keywords",
+    "keywordsList": "eisenhower matrix, task management, planning, priorities, productivity, time management, task planner, important tasks, urgent tasks, efficiency, time organization, time management, planner, task organizer, priority system, priority matrix, eisenhower quadrants, eisenhower method, productivity tools",
+    "author": "Eisenhower Matrix",
+    "section": "Productivity",
+    "faq1": {
+      "question": "What is the Eisenhower Matrix?",
+      "answer": "The Eisenhower Matrix is a time management tool that helps divide tasks into four categories by importance and urgency."
+    },
+    "faq2": {
+      "question": "How to use the Eisenhower Matrix?",
+      "answer": "Write down all tasks, determine their importance and urgency, place them in appropriate quadrants, and start with important and urgent tasks."
+    },
+    "faq3": {
+      "question": "What benefits does the Eisenhower Matrix provide?",
+      "answer": "Increased productivity, effective time management, proper priority setting, reduced stress, and improved decision quality."
+    }
+  },
   "errors": {
     "taskCreationFailed": "Failed to create task",
     "taskUpdateFailed": "Failed to update task",
