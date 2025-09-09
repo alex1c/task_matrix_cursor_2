@@ -172,6 +172,9 @@ export const TaskProvider = ({ children }) => {
 		try {
 			const response = await fetch('/api/tasks/export', {
 				method: 'GET',
+				headers: {
+					Accept: 'text/csv; charset=utf-8',
+				},
 			});
 
 			if (response.ok) {

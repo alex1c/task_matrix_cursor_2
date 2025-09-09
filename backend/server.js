@@ -293,6 +293,7 @@ app.get('/api/tasks/export', getUser, (req, res) => {
 
 			const csvWriter = createCsvWriter({
 				path: 'temp-tasks.csv',
+				encoding: 'utf8',
 				header: [
 					{ id: 'title', title: 'Название' },
 					{ id: 'description', title: 'Описание' },
@@ -319,6 +320,13 @@ app.get('/api/tasks/export', getUser, (req, res) => {
 			csvWriter
 				.writeRecords(records)
 				.then(() => {
+					// Устанавливаем заголовки для UTF-8
+					res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+					res.setHeader(
+						'Content-Disposition',
+						'attachment; filename="eisenhower-matrix-tasks.csv"'
+					);
+
 					res.download(
 						'temp-tasks.csv',
 						'eisenhower-matrix-tasks.csv',
@@ -381,4 +389,3 @@ process.on('SIGINT', () => {
 		process.exit(0);
 	});
 });
-
