@@ -14,9 +14,11 @@ import {
 import { format } from 'date-fns';
 import { ru } from 'date-fns/locale';
 import { useTasks } from '../context/TaskContext';
+import { useTranslations } from '../context/I18nContext';
 
 const TaskCard = ({ task, index }) => {
 	const { updateTask, deleteTask, moveTask } = useTasks();
+	const { t } = useTranslations();
 	const [isEditing, setIsEditing] = useState(false);
 	const [showMoveMenu, setShowMoveMenu] = useState(false);
 	const menuRef = useRef(null);
@@ -68,12 +70,6 @@ const TaskCard = ({ task, index }) => {
 		high: 'text-red-600',
 		medium: 'text-yellow-600',
 		low: 'text-green-600',
-	};
-
-	const priorityLabels = {
-		high: 'Высокий',
-		medium: 'Средний',
-		low: 'Низкий',
 	};
 
 	const quadrantLabels = {
@@ -178,7 +174,7 @@ const TaskCard = ({ task, index }) => {
 							})
 						}
 						className='w-full p-3 border border-gray-200 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 resize-none shadow-soft focus:shadow-medium transition-all duration-200 font-medium'
-						placeholder='Описание (необязательно)'
+						placeholder={t('modal.descriptionPlaceholder')}
 						rows='2'
 					/>
 
@@ -193,9 +189,11 @@ const TaskCard = ({ task, index }) => {
 							}
 							className='flex-1 p-3 border border-gray-200 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 shadow-soft focus:shadow-medium transition-all duration-200 font-medium'
 						>
-							<option value='high'>Высокий</option>
-							<option value='medium'>Средний</option>
-							<option value='low'>Низкий</option>
+							<option value='high'>{t('priorities.high')}</option>
+							<option value='medium'>
+								{t('priorities.medium')}
+							</option>
+							<option value='low'>{t('priorities.low')}</option>
 						</select>
 
 						<input
@@ -216,13 +214,13 @@ const TaskCard = ({ task, index }) => {
 							onClick={handleSave}
 							className='flex-1 px-4 py-3 bg-green-500 text-white rounded-xl hover:bg-green-600 transition-all duration-200 font-medium shadow-soft hover:shadow-medium'
 						>
-							Сохранить
+							{t('common.save')}
 						</button>
 						<button
 							onClick={() => setIsEditing(false)}
 							className='flex-1 px-4 py-3 bg-gray-500 text-white rounded-xl hover:bg-gray-600 transition-all duration-200 font-medium shadow-soft hover:shadow-medium'
 						>
-							Отмена
+							{t('common.cancel')}
 						</button>
 					</div>
 				</div>
@@ -355,7 +353,7 @@ const TaskCard = ({ task, index }) => {
 								priorityColors[task.priority]
 							} font-medium`}
 						>
-							{priorityLabels[task.priority]}
+							{t(`priorities.${task.priority}`)}
 						</span>
 					</div>
 

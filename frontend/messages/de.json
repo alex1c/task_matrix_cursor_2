@@ -77,6 +77,7 @@
   },
   "modal": {
     "createTask": "Neue Aufgabe erstellen",
+    "editTask": "Aufgabe bearbeiten",
     "required": "Pflichtfeld",
     "optional": "Optional",
     "titleRequired": "Bitte geben Sie den Aufgabentitel ein",

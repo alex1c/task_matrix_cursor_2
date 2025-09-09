@@ -3,8 +3,8 @@ import { X } from 'lucide-react';
 import { useTasks } from '../context/TaskContext';
 import { useTranslations } from '../context/I18nContext';
 
-const TaskModal = () => {
-	const { createTask } = useTasks();
+const TaskModal = ({ isEditMode = false, editTask = null, onClose = null }) => {
+	const { createTask, updateTask } = useTasks();
 	const { t } = useTranslations();
 	const [isOpen, setIsOpen] = useState(false);
 	const [formData, setFormData] = useState({
@@ -50,10 +50,14 @@ const TaskModal = () => {
 		}
 
 		try {
-			await createTask(formData);
+			if (isEditMode && editTask) {
+				await updateTask(editTask.id, formData);
+			} else {
+				await createTask(formData);
+			}
 			handleClose();
 		} catch (error) {
-			console.error('Error creating task:', error);
+			console.error('Error saving task:', error);
 		}
 	};
 
@@ -67,6 +71,9 @@ const TaskModal = () => {
 			dueDate: '',
 			completed: false,
 		});
+		if (onClose) {
+			onClose();
+		}
 	};
 
 	const handleChange = (e) => {
@@ -77,8 +84,24 @@ const TaskModal = () => {
 		}));
 	};
 
-	// Открываем модальное окно при нажатии Ctrl+N
+	// Инициализация формы данными редактируемой задачи
 	useEffect(() => {
+		if (isEditMode && editTask) {
+			setFormData({
+				title: editTask.title || '',
+				description: editTask.description || '',
+				quadrant: editTask.quadrant || 'urgent-important',
+				priority: editTask.priority || 'medium',
+				dueDate: editTask.dueDate || '',
+				completed: editTask.completed || false,
+			});
+		}
+	}, [isEditMode, editTask]);
+
+	// Открываем модальное окно при нажатии Ctrl+N (только в режиме создания)
+	useEffect(() => {
+		if (isEditMode) return; // Не открываем по Ctrl+N в режиме редактирования
+
 		const handleKeyDown = (e) => {
 			if (e.ctrlKey && e.key === 'n') {
 				e.preventDefault();
@@ -88,7 +111,7 @@ const TaskModal = () => {
 
 		document.addEventListener('keydown', handleKeyDown);
 		return () => document.removeEventListener('keydown', handleKeyDown);
-	}, []);
+	}, [isEditMode]);
 
 	if (!isOpen) return null;
 
@@ -98,7 +121,9 @@ const TaskModal = () => {
 				{/* Заголовок */}
 				<div className='flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700'>
 					<h2 className='text-xl font-bold'>
-						{t('modal.createTask')}
+						{isEditMode
+							? t('modal.editTask')
+							: t('modal.createTask')}
 					</h2>
 					<button
 						onClick={handleClose}
@@ -208,7 +233,9 @@ const TaskModal = () => {
 							type='submit'
 							className='flex-1 bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium'
 						>
-							{t('modal.createTask')}
+							{isEditMode
+								? t('common.save')
+								: t('modal.createTask')}
 						</button>
 						<button
 							type='button'

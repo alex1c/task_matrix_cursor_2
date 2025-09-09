@@ -77,6 +77,7 @@
   },
   "modal": {
     "createTask": "Create new task",
+    "editTask": "Edit task",
     "required": "Required field",
     "optional": "Optional",
     "titleRequired": "Please enter task title",

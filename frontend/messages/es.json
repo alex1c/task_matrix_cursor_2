@@ -77,6 +77,7 @@
   },
   "modal": {
     "createTask": "Crear nueva tarea",
+    "editTask": "Editar tarea",
     "required": "Campo obligatorio",
     "optional": "Opcional",
     "titleRequired": "Por favor, ingrese el título de la tarea",

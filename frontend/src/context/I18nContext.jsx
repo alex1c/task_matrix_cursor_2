@@ -86,6 +86,7 @@ const fallbackMessages = {
 	},
 	modal: {
 		createTask: 'Создать новую задачу',
+		editTask: 'Редактировать задачу',
 		required: 'Обязательное поле',
 		optional: 'Необязательное',
 		titleRequired: 'Пожалуйста, введите название задачи',
