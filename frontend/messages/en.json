@@ -85,7 +85,19 @@
     "totalTasks": "Total tasks",
     "completedTasks": "Completed",
     "pendingTasks": "Pending",
-    "completionRate": "Completion rate"
+    "completionRate": "Completion rate",
+    "chartTitle": "Where time goes",
+    "noTasksToDisplay": "No tasks to display",
+    "completed": "Completed",
+    "whatIsEisenhowerMatrix": "What is the Eisenhower Matrix?",
+    "eisenhowerMatrix": "Eisenhower Matrix",
+    "description": "is a task prioritization tool developed by the 34th President of the United States, Dwight Eisenhower. It helps organize tasks by importance and urgency.",
+    "urgentImportantDesc": "Crises, urgent problems, deadlines. Do immediately.",
+    "importantNotUrgentDesc": "Planning, development, relationships. Schedule time for completion.",
+    "urgentNotImportantDesc": "Distractions, some calls, meetings. Delegate or minimize.",
+    "notUrgentNotImportantDesc": "Time wasters, distracting factors. Delete or postpone.",
+    "usageTip": "Usage tip",
+    "usageTipText": "Try to spend more time in the \"Important, but not Urgent\" quadrant. This will help prevent tasks from appearing in the \"Important and Urgent\" quadrant."
   },
   "language": {
     "switch": "Language",

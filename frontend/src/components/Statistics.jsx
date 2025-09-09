@@ -8,34 +8,36 @@ import {
 	Tooltip,
 } from 'recharts';
 import { useTasks } from '../context/TaskContext';
+import { useTranslations } from '../context/I18nContext';
 
 const Statistics = () => {
 	const { tasks } = useTasks();
+	const { t } = useTranslations();
 
 	// Подсчет задач по квадрантам
 	const quadrantStats = [
 		{
-			name: 'Важно и Срочно',
+			name: t('quadrants.urgentImportant.title'),
 			value: tasks.filter((task) => task.quadrant === 'urgent-important')
 				.length,
 			color: '#ef4444',
 		},
 		{
-			name: 'Важно, но не Срочно',
+			name: t('quadrants.importantNotUrgent.title'),
 			value: tasks.filter(
 				(task) => task.quadrant === 'important-not-urgent'
 			).length,
 			color: '#f59e0b',
 		},
 		{
-			name: 'Срочно, но не Важно',
+			name: t('quadrants.urgentNotImportant.title'),
 			value: tasks.filter(
 				(task) => task.quadrant === 'urgent-not-important'
 			).length,
 			color: '#eab308',
 		},
 		{
-			name: 'Не Важно и не Срочно',
+			name: t('quadrants.notUrgentNotImportant.title'),
 			value: tasks.filter(
 				(task) => task.quadrant === 'not-urgent-not-important'
 			).length,
@@ -54,7 +56,7 @@ const Statistics = () => {
 				{/* Круговая диаграмма */}
 				<div className='bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md'>
 					<h3 className='text-xl font-bold mb-4 text-center'>
-						Куда уходит время
+						{t('statistics.chartTitle')}
 					</h3>
 
 					{totalTasks > 0 ? (
@@ -101,7 +103,7 @@ const Statistics = () => {
 						</div>
 					) : (
 						<div className='h-64 flex items-center justify-center text-gray-500'>
-							<p>Нет задач для отображения</p>
+							<p>{t('statistics.noTasksToDisplay')}</p>
 						</div>
 					)}
 
@@ -112,7 +114,7 @@ const Statistics = () => {
 								{totalTasks}
 							</div>
 							<div className='text-sm text-gray-600 dark:text-gray-400'>
-								Всего задач
+								{t('statistics.totalTasks')}
 							</div>
 						</div>
 						<div className='bg-gray-50 dark:bg-gray-700 rounded-lg p-3'>
@@ -120,7 +122,7 @@ const Statistics = () => {
 								{completionRate}%
 							</div>
 							<div className='text-sm text-gray-600 dark:text-gray-400'>
-								Выполнено
+								{t('statistics.completed')}
 							</div>
 						</div>
 					</div>
@@ -129,68 +131,60 @@ const Statistics = () => {
 				{/* Описание матрицы Эйзенхауэра */}
 				<div className='bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md'>
 					<h3 className='text-xl font-bold mb-4'>
-						Что такое матрица Эйзенхауэра?
+						{t('statistics.whatIsEisenhowerMatrix')}
 					</h3>
 
 					<div className='space-y-4 text-sm leading-relaxed'>
 						<p>
-							<strong>Матрица Эйзенхауэра</strong> — это
-							инструмент для приоритизации задач, разработанный
-							34-м президентом США Дуайтом Эйзенхауэром. Она
-							помогает организовать задачи по важности и
-							срочности.
+							<strong>{t('statistics.eisenhowerMatrix')}</strong>{' '}
+							— {t('statistics.description')}
 						</p>
 
 						<div className='space-y-3'>
 							<div className='border-l-4 border-red-500 pl-4'>
 								<h4 className='font-semibold text-red-700 dark:text-red-400'>
-									🔥 Важно и Срочно
+									🔥 {t('quadrants.urgentImportant.title')}
 								</h4>
 								<p className='text-gray-600 dark:text-gray-400'>
-									Кризисы, срочные проблемы, дедлайны.
-									Выполняйте немедленно.
+									{t('statistics.urgentImportantDesc')}
 								</p>
 							</div>
 
 							<div className='border-l-4 border-orange-500 pl-4'>
 								<h4 className='font-semibold text-orange-700 dark:text-orange-400'>
-									📅 Важно, но не Срочно
+									📅 {t('quadrants.importantNotUrgent.title')}
 								</h4>
 								<p className='text-gray-600 dark:text-gray-400'>
-									Планирование, развитие, отношения.
-									Запланируйте время для выполнения.
+									{t('statistics.importantNotUrgentDesc')}
 								</p>
 							</div>
 
 							<div className='border-l-4 border-yellow-500 pl-4'>
 								<h4 className='font-semibold text-yellow-700 dark:text-yellow-400'>
-									⚡ Срочно, но не Важно
+									⚡ {t('quadrants.urgentNotImportant.title')}
 								</h4>
 								<p className='text-gray-600 dark:text-gray-400'>
-									Отвлечения, некоторые звонки, встречи.
-									Делегируйте или минимизируйте.
+									{t('statistics.urgentNotImportantDesc')}
 								</p>
 							</div>
 
 							<div className='border-l-4 border-gray-500 pl-4'>
 								<h4 className='font-semibold text-gray-700 dark:text-gray-400'>
-									🗑️ Не Важно и не Срочно
+									🗑️{' '}
+									{t('quadrants.notUrgentNotImportant.title')}
 								</h4>
 								<p className='text-gray-600 dark:text-gray-400'>
-									Пустая трата времени, отвлекающие факторы.
-									Удалите или отложите.
+									{t('statistics.notUrgentNotImportantDesc')}
 								</p>
 							</div>
 						</div>
 
 						<div className='bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg'>
 							<h4 className='font-semibold text-blue-800 dark:text-blue-300 mb-2'>
-								💡 Совет по использованию
+								💡 {t('statistics.usageTip')}
 							</h4>
 							<p className='text-blue-700 dark:text-blue-400 text-sm'>
-								Старайтесь проводить больше времени в квадранте
-								"Важно, но не Срочно". Это поможет предотвратить
-								появление задач в квадранте "Важно и Срочно".
+								{t('statistics.usageTipText')}
 							</p>
 						</div>
 					</div>
@@ -201,4 +195,3 @@ const Statistics = () => {
 };
 
 export default Statistics;
-

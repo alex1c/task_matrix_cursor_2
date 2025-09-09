@@ -85,7 +85,19 @@
     "totalTasks": "Gesamtaufgaben",
     "completedTasks": "Abgeschlossen",
     "pendingTasks": "Ausstehend",
-    "completionRate": "Abschlussrate"
+    "completionRate": "Abschlussrate",
+    "chartTitle": "Wohin die Zeit geht",
+    "noTasksToDisplay": "Keine Aufgaben zum Anzeigen",
+    "completed": "Abgeschlossen",
+    "whatIsEisenhowerMatrix": "Was ist die Eisenhower-Matrix?",
+    "eisenhowerMatrix": "Eisenhower-Matrix",
+    "description": "ist ein Werkzeug zur Aufgabenpriorisierung, entwickelt vom 34. Präsidenten der Vereinigten Staaten, Dwight Eisenhower. Es hilft dabei, Aufgaben nach Wichtigkeit und Dringlichkeit zu organisieren.",
+    "urgentImportantDesc": "Krisen, dringende Probleme, Fristen. Sofort erledigen.",
+    "importantNotUrgentDesc": "Planung, Entwicklung, Beziehungen. Zeit für die Erledigung einplanen.",
+    "urgentNotImportantDesc": "Ablenkungen, einige Anrufe, Meetings. Delegieren oder minimieren.",
+    "notUrgentNotImportantDesc": "Zeitverschwendung, ablenkende Faktoren. Löschen oder verschieben.",
+    "usageTip": "Nutzungstipp",
+    "usageTipText": "Versuchen Sie, mehr Zeit im Quadranten \"Wichtig, aber nicht Dringend\" zu verbringen. Dies wird helfen zu verhindern, dass Aufgaben im Quadranten \"Dringend und Wichtig\" erscheinen."
   },
   "language": {
     "switch": "Sprache",

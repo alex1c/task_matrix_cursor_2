@@ -85,7 +85,19 @@
     "totalTasks": "总任务数",
     "completedTasks": "已完成",
     "pendingTasks": "待处理",
-    "completionRate": "完成率"
+    "completionRate": "完成率",
+    "chartTitle": "时间去向",
+    "noTasksToDisplay": "没有任务可显示",
+    "completed": "已完成",
+    "whatIsEisenhowerMatrix": "什么是艾森豪威尔矩阵？",
+    "eisenhowerMatrix": "艾森豪威尔矩阵",
+    "description": "是由美国第34任总统德怀特·艾森豪威尔开发的任务优先级工具。它帮助根据重要性和紧急性来组织任务。",
+    "urgentImportantDesc": "危机、紧急问题、截止日期。立即执行。",
+    "importantNotUrgentDesc": "规划、发展、关系。安排时间完成。",
+    "urgentNotImportantDesc": "干扰、一些电话、会议。委托或最小化。",
+    "notUrgentNotImportantDesc": "时间浪费、干扰因素。删除或推迟。",
+    "usageTip": "使用提示",
+    "usageTipText": "尽量在"重要但不紧急"象限中花费更多时间。这将有助于防止任务出现在"重要且紧急"象限中。"
   },
   "language": {
     "switch": "语言",
