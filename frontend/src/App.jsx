@@ -3,6 +3,7 @@ import { Toaster } from 'react-hot-toast';
 import Header from './components/Header';
 import Matrix from './components/Matrix';
 import Statistics from './components/Statistics';
+import ServiceInfo from './components/ServiceInfo';
 import TaskModal from './components/TaskModal';
 import ShareBlock from './components/ShareBlock';
 import AuthorContact from './components/AuthorContact';
@@ -25,6 +26,7 @@ function AppContent() {
 					<Header />
 					<Matrix />
 					<Statistics />
+					<ServiceInfo />
 					<ShareBlock />
 					<AuthorContact />
 				</div>

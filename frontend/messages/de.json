@@ -142,6 +142,14 @@
     "switchToLight": "Zu hellem Design wechseln",
     "switchToDark": "Zu dunklem Design wechseln"
   },
+  "serviceInfo": {
+    "title": "Einfacher und sicherer Aufgabenmanager",
+    "subtitle": "Nutzen Sie den Service kostenlos für persönliche Zwecke.",
+    "feature1": "Erstellen und Verschieben von Aufgaben (drag & drop)",
+    "feature2": "Filterung nach Status und Priorität",
+    "feature3": "Modi: alle, abgeschlossen, unvollständig",
+    "feature4": "Cookies zur Identifikation — nur Sie sehen Ihre Aufgaben"
+  },
   "errors": {
     "taskCreationFailed": "Fehler beim Erstellen der Aufgabe",
     "taskUpdateFailed": "Fehler beim Aktualisieren der Aufgabe",

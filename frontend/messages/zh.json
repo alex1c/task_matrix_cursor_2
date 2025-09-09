@@ -142,6 +142,14 @@
     "switchToLight": "切换到浅色主题",
     "switchToDark": "切换到深色主题"
   },
+  "serviceInfo": {
+    "title": "简单安全的任务管理器",
+    "subtitle": "免费使用此服务用于个人目的。",
+    "feature1": "创建和移动任务（拖拽）",
+    "feature2": "按状态和优先级筛选",
+    "feature3": "模式：全部、已完成、未完成",
+    "feature4": "Cookie用于识别——只有您能看到您的任务"
+  },
   "errors": {
     "taskCreationFailed": "创建任务失败",
     "taskUpdateFailed": "更新任务失败",

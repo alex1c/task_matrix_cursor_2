@@ -142,6 +142,14 @@
     "switchToLight": "Switch to light theme",
     "switchToDark": "Switch to dark theme"
   },
+  "serviceInfo": {
+    "title": "Simple and secure task manager",
+    "subtitle": "Use the service for free for personal purposes.",
+    "feature1": "Creating and moving tasks (drag & drop)",
+    "feature2": "Filtering by status and priority",
+    "feature3": "Modes: all, completed, incomplete",
+    "feature4": "Cookies for identification — only you see your tasks"
+  },
   "errors": {
     "taskCreationFailed": "Failed to create task",
     "taskUpdateFailed": "Failed to update task",
