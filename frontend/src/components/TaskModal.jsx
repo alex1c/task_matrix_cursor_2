@@ -56,9 +56,7 @@ const TaskModal = ({ isEditMode = false, editTask = null, onClose = null }) => {
 				await createTask(formData);
 			}
 			handleClose();
-		} catch (error) {
-			console.error('Error saving task:', error);
-		}
+		} catch (error) {}
 	};
 
 	const handleClose = () => {

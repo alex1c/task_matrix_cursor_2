@@ -31,7 +31,6 @@ const AuthorContact = () => {
 			toast.success(t('author.emailCopied'));
 			setTimeout(() => setCopied(false), 2000);
 		} catch (error) {
-			console.error('Ошибка копирования:', error);
 			toast.error(t('author.copyError'));
 		}
 	};
@@ -45,7 +44,6 @@ const AuthorContact = () => {
 				const decoded = atob(encodedEmail);
 				return decoded;
 			} catch (error) {
-				console.error('Ошибка декодирования:', error);
 				return 'alex1c-spb@yandex.ru';
 			}
 		};

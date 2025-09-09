@@ -40,7 +40,6 @@ export const TaskProvider = ({ children }) => {
 				throw new Error('Failed to fetch tasks');
 			}
 		} catch (error) {
-			console.error('Error fetching tasks:', error);
 			toast.error('Ошибка при загрузке задач');
 		} finally {
 			setLoading(false);
@@ -72,7 +71,6 @@ export const TaskProvider = ({ children }) => {
 				throw new Error('Failed to create task');
 			}
 		} catch (error) {
-			console.error('Error creating task:', error);
 			toast.error('Ошибка при создании задачи');
 			throw error;
 		}
@@ -107,7 +105,6 @@ export const TaskProvider = ({ children }) => {
 				throw new Error('Failed to update task');
 			}
 		} catch (error) {
-			console.error('Error updating task:', error);
 			toast.error('Ошибка при обновлении задачи');
 			throw error;
 		}
@@ -127,7 +124,6 @@ export const TaskProvider = ({ children }) => {
 				throw new Error('Failed to delete task');
 			}
 		} catch (error) {
-			console.error('Error deleting task:', error);
 			toast.error('Ошибка при удалении задачи');
 		}
 	};
@@ -161,7 +157,6 @@ export const TaskProvider = ({ children }) => {
 				throw new Error('Failed to move task');
 			}
 		} catch (error) {
-			console.error('Error moving task:', error);
 			toast.error('Ошибка при перемещении задачи');
 			throw error;
 		}
@@ -192,7 +187,6 @@ export const TaskProvider = ({ children }) => {
 				throw new Error('Failed to export tasks');
 			}
 		} catch (error) {
-			console.error('Error exporting tasks:', error);
 			toast.error('Ошибка при экспорте задач');
 		}
 	};
@@ -260,7 +254,6 @@ export const TaskProvider = ({ children }) => {
 
 			return sorted;
 		} catch (error) {
-			console.error('Error in getSortedTasks:', error);
 			// Возвращаем исходный список в случае ошибки
 			return taskList || [];
 		}

@@ -22,9 +22,7 @@ app.use(express.json());
 // Инициализация базы данных
 const db = new sqlite3.Database('./database.sqlite', (err) => {
 	if (err) {
-		console.error('Error opening database:', err.message);
 	} else {
-		console.log('Connected to SQLite database');
 		initDatabase();
 	}
 });
@@ -86,7 +84,6 @@ app.get('/api/tasks', getUser, (req, res) => {
 		[userId],
 		(err, rows) => {
 			if (err) {
-				console.error('Error fetching tasks:', err);
 				return res.status(500).json({ error: 'Database error' });
 			}
 			res.json(rows);
@@ -124,14 +121,12 @@ app.post('/api/tasks', getUser, (req, res) => {
 		],
 		function (err) {
 			if (err) {
-				console.error('Error creating task:', err);
 				return res.status(500).json({ error: 'Database error' });
 			}
 
 			// Возвращаем созданную задачу
 			db.get('SELECT * FROM tasks WHERE id = ?', [taskId], (err, row) => {
 				if (err) {
-					console.error('Error fetching created task:', err);
 					return res.status(500).json({ error: 'Database error' });
 				}
 				res.status(201).json(row);
@@ -152,7 +147,6 @@ app.put('/api/tasks/:id', getUser, (req, res) => {
 		[id, userId],
 		(err, task) => {
 			if (err) {
-				console.error('Error checking task ownership:', err);
 				return res.status(500).json({ error: 'Database error' });
 			}
 
@@ -199,14 +193,12 @@ app.put('/api/tasks/:id', getUser, (req, res) => {
 
 			db.run(query, updateValues, function (err) {
 				if (err) {
-					console.error('Error updating task:', err);
 					return res.status(500).json({ error: 'Database error' });
 				}
 
 				// Возвращаем обновленную задачу
 				db.get('SELECT * FROM tasks WHERE id = ?', [id], (err, row) => {
 					if (err) {
-						console.error('Error fetching updated task:', err);
 						return res
 							.status(500)
 							.json({ error: 'Database error' });
@@ -235,7 +227,6 @@ app.put('/api/tasks/:id/move', getUser, (req, res) => {
 		[quadrant, now, id, userId],
 		function (err) {
 			if (err) {
-				console.error('Error moving task:', err);
 				return res.status(500).json({ error: 'Database error' });
 			}
 
@@ -246,7 +237,6 @@ app.put('/api/tasks/:id/move', getUser, (req, res) => {
 			// Возвращаем обновленную задачу
 			db.get('SELECT * FROM tasks WHERE id = ?', [id], (err, row) => {
 				if (err) {
-					console.error('Error fetching moved task:', err);
 					return res.status(500).json({ error: 'Database error' });
 				}
 				res.json(row);
@@ -265,7 +255,6 @@ app.delete('/api/tasks/:id', getUser, (req, res) => {
 		[id, userId],
 		function (err) {
 			if (err) {
-				console.error('Error deleting task:', err);
 				return res.status(500).json({ error: 'Database error' });
 			}
 
@@ -287,7 +276,6 @@ app.get('/api/tasks/export', getUser, (req, res) => {
 		[userId],
 		(err, tasks) => {
 			if (err) {
-				console.error('Error fetching tasks for export:', err);
 				return res.status(500).json({ error: 'Database error' });
 			}
 
@@ -332,7 +320,6 @@ app.get('/api/tasks/export', getUser, (req, res) => {
 						'eisenhower-matrix-tasks.csv',
 						(err) => {
 							if (err) {
-								console.error('Error downloading file:', err);
 							}
 							// Удаляем временный файл
 							require('fs').unlinkSync('temp-tasks.csv');
@@ -340,7 +327,6 @@ app.get('/api/tasks/export', getUser, (req, res) => {
 					);
 				})
 				.catch((err) => {
-					console.error('Error writing CSV:', err);
 					res.status(500).json({ error: 'Export error' });
 				});
 		}
@@ -369,22 +355,17 @@ function getPriorityLabel(priority) {
 
 // Обработка ошибок
 app.use((err, req, res, next) => {
-	console.error(err.stack);
 	res.status(500).json({ error: 'Something broke!' });
 });
 
 // Запуск сервера
-app.listen(PORT, () => {
-	console.log(`Server is running on port ${PORT}`);
-});
+app.listen(PORT, () => {});
 
 // Graceful shutdown
 process.on('SIGINT', () => {
 	db.close((err) => {
 		if (err) {
-			console.error('Error closing database:', err.message);
 		} else {
-			console.log('Database connection closed');
 		}
 		process.exit(0);
 	});

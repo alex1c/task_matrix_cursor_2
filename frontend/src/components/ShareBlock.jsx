@@ -28,7 +28,6 @@ const ShareBlock = () => {
 			toast.success(t('share.linkCopied'));
 			setTimeout(() => setCopied(false), 2000);
 		} catch (error) {
-			console.error('Ошибка копирования:', error);
 			toast.error(t('share.copyError'));
 		}
 	};

@@ -82,53 +82,41 @@ const TaskCard = ({ task, index }) => {
 	const handleToggleComplete = async () => {
 		try {
 			if (!task || !task.id) {
-				console.error('Invalid task data for toggle completion');
 				return;
 			}
 			await updateTask(task.id, { completed: !task.completed });
-		} catch (error) {
-			console.error('Error toggling task completion:', error);
-		}
+		} catch (error) {}
 	};
 
 	const handleSave = async () => {
 		try {
 			if (!task || !task.id) {
-				console.error('Invalid task data for save');
 				return;
 			}
 			await updateTask(task.id, editData);
 			setIsEditing(false);
-		} catch (error) {
-			console.error('Error updating task:', error);
-		}
+		} catch (error) {}
 	};
 
 	const handleDelete = async () => {
 		if (!task || !task.id) {
-			console.error('Invalid task data for delete');
 			return;
 		}
 		if (window.confirm('Вы уверены, что хотите удалить эту задачу?')) {
 			try {
 				await deleteTask(task.id);
-			} catch (error) {
-				console.error('Error deleting task:', error);
-			}
+			} catch (error) {}
 		}
 	};
 
 	const handleMoveTask = async (newQuadrant) => {
 		try {
 			if (!task || !task.id) {
-				console.error('Invalid task data for move');
 				return;
 			}
 			await moveTask(task.id, newQuadrant);
 			setShowMoveMenu(false);
-		} catch (error) {
-			console.error('Error moving task:', error);
-		}
+		} catch (error) {}
 	};
 
 	const formatDate = (dateString) => {

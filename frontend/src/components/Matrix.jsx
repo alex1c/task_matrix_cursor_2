@@ -90,9 +90,7 @@ const Matrix = () => {
 			if (activeTask && activeTask.quadrant !== targetQuadrant) {
 				try {
 					await moveTask(active.id, targetQuadrant);
-				} catch (error) {
-					console.error('Error moving task:', error);
-				}
+				} catch (error) {}
 			}
 		}
 	};
@@ -110,9 +108,7 @@ const Matrix = () => {
 			if (activeTask && activeTask.quadrant !== targetQuadrant) {
 				try {
 					await moveTask(active.id, targetQuadrant);
-				} catch (error) {
-					console.error('Error moving task:', error);
-				}
+				} catch (error) {}
 			}
 		}
 	};
@@ -149,10 +145,6 @@ const Matrix = () => {
 									? sortedTasks
 									: rawTasks;
 							} catch (error) {
-								console.error(
-									`Error processing tasks for quadrant ${quadrant.id}:`,
-									error
-								);
 								return [];
 							}
 						}, [tasks, quadrant.id, isDragging, getSortedTasks]);

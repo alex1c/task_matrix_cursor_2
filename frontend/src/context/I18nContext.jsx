@@ -237,46 +237,26 @@ export const I18nProvider = ({ children }) => {
 	useEffect(() => {
 		const loadMessages = async () => {
 			setIsLoading(true);
-			console.log(`Loading messages for locale: ${locale}`);
 			try {
 				const url = `/messages/${locale}.json?t=${Date.now()}`;
-				console.log(`Fetching URL: ${url}`);
 				const response = await fetch(url);
-				console.log(`Response status for ${locale}:`, response.status);
 
 				if (response.ok) {
 					const data = await response.json();
-					console.log(`Loaded messages for ${locale}:`, data);
-					console.log(
-						`Sample translation for ${locale}:`,
-						data.common?.add
-					);
 					setMessages(data);
 				} else {
-					console.error(
-						`Failed to load messages for locale: ${locale}, status: ${response.status}`
-					);
 					// Fallback to default locale
 					if (locale !== defaultLocale) {
-						console.log(
-							`Falling back to default locale: ${defaultLocale}`
-						);
 						const fallbackResponse = await fetch(
 							`/messages/${defaultLocale}.json?t=${Date.now()}`
 						);
 						if (fallbackResponse.ok) {
 							const fallbackData = await fallbackResponse.json();
-							console.log(
-								`Loaded fallback messages:`,
-								fallbackData
-							);
 							setMessages(fallbackData);
 						}
 					}
 				}
 			} catch (error) {
-				console.error('Error loading messages:', error);
-				console.log('Falling back to hardcoded messages due to error');
 				setMessages(fallbackMessages);
 			} finally {
 				setIsLoading(false);
@@ -300,10 +280,6 @@ export const I18nProvider = ({ children }) => {
 			if (value && typeof value === 'object' && k in value) {
 				value = value[k];
 			} else {
-				// Only warn if not loading and messages are available
-				if (!isLoading && Object.keys(messages).length > 0) {
-					console.warn(`Translation key not found: ${key}`);
-				}
 				return key; // Return the key if translation not found
 			}
 		}
@@ -320,14 +296,10 @@ export const I18nProvider = ({ children }) => {
 
 	// Function to change locale
 	const changeLocale = (newLocale) => {
-		console.log(`Changing locale from ${locale} to ${newLocale}`);
 		if (locales[newLocale]) {
 			setLocale(newLocale);
 			// Save to localStorage
 			localStorage.setItem('preferred-locale', newLocale);
-			console.log(`Locale changed to: ${newLocale}`);
-		} else {
-			console.error(`Invalid locale: ${newLocale}`);
 		}
 	};
 
