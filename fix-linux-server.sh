@@ -1,148 +1,12 @@
-# Инструкция по деплою на Linux сервер
+#!/bin/bash
 
-## Проблема и решение
+# Скрипт для исправления конфигурации на Linux сервере
+# Запускать из корневой папки проекта: /var/www/eisenhower-matrix
 
-### Проблема
+echo "🔧 Исправление конфигурации для Linux сервера..."
 
-При запуске `npm run build` на Linux сервере возникала ошибка:
-
-```
-SyntaxError: missing ) after argument list
-at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:168:18)
-```
-
-### Причина
-
-Конфликт между `"type": "module"` в package.json и bash-скриптами Vite в Linux окружении.
-
-### Решение
-
-1. **Убрать `"type": "module"`** из `frontend/package.json`
-2. **Изменить конфигурационные файлы** на CommonJS синтаксис
-3. **Добавить скрипт "start"** в корневой `package.json`
-
-## Изменения в файлах
-
-### 1. frontend/package.json
-
-```json
-{
-	"name": "eisenhower-matrix-frontend",
-	"private": true,
-	"version": "0.0.0",
-	// Убрана строка: "type": "module",
-	"scripts": {
-		"dev": "npx vite",
-		"build": "npx vite build",
-		"lint": "npx eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-		"preview": "npx vite preview"
-	}
-}
-```
-
-### 2. frontend/postcss.config.js
-
-```javascript
-// Было:
-export default {
-	plugins: {
-		tailwindcss: {},
-		autoprefixer: {},
-	},
-};
-
-// Стало:
-module.exports = {
-	plugins: {
-		tailwindcss: {},
-		autoprefixer: {},
-	},
-};
-```
-
-### 3. frontend/tailwind.config.js
-
-```javascript
-// Было:
-export default {
-
-// Стало:
-module.exports = {
-```
-
-### 4. package.json (корневой)
-
-```json
-{
-	"scripts": {
-		"dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
-		"dev:frontend": "cd frontend && npm run dev",
-		"dev:backend": "cd backend && npm run dev",
-		"build": "cd frontend && npm run build",
-		"start": "cd backend && npm start", // ← Добавлен скрипт start
-		"install:all": "npm install && cd frontend && npm install && cd ../backend && npm install"
-	}
-}
-```
-
-## Команды для деплоя
-
-### На Linux сервере:
-
-```bash
-# 1. Перейти в папку проекта
-cd /var/www/eisenhower-matrix
-
-# 2. Убедиться, что файлы обновлены
-# Убедитесь, что в frontend/package.json НЕТ строки "type": "module"
-# Убедитесь, что frontend/postcss.config.js использует module.exports
-# Убедитесь, что frontend/tailwind.config.js использует module.exports
-# Убедитесь, что в корневом package.json есть скрипт "start"
-
-# 3. Установить зависимости
-npm install
-
-# 4. Собрать frontend
-cd frontend
-npm install
-npm run build
-
-# 5. Запустить backend
-cd ..
-npm start
-```
-
-### Альтернативный способ:
-
-```bash
-# В корне проекта
-npm run build
-npm start
-```
-
-## Если нужно обновить файлы на сервере
-
-### Вариант 1: Скопировать файлы вручную
-
-```bash
-# Скопировать исправленные файлы на сервер:
-# - frontend/package.json (без "type": "module")
-# - frontend/postcss.config.js (с module.exports)
-# - frontend/tailwind.config.js (с module.exports)
-# - package.json (с добавленным скриптом "start")
-```
-
-### Вариант 2: Использовать git
-
-```bash
-# Если проект в git репозитории
-git pull origin main
-```
-
-### Вариант 3: Создать файлы на сервере
-
-```bash
-# Создать frontend/package.json
+# 1. Исправляем frontend/package.json - убираем "type": "module"
+echo "📝 Исправляем frontend/package.json..."
 cat > frontend/package.json << 'EOF'
 {
   "name": "eisenhower-matrix-frontend",
@@ -183,7 +47,8 @@ cat > frontend/package.json << 'EOF'
 }
 EOF
 
-# Создать frontend/postcss.config.js
+# 2. Исправляем frontend/postcss.config.js - используем CommonJS
+echo "📝 Исправляем frontend/postcss.config.js..."
 cat > frontend/postcss.config.js << 'EOF'
 module.exports = {
 	plugins: {
@@ -193,7 +58,8 @@ module.exports = {
 };
 EOF
 
-# Создать frontend/tailwind.config.js
+# 3. Исправляем frontend/tailwind.config.js - используем CommonJS
+echo "📝 Исправляем frontend/tailwind.config.js..."
 cat > frontend/tailwind.config.js << 'EOF'
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -322,7 +188,8 @@ module.exports = {
 };
 EOF
 
-# Обновить корневой package.json
+# 4. Исправляем корневой package.json - добавляем скрипт "start"
+echo "📝 Исправляем корневой package.json..."
 cat > package.json << 'EOF'
 {
   "name": "eisenhower-matrix",
@@ -341,27 +208,13 @@ cat > package.json << 'EOF'
   }
 }
 EOF
-```
 
-## Результат
-
--   ✅ Build проходит успешно
--   ✅ Все файлы генерируются в `frontend/dist/`
--   ✅ Приложение готово к работе
--   ✅ Скрипт "start" работает
-
-## Предупреждения (не критично)
-
--   `The CJS build of Vite's Node API is deprecated` - это предупреждение, не ошибка
--   Приложение работает корректно
-
-## Проверка
-
-После успешного build в папке `frontend/dist/` должны быть файлы:
-
--   `index.html`
--   `assets/index-*.css`
--   `assets/index-*.js`
--   `assets/vendor-*.js`
--   `assets/dnd-*.js`
--   `assets/charts-*.js`
+echo "✅ Все файлы исправлены!"
+echo ""
+echo "🚀 Теперь можно запустить деплой:"
+echo "   npm install"
+echo "   cd frontend && npm install && npm run build"
+echo "   cd .. && npm start"
+echo ""
+echo "📋 Или одной командой:"
+echo "   npm run build && npm start"
