@@ -30,7 +30,12 @@ export const TaskProvider = ({ children }) => {
 			const response = await fetch('/api/tasks');
 			if (response.ok) {
 				const data = await response.json();
-				setTasks(data);
+				// Transform server data to frontend format
+				const transformedData = data.map((task) => ({
+					...task,
+					dueDate: task.due_date, // Convert due_date to dueDate
+				}));
+				setTasks(transformedData);
 			} else {
 				throw new Error('Failed to fetch tasks');
 			}
@@ -55,9 +60,14 @@ export const TaskProvider = ({ children }) => {
 
 			if (response.ok) {
 				const newTask = await response.json();
-				setTasks((prev) => [...prev, newTask]);
+				// Transform server data to frontend format
+				const transformedTask = {
+					...newTask,
+					dueDate: newTask.due_date, // Convert due_date to dueDate
+				};
+				setTasks((prev) => [...prev, transformedTask]);
 				toast.success('Задача создана');
-				return newTask;
+				return transformedTask;
 			} else {
 				throw new Error('Failed to create task');
 			}
@@ -81,13 +91,18 @@ export const TaskProvider = ({ children }) => {
 
 			if (response.ok) {
 				const updatedTask = await response.json();
+				// Transform server data to frontend format
+				const transformedTask = {
+					...updatedTask,
+					dueDate: updatedTask.due_date, // Convert due_date to dueDate
+				};
 				setTasks((prev) =>
 					prev.map((task) =>
-						task.id === taskId ? updatedTask : task
+						task.id === taskId ? transformedTask : task
 					)
 				);
 				toast.success('Задача обновлена');
-				return updatedTask;
+				return transformedTask;
 			} else {
 				throw new Error('Failed to update task');
 			}
@@ -130,13 +145,18 @@ export const TaskProvider = ({ children }) => {
 
 			if (response.ok) {
 				const updatedTask = await response.json();
+				// Transform server data to frontend format
+				const transformedTask = {
+					...updatedTask,
+					dueDate: updatedTask.due_date, // Convert due_date to dueDate
+				};
 				setTasks((prev) =>
 					prev.map((task) =>
-						task.id === taskId ? updatedTask : task
+						task.id === taskId ? transformedTask : task
 					)
 				);
 				toast.success('Задача перемещена');
-				return updatedTask;
+				return transformedTask;
 			} else {
 				throw new Error('Failed to move task');
 			}
