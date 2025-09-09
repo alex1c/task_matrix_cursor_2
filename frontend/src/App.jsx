@@ -9,6 +9,7 @@ import AuthorContact from './components/AuthorContact';
 import SemanticStructure from './components/SemanticStructure';
 import { TaskProvider } from './context/TaskContext';
 import { ThemeProvider } from './context/ThemeContext';
+import { I18nProvider } from './context/I18nContext';
 import { useTheme } from './context/ThemeContext';
 
 function AppContent() {
@@ -35,11 +36,13 @@ function AppContent() {
 
 function App() {
 	return (
-		<ThemeProvider>
-			<TaskProvider>
-				<AppContent />
-			</TaskProvider>
-		</ThemeProvider>
+		<I18nProvider>
+			<ThemeProvider>
+				<TaskProvider>
+					<AppContent />
+				</TaskProvider>
+			</ThemeProvider>
+		</I18nProvider>
 	);
 }
 

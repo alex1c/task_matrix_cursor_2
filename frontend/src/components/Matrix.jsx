@@ -16,9 +16,11 @@ import {
 } from '@dnd-kit/sortable';
 import Quadrant from './Quadrant';
 import { useTasks } from '../context/TaskContext';
+import { useTranslations } from '../context/I18nContext';
 
 const Matrix = () => {
 	const { tasks, moveTask, getSortedTasks } = useTasks();
+	const { t } = useTranslations();
 	const [activeId, setActiveId] = React.useState(null);
 	const [isDragging, setIsDragging] = React.useState(false);
 
@@ -40,29 +42,29 @@ const Matrix = () => {
 	const quadrants = [
 		{
 			id: 'urgent-important',
-			title: 'Важно и Срочно',
-			subtitle: 'Сделать немедленно',
+			title: t('quadrants.urgentImportant.title'),
+			subtitle: t('quadrants.urgentImportant.subtitle'),
 			color: 'quadrant-urgent-important',
 			icon: '🔥',
 		},
 		{
 			id: 'important-not-urgent',
-			title: 'Важно, но не Срочно',
-			subtitle: 'Запланировать',
+			title: t('quadrants.importantNotUrgent.title'),
+			subtitle: t('quadrants.importantNotUrgent.subtitle'),
 			color: 'quadrant-important-not-urgent',
 			icon: '📅',
 		},
 		{
 			id: 'urgent-not-important',
-			title: 'Срочно, но не Важно',
-			subtitle: 'Делегировать',
+			title: t('quadrants.urgentNotImportant.title'),
+			subtitle: t('quadrants.urgentNotImportant.subtitle'),
 			color: 'quadrant-urgent-not-important',
 			icon: '⚡',
 		},
 		{
 			id: 'not-urgent-not-important',
-			title: 'Не Важно и не Срочно',
-			subtitle: 'Удалить или отложить',
+			title: t('quadrants.notUrgentNotImportant.title'),
+			subtitle: t('quadrants.notUrgentNotImportant.subtitle'),
 			color: 'quadrant-not-urgent-not-important',
 			icon: '🗑️',
 		},

@@ -1,0 +1,116 @@
+{
+  "common": {
+    "add": "添加",
+    "edit": "编辑",
+    "delete": "删除",
+    "save": "保存",
+    "cancel": "取消",
+    "close": "关闭",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "confirm": "确认",
+    "yes": "是",
+    "no": "否",
+    "export": "导出为CSV",
+    "sort": "排序",
+    "byPriority": "按优先级",
+    "byDate": "按日期",
+    "byName": "按名称",
+    "all": "全部",
+    "incomplete": "未完成",
+    "completed": "已完成",
+    "filters": "筛选和排序",
+    "priority": "优先级",
+    "allPriorities": "所有优先级"
+  },
+  "header": {
+    "title": "艾森豪威尔矩阵",
+    "subtitle": "按优先级管理任务"
+  },
+  "quadrants": {
+    "urgentImportant": {
+      "title": "重要且紧急",
+      "subtitle": "立即执行"
+    },
+    "importantNotUrgent": {
+      "title": "重要但不紧急",
+      "subtitle": "提前规划"
+    },
+    "urgentNotImportant": {
+      "title": "紧急但不重要",
+      "subtitle": "委托他人"
+    },
+    "notUrgentNotImportant": {
+      "title": "既不重要也不紧急",
+      "subtitle": "从列表中删除"
+    }
+  },
+  "task": {
+    "title": "任务标题",
+    "description": "描述",
+    "priority": "优先级",
+    "dueDate": "截止日期",
+    "quadrant": "象限",
+    "completed": "已完成",
+    "newTask": "新任务",
+    "createTask": "创建任务",
+    "editTask": "编辑任务",
+    "deleteTask": "删除任务",
+    "moveTask": "移动任务",
+    "markComplete": "标记为已完成",
+    "markIncomplete": "标记为未完成",
+    "noTasks": "无任务",
+    "dragHere": "将任务拖到此处或创建新任务",
+    "status": "任务状态",
+    "tasks": "任务",
+    "taskCount": {
+      "one": "任务",
+      "few": "任务",
+      "many": "任务"
+    }
+  },
+  "priorities": {
+    "high": "高",
+    "medium": "中",
+    "low": "低"
+  },
+  "modal": {
+    "createTask": "创建新任务",
+    "required": "必填字段",
+    "optional": "可选"
+  },
+  "statistics": {
+    "title": "统计",
+    "totalTasks": "总任务数",
+    "completedTasks": "已完成",
+    "pendingTasks": "待处理",
+    "completionRate": "完成率"
+  },
+  "language": {
+    "switch": "语言",
+    "russian": "Русский",
+    "english": "English",
+    "german": "Deutsch",
+    "spanish": "Español",
+    "chinese": "中文"
+  },
+  "errors": {
+    "taskCreationFailed": "创建任务失败",
+    "taskUpdateFailed": "更新任务失败",
+    "taskDeleteFailed": "删除任务失败",
+    "taskMoveFailed": "移动任务失败",
+    "loadTasksFailed": "加载任务失败",
+    "exportFailed": "导出任务失败"
+  },
+  "success": {
+    "taskCreated": "任务已创建",
+    "taskUpdated": "任务已更新",
+    "taskDeleted": "任务已删除",
+    "taskMoved": "任务已移动",
+    "tasksExported": "任务已导出为CSV"
+  },
+  "confirmations": {
+    "deleteTask": "您确定要删除此任务吗？"
+  }
+}

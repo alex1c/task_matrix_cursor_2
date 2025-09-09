@@ -1,0 +1,116 @@
+{
+  "common": {
+    "add": "Hinzufügen",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "loading": "Laden...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "confirm": "Bestätigen",
+    "yes": "Ja",
+    "no": "Nein",
+    "export": "Als CSV exportieren",
+    "sort": "Sortierung",
+    "byPriority": "Nach Priorität",
+    "byDate": "Nach Datum",
+    "byName": "Nach Name",
+    "all": "Alle",
+    "incomplete": "Unvollständig",
+    "completed": "Abgeschlossen",
+    "filters": "Filter und Sortierung",
+    "priority": "Prioritäten",
+    "allPriorities": "Alle Prioritäten"
+  },
+  "header": {
+    "title": "Eisenhower-Matrix",
+    "subtitle": "Aufgabenverwaltung nach Prioritäten"
+  },
+  "quadrants": {
+    "urgentImportant": {
+      "title": "Dringend und Wichtig",
+      "subtitle": "Sofort erledigen"
+    },
+    "importantNotUrgent": {
+      "title": "Wichtig, aber nicht Dringend",
+      "subtitle": "Vorausplanen"
+    },
+    "urgentNotImportant": {
+      "title": "Dringend, aber nicht Wichtig",
+      "subtitle": "An andere delegieren"
+    },
+    "notUrgentNotImportant": {
+      "title": "Nicht Dringend und nicht Wichtig",
+      "subtitle": "Aus der Liste streichen"
+    }
+  },
+  "task": {
+    "title": "Aufgabentitel",
+    "description": "Beschreibung",
+    "priority": "Priorität",
+    "dueDate": "Fälligkeitsdatum",
+    "quadrant": "Quadrant",
+    "completed": "Abgeschlossen",
+    "newTask": "Neue Aufgabe",
+    "createTask": "Aufgabe erstellen",
+    "editTask": "Aufgabe bearbeiten",
+    "deleteTask": "Aufgabe löschen",
+    "moveTask": "Aufgabe verschieben",
+    "markComplete": "Als abgeschlossen markieren",
+    "markIncomplete": "Als unvollständig markieren",
+    "noTasks": "Keine Aufgaben",
+    "dragHere": "Aufgabe hierher ziehen oder neue erstellen",
+    "status": "Aufgabenstatus",
+    "tasks": "Aufgaben",
+    "taskCount": {
+      "one": "Aufgabe",
+      "few": "Aufgaben",
+      "many": "Aufgaben"
+    }
+  },
+  "priorities": {
+    "high": "Hoch",
+    "medium": "Mittel",
+    "low": "Niedrig"
+  },
+  "modal": {
+    "createTask": "Neue Aufgabe erstellen",
+    "required": "Pflichtfeld",
+    "optional": "Optional"
+  },
+  "statistics": {
+    "title": "Statistiken",
+    "totalTasks": "Gesamtaufgaben",
+    "completedTasks": "Abgeschlossen",
+    "pendingTasks": "Ausstehend",
+    "completionRate": "Abschlussrate"
+  },
+  "language": {
+    "switch": "Sprache",
+    "russian": "Русский",
+    "english": "English",
+    "german": "Deutsch",
+    "spanish": "Español",
+    "chinese": "中文"
+  },
+  "errors": {
+    "taskCreationFailed": "Fehler beim Erstellen der Aufgabe",
+    "taskUpdateFailed": "Fehler beim Aktualisieren der Aufgabe",
+    "taskDeleteFailed": "Fehler beim Löschen der Aufgabe",
+    "taskMoveFailed": "Fehler beim Verschieben der Aufgabe",
+    "loadTasksFailed": "Fehler beim Laden der Aufgaben",
+    "exportFailed": "Fehler beim Exportieren der Aufgaben"
+  },
+  "success": {
+    "taskCreated": "Aufgabe erstellt",
+    "taskUpdated": "Aufgabe aktualisiert",
+    "taskDeleted": "Aufgabe gelöscht",
+    "taskMoved": "Aufgabe verschoben",
+    "tasksExported": "Aufgaben in CSV exportiert"
+  },
+  "confirmations": {
+    "deleteTask": "Sind Sie sicher, dass Sie diese Aufgabe löschen möchten?"
+  }
+}

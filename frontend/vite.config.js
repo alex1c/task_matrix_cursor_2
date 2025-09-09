@@ -31,4 +31,8 @@ export default defineConfig({
 			},
 		},
 	},
+	define: {
+		// Support for next-intl in Vite
+		'process.env': process.env,
+	},
 });

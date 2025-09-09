@@ -12,6 +12,8 @@ import {
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { useTasks } from '../context/TaskContext';
+import { useTranslations } from '../context/I18nContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Header = () => {
 	const { theme, isDark, toggleDarkMode, changeTheme } = useTheme();
@@ -24,6 +26,7 @@ const Header = () => {
 		setFilterPriority,
 		exportToCSV,
 	} = useTasks();
+	const { t } = useTranslations();
 
 	const [showFilters, setShowFilters] = useState(false);
 
@@ -52,15 +55,18 @@ const Header = () => {
 				{/* Заголовок */}
 				<div className='text-center lg:text-left'>
 					<h1 className='text-3xl lg:text-4xl font-bold bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 bg-clip-text text-transparent leading-tight'>
-						Матрица Эйзенхауэра
+						{t('header.title')}
 					</h1>
 					<p className='text-sm text-gray-600 dark:text-gray-300 mt-2 font-medium'>
-						Управляйте своими задачами эффективно
+						{t('header.subtitle')}
 					</p>
 				</div>
 
 				{/* Контролы */}
 				<div className='flex flex-wrap items-center justify-center lg:justify-end gap-3'>
+					{/* Переключатель языков */}
+					<LanguageSwitcher />
+
 					{/* Переключатель темной темы */}
 					<button
 						onClick={toggleDarkMode}
@@ -117,7 +123,7 @@ const Header = () => {
 								? 'ring-2 ring-primary-500 ring-opacity-50'
 								: ''
 						}`}
-						title='Фильтры и сортировка'
+						title={t('common.filters')}
 					>
 						<Filter
 							size={20}
@@ -129,7 +135,7 @@ const Header = () => {
 					<button
 						onClick={exportToCSV}
 						className='p-3 rounded-xl bg-white dark:bg-gray-800 shadow-soft hover:shadow-medium transition-all duration-300 hover:scale-105 border border-gray-200 dark:border-gray-700'
-						title='Экспорт в CSV'
+						title={t('common.export')}
 					>
 						<Download
 							size={20}
@@ -146,28 +152,29 @@ const Header = () => {
 						{/* Сортировка */}
 						<div>
 							<label className='block text-sm font-semibold mb-3 text-gray-700 dark:text-gray-200'>
-								Сортировка
+								{t('common.sort')}
 							</label>
 							<select
 								value={sortBy}
 								onChange={(e) => setSortBy(e.target.value)}
 								className='w-full p-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 shadow-soft focus:shadow-medium transition-all duration-200 font-medium'
 							>
-								{sortOptions.map((option) => (
-									<option
-										key={option.value}
-										value={option.value}
-									>
-										{option.label}
-									</option>
-								))}
+								<option value='priority'>
+									{t('common.byPriority')}
+								</option>
+								<option value='date'>
+									{t('common.byDate')}
+								</option>
+								<option value='name'>
+									{t('common.byName')}
+								</option>
 							</select>
 						</div>
 
 						{/* Фильтр по приоритету */}
 						<div>
 							<label className='block text-sm font-semibold mb-3 text-gray-700 dark:text-gray-200'>
-								Приоритет
+								{t('task.priority')}
 							</label>
 							<select
 								value={filterPriority}
@@ -176,21 +183,25 @@ const Header = () => {
 								}
 								className='w-full p-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 shadow-soft focus:shadow-medium transition-all duration-200 font-medium'
 							>
-								{priorityOptions.map((option) => (
-									<option
-										key={option.value}
-										value={option.value}
-									>
-										{option.label}
-									</option>
-								))}
+								<option value='all'>
+									{t('common.allPriorities')}
+								</option>
+								<option value='high'>
+									{t('priorities.high')}
+								</option>
+								<option value='medium'>
+									{t('priorities.medium')}
+								</option>
+								<option value='low'>
+									{t('priorities.low')}
+								</option>
 							</select>
 						</div>
 
 						{/* Фильтр по статусу задач */}
 						<div className='flex items-end'>
 							<label className='block text-sm font-semibold mb-3 text-gray-700 dark:text-gray-200'>
-								Статус задач
+								{t('task.status')}
 							</label>
 							<select
 								value={filterStatus}
@@ -200,10 +211,14 @@ const Header = () => {
 								className='w-full p-3 rounded-xl border border-gray-200 dark:border-gray-600 shadow-soft focus:shadow-medium font-medium bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300'
 							>
 								<option value='incomplete'>
-									Не выполненные
+									{t('common.incomplete')}
 								</option>
-								<option value='completed'>Выполненные</option>
-								<option value='all'>Все задачи</option>
+								<option value='completed'>
+									{t('common.completed')}
+								</option>
+								<option value='all'>
+									{t('common.all')} {t('task.tasks')}
+								</option>
 							</select>
 						</div>
 					</div>

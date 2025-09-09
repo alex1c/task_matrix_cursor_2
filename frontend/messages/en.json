@@ -1,0 +1,116 @@
+{
+  "common": {
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No",
+    "export": "Export to CSV",
+    "sort": "Sorting",
+    "byPriority": "By priority",
+    "byDate": "By date",
+    "byName": "By name",
+    "all": "All",
+    "incomplete": "Incomplete",
+    "completed": "Completed",
+    "filters": "Filters and sorting",
+    "priority": "priorities",
+    "allPriorities": "All priorities"
+  },
+  "header": {
+    "title": "Eisenhower Matrix",
+    "subtitle": "Task management by priorities"
+  },
+  "quadrants": {
+    "urgentImportant": {
+      "title": "Urgent and Important",
+      "subtitle": "Do immediately"
+    },
+    "importantNotUrgent": {
+      "title": "Important, but not Urgent",
+      "subtitle": "Plan ahead"
+    },
+    "urgentNotImportant": {
+      "title": "Urgent, but not Important",
+      "subtitle": "Delegate to others"
+    },
+    "notUrgentNotImportant": {
+      "title": "Not Urgent and not Important",
+      "subtitle": "Eliminate from list"
+    }
+  },
+  "task": {
+    "title": "Task title",
+    "description": "Description",
+    "priority": "Priority",
+    "dueDate": "Due date",
+    "quadrant": "Quadrant",
+    "completed": "Completed",
+    "newTask": "New task",
+    "createTask": "Create task",
+    "editTask": "Edit task",
+    "deleteTask": "Delete task",
+    "moveTask": "Move task",
+    "markComplete": "Mark as completed",
+    "markIncomplete": "Mark as incomplete",
+    "noTasks": "No tasks",
+    "dragHere": "Drag a task here or create a new one",
+    "status": "Task status",
+    "tasks": "tasks",
+    "taskCount": {
+      "one": "task",
+      "few": "tasks",
+      "many": "tasks"
+    }
+  },
+  "priorities": {
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low"
+  },
+  "modal": {
+    "createTask": "Create new task",
+    "required": "Required field",
+    "optional": "Optional"
+  },
+  "statistics": {
+    "title": "Statistics",
+    "totalTasks": "Total tasks",
+    "completedTasks": "Completed",
+    "pendingTasks": "Pending",
+    "completionRate": "Completion rate"
+  },
+  "language": {
+    "switch": "Language",
+    "russian": "Русский",
+    "english": "English",
+    "german": "Deutsch",
+    "spanish": "Español",
+    "chinese": "中文"
+  },
+  "errors": {
+    "taskCreationFailed": "Failed to create task",
+    "taskUpdateFailed": "Failed to update task",
+    "taskDeleteFailed": "Failed to delete task",
+    "taskMoveFailed": "Failed to move task",
+    "loadTasksFailed": "Failed to load tasks",
+    "exportFailed": "Failed to export tasks"
+  },
+  "success": {
+    "taskCreated": "Task created",
+    "taskUpdated": "Task updated",
+    "taskDeleted": "Task deleted",
+    "taskMoved": "Task moved",
+    "tasksExported": "Tasks exported to CSV"
+  },
+  "confirmations": {
+    "deleteTask": "Are you sure you want to delete this task?"
+  }
+}

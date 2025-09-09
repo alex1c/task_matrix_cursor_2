@@ -1,0 +1,116 @@
+{
+  "common": {
+    "add": "Добавить",
+    "edit": "Редактировать",
+    "delete": "Удалить",
+    "save": "Сохранить",
+    "cancel": "Отмена",
+    "close": "Закрыть",
+    "loading": "Загрузка...",
+    "error": "Ошибка",
+    "success": "Успешно",
+    "confirm": "Подтвердить",
+    "yes": "Да",
+    "no": "Нет",
+    "export": "Экспорт в CSV",
+    "sort": "Сортировка",
+    "byPriority": "По приоритету",
+    "byDate": "По дате",
+    "byName": "По названию",
+    "all": "Все",
+    "incomplete": "Не выполненные",
+    "completed": "Выполненные",
+    "filters": "Фильтры и сортировка",
+    "priority": "приоритеты",
+    "allPriorities": "Все приоритеты"
+  },
+  "header": {
+    "title": "Матрица Эйзенхауэра",
+    "subtitle": "Управление задачами по приоритетам"
+  },
+  "quadrants": {
+    "urgentImportant": {
+      "title": "Важно и Срочно",
+      "subtitle": "Делайте немедленно"
+    },
+    "importantNotUrgent": {
+      "title": "Важно, но не Срочно",
+      "subtitle": "Планируйте заранее"
+    },
+    "urgentNotImportant": {
+      "title": "Срочно, но не Важно",
+      "subtitle": "Делегируйте другим"
+    },
+    "notUrgentNotImportant": {
+      "title": "Не Важно и не Срочно",
+      "subtitle": "Исключите из списка"
+    }
+  },
+  "task": {
+    "title": "Название задачи",
+    "description": "Описание",
+    "priority": "Приоритет",
+    "dueDate": "Дата выполнения",
+    "quadrant": "Квадрант",
+    "completed": "Выполнено",
+    "newTask": "Новая задача",
+    "createTask": "Создать задачу",
+    "editTask": "Редактировать задачу",
+    "deleteTask": "Удалить задачу",
+    "moveTask": "Переместить задачу",
+    "markComplete": "Отметить как выполненную",
+    "markIncomplete": "Отметить как невыполненную",
+    "noTasks": "Нет задач",
+    "dragHere": "Перетащите задачу сюда или создайте новую",
+    "status": "Статус задач",
+    "tasks": "задач",
+    "taskCount": {
+      "one": "задача",
+      "few": "задачи",
+      "many": "задач"
+    }
+  },
+  "priorities": {
+    "high": "Высокий",
+    "medium": "Средний",
+    "low": "Низкий"
+  },
+  "modal": {
+    "createTask": "Создать новую задачу",
+    "required": "Обязательное поле",
+    "optional": "Необязательно"
+  },
+  "statistics": {
+    "title": "Статистика",
+    "totalTasks": "Всего задач",
+    "completedTasks": "Выполнено",
+    "pendingTasks": "В ожидании",
+    "completionRate": "Процент выполнения"
+  },
+  "language": {
+    "switch": "Язык",
+    "russian": "Русский",
+    "english": "English",
+    "german": "Deutsch",
+    "spanish": "Español",
+    "chinese": "中文"
+  },
+  "errors": {
+    "taskCreationFailed": "Ошибка при создании задачи",
+    "taskUpdateFailed": "Ошибка при обновлении задачи",
+    "taskDeleteFailed": "Ошибка при удалении задачи",
+    "taskMoveFailed": "Ошибка при перемещении задачи",
+    "loadTasksFailed": "Ошибка при загрузке задач",
+    "exportFailed": "Ошибка при экспорте задач"
+  },
+  "success": {
+    "taskCreated": "Задача создана",
+    "taskUpdated": "Задача обновлена",
+    "taskDeleted": "Задача удалена",
+    "taskMoved": "Задача перемещена",
+    "tasksExported": "Задачи экспортированы в CSV"
+  },
+  "confirmations": {
+    "deleteTask": "Вы уверены, что хотите удалить эту задачу?"
+  }
+}

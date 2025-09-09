@@ -3,6 +3,7 @@ import { useDroppable } from '@dnd-kit/core';
 import TaskCard from './TaskCard';
 import { Plus } from 'lucide-react';
 import { useTasks } from '../context/TaskContext';
+import { useTranslations } from '../context/I18nContext';
 
 const Quadrant = ({
 	id,
@@ -14,13 +15,14 @@ const Quadrant = ({
 	isDragging = false,
 }) => {
 	const { createTask } = useTasks();
+	const { t } = useTranslations();
 	const { setNodeRef, isOver } = useDroppable({
 		id: `quadrant-${id}`,
 	});
 
 	const handleAddTask = () => {
 		createTask({
-			title: 'Новая задача',
+			title: t('task.newTask'),
 			description: '',
 			quadrant: id,
 			priority: 'medium',
@@ -65,10 +67,10 @@ const Quadrant = ({
 			<div className='text-sm opacity-75 mb-4 font-medium text-gray-700 dark:text-gray-300'>
 				{tasks.length}{' '}
 				{tasks.length === 1
-					? 'задача'
+					? t('task.taskCount.one')
 					: tasks.length < 5
-					? 'задачи'
-					: 'задач'}
+					? t('task.taskCount.few')
+					: t('task.taskCount.many')}
 			</div>
 
 			{/* Зона для задач */}
@@ -77,10 +79,10 @@ const Quadrant = ({
 					<div className='flex items-center justify-center h-36 text-center opacity-60'>
 						<div>
 							<p className='text-sm font-medium text-gray-600 dark:text-gray-400'>
-								Нет задач
+								{t('task.noTasks')}
 							</p>
 							<p className='text-xs mt-1 text-gray-500 dark:text-gray-500'>
-								Перетащите задачу сюда или создайте новую
+								{t('task.dragHere')}
 							</p>
 						</div>
 					</div>

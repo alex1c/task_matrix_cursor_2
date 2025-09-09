@@ -1,0 +1,116 @@
+{
+  "common": {
+    "add": "Agregar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "confirm": "Confirmar",
+    "yes": "Sí",
+    "no": "No",
+    "export": "Exportar a CSV",
+    "sort": "Ordenamiento",
+    "byPriority": "Por prioridad",
+    "byDate": "Por fecha",
+    "byName": "Por nombre",
+    "all": "Todas",
+    "incomplete": "Incompletas",
+    "completed": "Completadas",
+    "filters": "Filtros y ordenamiento",
+    "priority": "prioridades",
+    "allPriorities": "Todas las prioridades"
+  },
+  "header": {
+    "title": "Matriz de Eisenhower",
+    "subtitle": "Gestión de tareas por prioridades"
+  },
+  "quadrants": {
+    "urgentImportant": {
+      "title": "Urgente e Importante",
+      "subtitle": "Hacer inmediatamente"
+    },
+    "importantNotUrgent": {
+      "title": "Importante, pero no Urgente",
+      "subtitle": "Planificar con anticipación"
+    },
+    "urgentNotImportant": {
+      "title": "Urgente, pero no Importante",
+      "subtitle": "Delegar a otros"
+    },
+    "notUrgentNotImportant": {
+      "title": "No Urgente y no Importante",
+      "subtitle": "Eliminar de la lista"
+    }
+  },
+  "task": {
+    "title": "Título de la tarea",
+    "description": "Descripción",
+    "priority": "Prioridad",
+    "dueDate": "Fecha de vencimiento",
+    "quadrant": "Cuadrante",
+    "completed": "Completado",
+    "newTask": "Nueva tarea",
+    "createTask": "Crear tarea",
+    "editTask": "Editar tarea",
+    "deleteTask": "Eliminar tarea",
+    "moveTask": "Mover tarea",
+    "markComplete": "Marcar como completada",
+    "markIncomplete": "Marcar como incompleta",
+    "noTasks": "Sin tareas",
+    "dragHere": "Arrastra una tarea aquí o crea una nueva",
+    "status": "Estado de tareas",
+    "tasks": "tareas",
+    "taskCount": {
+      "one": "tarea",
+      "few": "tareas",
+      "many": "tareas"
+    }
+  },
+  "priorities": {
+    "high": "Alta",
+    "medium": "Media",
+    "low": "Baja"
+  },
+  "modal": {
+    "createTask": "Crear nueva tarea",
+    "required": "Campo obligatorio",
+    "optional": "Opcional"
+  },
+  "statistics": {
+    "title": "Estadísticas",
+    "totalTasks": "Total de tareas",
+    "completedTasks": "Completadas",
+    "pendingTasks": "Pendientes",
+    "completionRate": "Tasa de finalización"
+  },
+  "language": {
+    "switch": "Idioma",
+    "russian": "Русский",
+    "english": "English",
+    "german": "Deutsch",
+    "spanish": "Español",
+    "chinese": "中文"
+  },
+  "errors": {
+    "taskCreationFailed": "Error al crear la tarea",
+    "taskUpdateFailed": "Error al actualizar la tarea",
+    "taskDeleteFailed": "Error al eliminar la tarea",
+    "taskMoveFailed": "Error al mover la tarea",
+    "loadTasksFailed": "Error al cargar las tareas",
+    "exportFailed": "Error al exportar las tareas"
+  },
+  "success": {
+    "taskCreated": "Tarea creada",
+    "taskUpdated": "Tarea actualizada",
+    "taskDeleted": "Tarea eliminada",
+    "taskMoved": "Tarea movida",
+    "tasksExported": "Tareas exportadas a CSV"
+  },
+  "confirmations": {
+    "deleteTask": "¿Estás seguro de que quieres eliminar esta tarea?"
+  }
+}
