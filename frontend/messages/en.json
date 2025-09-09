@@ -78,7 +78,10 @@
   "modal": {
     "createTask": "Create new task",
     "required": "Required field",
-    "optional": "Optional"
+    "optional": "Optional",
+    "titleRequired": "Please enter task title",
+    "titlePlaceholder": "Enter task title",
+    "descriptionPlaceholder": "Additional description (optional)"
   },
   "statistics": {
     "title": "Statistics",
@@ -106,6 +109,37 @@
     "german": "Deutsch",
     "spanish": "Español",
     "chinese": "中文"
+  },
+  "share": {
+    "title": "Eisenhower Matrix - Task Management",
+    "description": "Effective task planning with the Eisenhower Matrix. Organize tasks by importance and urgency.",
+    "shareTitle": "Share",
+    "shareDescription": "Help friends and colleagues effectively manage tasks with the Eisenhower Matrix",
+    "shareIn": "Share on {platform}",
+    "linkCopied": "Link copied!",
+    "copyError": "Failed to copy link",
+    "copied": "Copied!",
+    "copyLink": "Copy link",
+    "additionalInfo": "The Eisenhower Matrix will help you set priorities and increase productivity"
+  },
+  "author": {
+    "contactTitle": "Contact the Author",
+    "contactDescription": "Have questions about the project or suggestions for improvement? Contact the author",
+    "emailLabel": "Author's email:",
+    "showEmail": "Show email",
+    "hideEmail": "Hide email",
+    "copyEmail": "Copy email",
+    "copied": "Copied!",
+    "emailCopied": "Email copied!",
+    "copyError": "Failed to copy email",
+    "responseTime": "The author responds to all messages within 24-48 hours"
+  },
+  "theme": {
+    "standard": "Standard",
+    "retro": "Retro",
+    "neon": "Neon",
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme"
   },
   "errors": {
     "taskCreationFailed": "Failed to create task",

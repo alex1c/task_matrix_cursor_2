@@ -31,9 +31,9 @@ const Header = () => {
 	const [showFilters, setShowFilters] = useState(false);
 
 	const themes = [
-		{ id: 'standard', name: 'Стандартная', icon: Monitor },
-		{ id: 'retro', name: 'Ретро', icon: Palette },
-		{ id: 'neon', name: 'Неон', icon: Zap },
+		{ id: 'standard', name: t('theme.standard'), icon: Monitor },
+		{ id: 'retro', name: t('theme.retro'), icon: Palette },
+		{ id: 'neon', name: t('theme.neon'), icon: Zap },
 	];
 
 	const sortOptions = [
@@ -73,8 +73,8 @@ const Header = () => {
 						className='p-3 rounded-xl bg-white dark:bg-gray-800 shadow-soft hover:shadow-medium transition-all duration-300 hover:scale-105 border border-gray-200 dark:border-gray-700'
 						title={
 							isDark
-								? 'Переключить на светлую тему'
-								: 'Переключить на темную тему'
+								? t('theme.switchToLight')
+								: t('theme.switchToDark')
 						}
 					>
 						{isDark ? (

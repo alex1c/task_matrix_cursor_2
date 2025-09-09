@@ -78,7 +78,10 @@
   "modal": {
     "createTask": "创建新任务",
     "required": "必填字段",
-    "optional": "可选"
+    "optional": "可选",
+    "titleRequired": "请输入任务标题",
+    "titlePlaceholder": "输入任务标题",
+    "descriptionPlaceholder": "附加描述（可选）"
   },
   "statistics": {
     "title": "统计",
@@ -97,7 +100,7 @@
     "urgentNotImportantDesc": "干扰、一些电话、会议。委托或最小化。",
     "notUrgentNotImportantDesc": "时间浪费、干扰因素。删除或推迟。",
     "usageTip": "使用提示",
-    "usageTipText": "尽量在"重要但不紧急"象限中花费更多时间。这将有助于防止任务出现在"重要且紧急"象限中。"
+    "usageTipText": "尽量在\"重要但不紧急\"象限中花费更多时间。这将有助于防止任务出现在\"重要且紧急\"象限中。"
   },
   "language": {
     "switch": "语言",
@@ -106,6 +109,37 @@
     "german": "Deutsch",
     "spanish": "Español",
     "chinese": "中文"
+  },
+  "share": {
+    "title": "艾森豪威尔矩阵 - 任务管理",
+    "description": "使用艾森豪威尔矩阵进行有效的任务规划。根据重要性和紧急性组织任务。",
+    "shareTitle": "分享",
+    "shareDescription": "帮助朋友和同事使用艾森豪威尔矩阵有效管理任务",
+    "shareIn": "在{platform}上分享",
+    "linkCopied": "链接已复制！",
+    "copyError": "无法复制链接",
+    "copied": "已复制！",
+    "copyLink": "复制链接",
+    "additionalInfo": "艾森豪威尔矩阵将帮助您设定优先级并提高生产力"
+  },
+  "author": {
+    "contactTitle": "联系作者",
+    "contactDescription": "对项目有疑问或有改进建议？联系作者",
+    "emailLabel": "作者邮箱：",
+    "showEmail": "显示邮箱",
+    "hideEmail": "隐藏邮箱",
+    "copyEmail": "复制邮箱",
+    "copied": "已复制！",
+    "emailCopied": "邮箱已复制！",
+    "copyError": "无法复制邮箱",
+    "responseTime": "作者会在24-48小时内回复所有消息"
+  },
+  "theme": {
+    "standard": "标准",
+    "retro": "复古",
+    "neon": "霓虹",
+    "switchToLight": "切换到浅色主题",
+    "switchToDark": "切换到深色主题"
   },
   "errors": {
     "taskCreationFailed": "创建任务失败",

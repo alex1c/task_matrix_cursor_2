@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import { useTasks } from '../context/TaskContext';
+import { useTranslations } from '../context/I18nContext';
 
 const TaskModal = () => {
 	const { createTask } = useTasks();
+	const { t } = useTranslations();
 	const [isOpen, setIsOpen] = useState(false);
 	const [formData, setFormData] = useState({
 		title: '',
@@ -15,23 +17,35 @@ const TaskModal = () => {
 	});
 
 	const quadrants = [
-		{ value: 'urgent-important', label: 'Важно и Срочно' },
-		{ value: 'important-not-urgent', label: 'Важно, но не Срочно' },
-		{ value: 'urgent-not-important', label: 'Срочно, но не Важно' },
-		{ value: 'not-urgent-not-important', label: 'Не Важно и не Срочно' },
+		{
+			value: 'urgent-important',
+			label: t('quadrants.urgentImportant.title'),
+		},
+		{
+			value: 'important-not-urgent',
+			label: t('quadrants.importantNotUrgent.title'),
+		},
+		{
+			value: 'urgent-not-important',
+			label: t('quadrants.urgentNotImportant.title'),
+		},
+		{
+			value: 'not-urgent-not-important',
+			label: t('quadrants.notUrgentNotImportant.title'),
+		},
 	];
 
 	const priorities = [
-		{ value: 'high', label: 'Высокий' },
-		{ value: 'medium', label: 'Средний' },
-		{ value: 'low', label: 'Низкий' },
+		{ value: 'high', label: t('priorities.high') },
+		{ value: 'medium', label: t('priorities.medium') },
+		{ value: 'low', label: t('priorities.low') },
 	];
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
 		if (!formData.title.trim()) {
-			alert('Пожалуйста, введите название задачи');
+			alert(t('modal.titleRequired'));
 			return;
 		}
 
@@ -83,7 +97,9 @@ const TaskModal = () => {
 			<div className='bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto'>
 				{/* Заголовок */}
 				<div className='flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700'>
-					<h2 className='text-xl font-bold'>Создать новую задачу</h2>
+					<h2 className='text-xl font-bold'>
+						{t('modal.createTask')}
+					</h2>
 					<button
 						onClick={handleClose}
 						className='p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors'
@@ -100,7 +116,7 @@ const TaskModal = () => {
 					{/* Название */}
 					<div>
 						<label className='block text-sm font-medium mb-2'>
-							Название задачи *
+							{t('task.title')} *
 						</label>
 						<input
 							type='text'
@@ -108,7 +124,7 @@ const TaskModal = () => {
 							value={formData.title}
 							onChange={handleChange}
 							className='w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent'
-							placeholder='Введите название задачи'
+							placeholder={t('modal.titlePlaceholder')}
 							required
 						/>
 					</div>
@@ -116,7 +132,7 @@ const TaskModal = () => {
 					{/* Описание */}
 					<div>
 						<label className='block text-sm font-medium mb-2'>
-							Описание
+							{t('task.description')}
 						</label>
 						<textarea
 							name='description'
@@ -124,14 +140,14 @@ const TaskModal = () => {
 							onChange={handleChange}
 							rows='3'
 							className='w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none'
-							placeholder='Дополнительное описание (необязательно)'
+							placeholder={t('modal.descriptionPlaceholder')}
 						/>
 					</div>
 
 					{/* Квадрант */}
 					<div>
 						<label className='block text-sm font-medium mb-2'>
-							Квадрант
+							{t('task.quadrant')}
 						</label>
 						<select
 							name='quadrant'
@@ -153,7 +169,7 @@ const TaskModal = () => {
 					{/* Приоритет */}
 					<div>
 						<label className='block text-sm font-medium mb-2'>
-							Приоритет
+							{t('task.priority')}
 						</label>
 						<select
 							name='priority'
@@ -175,7 +191,7 @@ const TaskModal = () => {
 					{/* Дата выполнения */}
 					<div>
 						<label className='block text-sm font-medium mb-2'>
-							Дата выполнения
+							{t('task.dueDate')}
 						</label>
 						<input
 							type='date'
@@ -192,14 +208,14 @@ const TaskModal = () => {
 							type='submit'
 							className='flex-1 bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium'
 						>
-							Создать задачу
+							{t('modal.createTask')}
 						</button>
 						<button
 							type='button'
 							onClick={handleClose}
 							className='flex-1 bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 py-3 px-4 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-500 transition-colors font-medium'
 						>
-							Отмена
+							{t('common.cancel')}
 						</button>
 					</div>
 				</form>
@@ -209,4 +225,3 @@ const TaskModal = () => {
 };
 
 export default TaskModal;
-

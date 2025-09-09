@@ -78,7 +78,10 @@
   "modal": {
     "createTask": "Crear nueva tarea",
     "required": "Campo obligatorio",
-    "optional": "Opcional"
+    "optional": "Opcional",
+    "titleRequired": "Por favor, ingrese el título de la tarea",
+    "titlePlaceholder": "Ingrese el título de la tarea",
+    "descriptionPlaceholder": "Descripción adicional (opcional)"
   },
   "statistics": {
     "title": "Estadísticas",
@@ -106,6 +109,37 @@
     "german": "Deutsch",
     "spanish": "Español",
     "chinese": "中文"
+  },
+  "share": {
+    "title": "Matriz de Eisenhower - Gestión de Tareas",
+    "description": "Planificación efectiva de tareas con la Matriz de Eisenhower. Organice las tareas por importancia y urgencia.",
+    "shareTitle": "Compartir",
+    "shareDescription": "Ayude a amigos y colegas a gestionar tareas efectivamente con la Matriz de Eisenhower",
+    "shareIn": "Compartir en {platform}",
+    "linkCopied": "¡Enlace copiado!",
+    "copyError": "No se pudo copiar el enlace",
+    "copied": "¡Copiado!",
+    "copyLink": "Copiar enlace",
+    "additionalInfo": "La Matriz de Eisenhower le ayudará a establecer prioridades y aumentar la productividad"
+  },
+  "author": {
+    "contactTitle": "Contactar al Autor",
+    "contactDescription": "¿Tiene preguntas sobre el proyecto o sugerencias de mejora? Contacte al autor",
+    "emailLabel": "Correo del autor:",
+    "showEmail": "Mostrar correo",
+    "hideEmail": "Ocultar correo",
+    "copyEmail": "Copiar correo",
+    "copied": "¡Copiado!",
+    "emailCopied": "¡Correo copiado!",
+    "copyError": "No se pudo copiar el correo",
+    "responseTime": "El autor responde a todos los mensajes dentro de 24-48 horas"
+  },
+  "theme": {
+    "standard": "Estándar",
+    "retro": "Retro",
+    "neon": "Neón",
+    "switchToLight": "Cambiar a tema claro",
+    "switchToDark": "Cambiar a tema oscuro"
   },
   "errors": {
     "taskCreationFailed": "Error al crear la tarea",

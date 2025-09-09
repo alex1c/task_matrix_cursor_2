@@ -84,6 +84,14 @@ const fallbackMessages = {
 		medium: 'Средний',
 		low: 'Низкий',
 	},
+	modal: {
+		createTask: 'Создать новую задачу',
+		required: 'Обязательное поле',
+		optional: 'Необязательное',
+		titleRequired: 'Пожалуйста, введите название задачи',
+		titlePlaceholder: 'Введите название задачи',
+		descriptionPlaceholder: 'Дополнительное описание (необязательно)',
+	},
 	statistics: {
 		title: 'Статистика',
 		totalTasks: 'Всего задач',
@@ -128,6 +136,41 @@ const fallbackMessages = {
 			subtitle: 'Исключите из списка',
 		},
 	},
+	share: {
+		title: 'Матрица Эйзенхауэра - Управление задачами',
+		description:
+			'Эффективное планирование задач с помощью матрицы Эйзенхауэра. Разделяйте задачи по важности и срочности.',
+		shareTitle: 'Поделиться',
+		shareDescription:
+			'Помогите друзьям и коллегам эффективно управлять задачами с помощью матрицы Эйзенхауэра',
+		shareIn: 'Поделиться в {platform}',
+		linkCopied: 'Ссылка скопирована!',
+		copyError: 'Не удалось скопировать ссылку',
+		copied: 'Скопировано!',
+		copyLink: 'Копировать ссылку',
+		additionalInfo:
+			'Матрица Эйзенхауэра поможет вам расставить приоритеты и повысить продуктивность',
+	},
+	author: {
+		contactTitle: 'Связаться с автором',
+		contactDescription:
+			'Есть вопросы по проекту или предложения по улучшению? Свяжитесь с автором',
+		emailLabel: 'Email автора:',
+		showEmail: 'Показать email',
+		hideEmail: 'Скрыть email',
+		copyEmail: 'Копировать email',
+		copied: 'Скопировано!',
+		emailCopied: 'Email скопирован!',
+		copyError: 'Не удалось скопировать email',
+		responseTime: 'Автор отвечает на все сообщения в течение 24-48 часов',
+	},
+	theme: {
+		standard: 'Стандартная',
+		retro: 'Ретро',
+		neon: 'Неон',
+		switchToLight: 'Переключить на светлую тему',
+		switchToDark: 'Переключить на темную тему',
+	},
 };
 
 // Provider component
@@ -140,28 +183,47 @@ export const I18nProvider = ({ children }) => {
 	useEffect(() => {
 		const loadMessages = async () => {
 			setIsLoading(true);
+			console.log(`Loading messages for locale: ${locale}`);
 			try {
-				const response = await fetch(`/messages/${locale}.json`);
+				const url = `/messages/${locale}.json?t=${Date.now()}`;
+				console.log(`Fetching URL: ${url}`);
+				const response = await fetch(url);
+				console.log(`Response status for ${locale}:`, response.status);
+
 				if (response.ok) {
 					const data = await response.json();
+					console.log(`Loaded messages for ${locale}:`, data);
+					console.log(
+						`Sample translation for ${locale}:`,
+						data.common?.add
+					);
 					setMessages(data);
 				} else {
 					console.error(
-						`Failed to load messages for locale: ${locale}`
+						`Failed to load messages for locale: ${locale}, status: ${response.status}`
 					);
 					// Fallback to default locale
 					if (locale !== defaultLocale) {
+						console.log(
+							`Falling back to default locale: ${defaultLocale}`
+						);
 						const fallbackResponse = await fetch(
-							`/messages/${defaultLocale}.json`
+							`/messages/${defaultLocale}.json?t=${Date.now()}`
 						);
 						if (fallbackResponse.ok) {
 							const fallbackData = await fallbackResponse.json();
+							console.log(
+								`Loaded fallback messages:`,
+								fallbackData
+							);
 							setMessages(fallbackData);
 						}
 					}
 				}
 			} catch (error) {
 				console.error('Error loading messages:', error);
+				console.log('Falling back to hardcoded messages due to error');
+				setMessages(fallbackMessages);
 			} finally {
 				setIsLoading(false);
 			}
@@ -204,10 +266,14 @@ export const I18nProvider = ({ children }) => {
 
 	// Function to change locale
 	const changeLocale = (newLocale) => {
+		console.log(`Changing locale from ${locale} to ${newLocale}`);
 		if (locales[newLocale]) {
 			setLocale(newLocale);
 			// Save to localStorage
 			localStorage.setItem('preferred-locale', newLocale);
+			console.log(`Locale changed to: ${newLocale}`);
+		} else {
+			console.error(`Invalid locale: ${newLocale}`);
 		}
 	};
 

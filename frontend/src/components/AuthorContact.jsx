@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, Copy, Check, Eye, EyeOff } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { useTranslations } from '../context/I18nContext';
 
 const AuthorContact = () => {
 	const [showEmail, setShowEmail] = useState(false);
 	const [copied, setCopied] = useState(false);
+	const { t } = useTranslations();
 
 	// JavaScript кодирование email для защиты от спама
 	const encodedEmail = btoa('alex1c-spb@yandex.ru'); // Base64 кодирование
@@ -26,11 +28,11 @@ const AuthorContact = () => {
 		try {
 			await navigator.clipboard.writeText('alex1c-spb@yandex.ru');
 			setCopied(true);
-			toast.success('Email скопирован!');
+			toast.success(t('author.emailCopied'));
 			setTimeout(() => setCopied(false), 2000);
 		} catch (error) {
 			console.error('Ошибка копирования:', error);
-			toast.error('Не удалось скопировать email');
+			toast.error(t('author.copyError'));
 		}
 	};
 
@@ -59,14 +61,13 @@ const AuthorContact = () => {
 				<div className='flex items-center justify-center gap-3 mb-6'>
 					<Mail className='w-6 h-6 text-primary-600 dark:text-primary-400' />
 					<h3 className='text-xl font-bold text-gray-900 dark:text-gray-100'>
-						Связаться с автором
+						{t('author.contactTitle')}
 					</h3>
 				</div>
 
 				{/* Описание */}
 				<p className='text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto'>
-					Есть вопросы по проекту или предложения по улучшению?
-					Свяжитесь с автором
+					{t('author.contactDescription')}
 				</p>
 
 				{/* Защищенный email */}
@@ -75,7 +76,7 @@ const AuthorContact = () => {
 						{/* Основной email с защитой */}
 						<div>
 							<label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2'>
-								Email автора:
+								{t('author.emailLabel')}
 							</label>
 							<div className='flex items-center gap-2'>
 								<code className='flex-1 p-3 bg-gray-100 dark:bg-gray-600 rounded-lg text-sm font-mono text-gray-900 dark:text-gray-100'>
@@ -88,8 +89,8 @@ const AuthorContact = () => {
 									className='p-3 bg-gray-500 hover:bg-gray-600 text-white rounded-lg transition-all duration-300 hover:scale-105'
 									title={
 										showEmail
-											? 'Скрыть email'
-											: 'Показать email'
+											? t('author.hideEmail')
+											: t('author.showEmail')
 									}
 								>
 									{showEmail ? (
@@ -108,8 +109,8 @@ const AuthorContact = () => {
 										}`}
 										title={
 											copied
-												? 'Скопировано!'
-												: 'Копировать email'
+												? t('author.copied')
+												: t('author.copyEmail')
 										}
 									>
 										{copied ? (
@@ -123,13 +124,12 @@ const AuthorContact = () => {
 						</div>
 
 						{/* Альтернативные способы получения email */}
-						
 					</div>
 				</div>
 
 				{/* Дополнительная информация */}
 				<div className='mt-6 text-sm text-gray-500 dark:text-gray-400'>
-					<p>Автор отвечает на все сообщения в течение 24-48 часов</p>
+					<p>{t('author.responseTime')}</p>
 				</div>
 			</div>
 		</div>

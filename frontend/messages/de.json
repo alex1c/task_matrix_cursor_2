@@ -78,7 +78,10 @@
   "modal": {
     "createTask": "Neue Aufgabe erstellen",
     "required": "Pflichtfeld",
-    "optional": "Optional"
+    "optional": "Optional",
+    "titleRequired": "Bitte geben Sie den Aufgabentitel ein",
+    "titlePlaceholder": "Aufgabentitel eingeben",
+    "descriptionPlaceholder": "Zusätzliche Beschreibung (optional)"
   },
   "statistics": {
     "title": "Statistiken",
@@ -106,6 +109,37 @@
     "german": "Deutsch",
     "spanish": "Español",
     "chinese": "中文"
+  },
+  "share": {
+    "title": "Eisenhower-Matrix - Aufgabenverwaltung",
+    "description": "Effektive Aufgabenplanung mit der Eisenhower-Matrix. Organisieren Sie Aufgaben nach Wichtigkeit und Dringlichkeit.",
+    "shareTitle": "Teilen",
+    "shareDescription": "Helfen Sie Freunden und Kollegen, Aufgaben effektiv mit der Eisenhower-Matrix zu verwalten",
+    "shareIn": "Auf {platform} teilen",
+    "linkCopied": "Link kopiert!",
+    "copyError": "Link konnte nicht kopiert werden",
+    "copied": "Kopiert!",
+    "copyLink": "Link kopieren",
+    "additionalInfo": "Die Eisenhower-Matrix hilft Ihnen, Prioritäten zu setzen und die Produktivität zu steigern"
+  },
+  "author": {
+    "contactTitle": "Kontakt zum Autor",
+    "contactDescription": "Haben Sie Fragen zum Projekt oder Verbesserungsvorschläge? Kontaktieren Sie den Autor",
+    "emailLabel": "E-Mail des Autors:",
+    "showEmail": "E-Mail anzeigen",
+    "hideEmail": "E-Mail verbergen",
+    "copyEmail": "E-Mail kopieren",
+    "copied": "Kopiert!",
+    "emailCopied": "E-Mail kopiert!",
+    "copyError": "E-Mail konnte nicht kopiert werden",
+    "responseTime": "Der Autor antwortet auf alle Nachrichten innerhalb von 24-48 Stunden"
+  },
+  "theme": {
+    "standard": "Standard",
+    "retro": "Retro",
+    "neon": "Neon",
+    "switchToLight": "Zu hellem Design wechseln",
+    "switchToDark": "Zu dunklem Design wechseln"
   },
   "errors": {
     "taskCreationFailed": "Fehler beim Erstellen der Aufgabe",

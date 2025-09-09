@@ -11,24 +11,25 @@ import {
 	Check,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { useTranslations } from '../context/I18nContext';
 
 const ShareBlock = () => {
 	const [copied, setCopied] = useState(false);
+	const { t } = useTranslations();
 	const currentUrl = window.location.href;
-	const title = 'Матрица Эйзенхауэра - Управление задачами';
-	const description =
-		'Эффективное планирование задач с помощью матрицы Эйзенхауэра. Разделяйте задачи по важности и срочности.';
+	const title = t('share.title');
+	const description = t('share.description');
 
 	// Функция для копирования ссылки
 	const copyToClipboard = async () => {
 		try {
 			await navigator.clipboard.writeText(currentUrl);
 			setCopied(true);
-			toast.success('Ссылка скопирована!');
+			toast.success(t('share.linkCopied'));
 			setTimeout(() => setCopied(false), 2000);
 		} catch (error) {
 			console.error('Ошибка копирования:', error);
-			toast.error('Не удалось скопировать ссылку');
+			toast.error(t('share.copyError'));
 		}
 	};
 
@@ -102,14 +103,13 @@ const ShareBlock = () => {
 				<div className='flex items-center justify-center gap-3 mb-6'>
 					<Share2 className='w-6 h-6 text-primary-600 dark:text-primary-400' />
 					<h3 className='text-xl font-bold text-gray-900 dark:text-gray-100'>
-						Поделиться
+						{t('share.shareTitle')}
 					</h3>
 				</div>
 
 				{/* Описание */}
 				<p className='text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto'>
-					Помогите друзьям и коллегам эффективно управлять задачами с
-					помощью матрицы Эйзенхауэра
+					{t('share.shareDescription')}
 				</p>
 
 				{/* Кнопки социальных сетей */}
@@ -125,7 +125,9 @@ const ShareBlock = () => {
 									transition-all duration-300 hover:scale-105 shadow-soft hover:shadow-medium
 									${option.color}
 								`}
-								title={`Поделиться в ${option.name}`}
+								title={t('share.shareIn', {
+									platform: option.name,
+								})}
 							>
 								<IconComponent className='w-5 h-5' />
 								<span className='hidden sm:inline'>
@@ -161,8 +163,8 @@ const ShareBlock = () => {
 								`}
 								title={
 									copied
-										? 'Скопировано!'
-										: 'Копировать ссылку'
+										? t('share.copied')
+										: t('share.copyLink')
 								}
 							>
 								{copied ? (
@@ -177,10 +179,7 @@ const ShareBlock = () => {
 
 				{/* Дополнительная информация */}
 				<div className='mt-8 text-sm text-gray-500 dark:text-gray-400'>
-					<p>
-						Матрица Эйзенхауэра поможет вам расставить приоритеты и
-						повысить продуктивность
-					</p>
+					<p>{t('share.additionalInfo')}</p>
 				</div>
 			</div>
 		</div>
