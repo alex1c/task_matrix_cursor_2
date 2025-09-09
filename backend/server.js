@@ -19,6 +19,9 @@ app.use(
 app.use(cookieParser());
 app.use(express.json());
 
+// Обслуживание статических файлов (включая файлы переводов)
+app.use(express.static('frontend/public'));
+
 // Инициализация базы данных
 const db = new sqlite3.Database('./database.sqlite', (err) => {
 	if (err) {
