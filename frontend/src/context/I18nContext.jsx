@@ -101,7 +101,6 @@ const fallbackMessages = {
 		completionRate: 'Процент выполнения',
 		chartTitle: 'Куда уходит время',
 		noTasksToDisplay: 'Нет задач для отображения',
-		totalTasks: 'Всего задач',
 		completed: 'Выполнено',
 		whatIsEisenhowerMatrix: 'Что такое матрица Эйзенхауэра?',
 		eisenhowerMatrix: 'Матрица Эйзенхауэра',
