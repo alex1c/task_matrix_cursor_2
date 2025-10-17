@@ -1,0 +1,38 @@
+[Unit]
+Description=Eisenhower Matrix Application
+Documentation=https://github.com/your-repo/eisenhower-matrix
+After=network.target
+Wants=network.target
+
+[Service]
+Type=forking
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/eisenhower-matrix
+ExecStart=/var/www/eisenhower-matrix/start-app.sh
+ExecStop=/var/www/eisenhower-matrix/start-app.sh stop
+ExecReload=/var/www/eisenhower-matrix/start-app.sh restart
+PIDFile=/var/log/eisenhower-matrix/backend.pid
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=eisenhower-matrix
+
+# Environment variables
+Environment=NODE_ENV=production
+Environment=PORT=5000
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/www/task_matrix_cursor_2 /var/log/eisenhower-matrix
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=4096
+
+[Install]
+WantedBy=multi-user.target
