@@ -240,4 +240,4 @@ sudo tail -f /var/log/apache2/error.log
 Мониторинг
 
 pm2 monit
-sudo systemctl status apache2
+sudo systemctl status apache2# Test
