@@ -76,7 +76,28 @@ dist
 
 # Gatsby files
 .cache/
+# Ignore public directories except frontend/public
 public
+!frontend/
+frontend/*
+!frontend/public/
+frontend/public/*
+!frontend/public/messages/
+!frontend/public/**/*.json
+!frontend/public/**/*.svg
+!frontend/public/**/*.txt
+!frontend/public/**/*.xml
+!frontend/public/**/*.css
+!frontend/public/**/*.js
+!frontend/public/**/*.png
+!frontend/public/**/*.jpg
+!frontend/public/**/*.ico
+!frontend/public/manifest.json
+!frontend/public/robots.txt
+!frontend/public/sitemap.xml
+!frontend/public/favicon.svg
+!frontend/public/.htaccess
+!frontend/public/fonts/
 
 # Storybook build outputs
 .out
