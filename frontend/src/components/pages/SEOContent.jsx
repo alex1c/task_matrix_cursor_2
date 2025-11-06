@@ -1,5 +1,5 @@
 import React from 'react';
-import PageLayout from './PageLayout';
+import PageLayout from '../PageLayout';
 import { useTranslations } from '../../context/I18nContext';
 
 const SEOContent = ({ onBack }) => {

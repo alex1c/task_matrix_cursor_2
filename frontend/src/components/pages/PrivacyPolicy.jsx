@@ -1,6 +1,6 @@
 import React from 'react';
-import PageLayout from './PageLayout';
-import { useTranslations } from '../context/I18nContext';
+import PageLayout from '../PageLayout';
+import { useTranslations } from '../../context/I18nContext';
 
 const PrivacyPolicy = ({ onBack }) => {
 	const { t } = useTranslations();
