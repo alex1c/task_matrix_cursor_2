@@ -160,6 +160,28 @@ const SemanticStructure = ({ currentPage = 'home' }) => {
 				description: '联系我们。有问题或建议吗？我们很高兴收到您的来信。',
 			},
 		},
+		notFound: {
+			ru: {
+				title: '404 - Страница не найдена | Матрица Эйзенхауэра',
+				description: 'Страница, которую вы ищете, не существует. Вернитесь на главную страницу.',
+			},
+			en: {
+				title: '404 - Page Not Found | Eisenhower Matrix',
+				description: 'The page you are looking for does not exist. Return to the home page.',
+			},
+			de: {
+				title: '404 - Seite nicht gefunden | Eisenhower-Matrix',
+				description: 'Die Seite, die Sie suchen, existiert nicht. Zurück zur Startseite.',
+			},
+			es: {
+				title: '404 - Página no encontrada | Matriz de Eisenhower',
+				description: 'La página que busca no existe. Volver a la página de inicio.',
+			},
+			zh: {
+				title: '404 - 页面未找到 | 艾森豪威尔矩阵',
+				description: '您要查找的页面不存在。返回首页。',
+			},
+		},
 	};
 
 	// Get current page metadata

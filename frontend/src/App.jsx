@@ -15,6 +15,7 @@ import TermsOfService from './components/pages/TermsOfService';
 import CookiePolicy from './components/pages/CookiePolicy';
 import About from './components/pages/About';
 import Contact from './components/pages/Contact';
+import NotFound from './components/pages/NotFound';
 import { TaskProvider } from './context/TaskContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { I18nProvider } from './context/I18nContext';
@@ -57,8 +58,16 @@ function AppContent() {
 		setCurrentPage('home');
 	};
 
+	// Valid pages list
+	const validPages = ['seo', 'guide', 'privacy', 'terms', 'cookies', 'about', 'contact', 'home'];
+
 	// Render page based on current route
 	const renderPage = () => {
+		// Show 404 for unknown pages (except home)
+		if (currentPage !== 'home' && !validPages.includes(currentPage)) {
+			return <NotFound onBack={handleBack} />;
+		}
+
 		switch (currentPage) {
 			case 'seo':
 			case 'guide':

@@ -25,6 +25,17 @@
     "allPriorities": "Alle Prioritäten",
     "back": "Zurück"
   },
+  "notFound": {
+    "title": "404 - Seite nicht gefunden",
+    "heading": "404",
+    "message": "Die Seite, die Sie suchen, existiert nicht.",
+    "description": "Die Seite wurde möglicherweise verschoben oder gelöscht.",
+    "goHome": "Zur Startseite",
+    "suggestions": "Versuchen Sie:",
+    "suggestion1": "Überprüfen Sie die eingegebene Adresse",
+    "suggestion2": "Zurück zur Startseite",
+    "suggestion3": "Verwenden Sie das Navigationsmenü"
+  },
   "header": {
     "title": "Eisenhower-Matrix",
     "subtitle": "Aufgabenverwaltung nach Prioritäten"

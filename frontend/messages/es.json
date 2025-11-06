@@ -23,7 +23,18 @@
     "filters": "Filtros y ordenamiento",
     "priority": "prioridades",
     "allPriorities": "Todas las prioridades",
-    "back": "Atrás"
+    "back": "Volver"
+  },
+  "notFound": {
+    "title": "404 - Página no encontrada",
+    "heading": "404",
+    "message": "La página que busca no existe.",
+    "description": "Es posible que la página haya sido movida o eliminada.",
+    "goHome": "Ir al inicio",
+    "suggestions": "Intente:",
+    "suggestion1": "Verifique la dirección ingresada",
+    "suggestion2": "Volver a la página de inicio",
+    "suggestion3": "Use el menú de navegación"
   },
   "header": {
     "title": "Matriz de Eisenhower",

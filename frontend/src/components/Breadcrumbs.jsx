@@ -5,11 +5,6 @@ import { useTranslations } from '../context/I18nContext';
 const Breadcrumbs = ({ currentPage }) => {
 	const { t } = useTranslations();
 
-	// Don't show breadcrumbs on home page
-	if (currentPage === 'home' || !currentPage) {
-		return null;
-	}
-
 	// Page titles mapping
 	const pageTitles = {
 		seo: t('pages.seoContent.title') || 'Руководство',
@@ -20,6 +15,11 @@ const Breadcrumbs = ({ currentPage }) => {
 		about: t('pages.about.title') || 'О нас',
 		contact: t('pages.contact.title') || 'Контакты',
 	};
+
+	// Don't show breadcrumbs for 404 or home
+	if (currentPage === 'home' || !currentPage || !pageTitles[currentPage]) {
+		return null;
+	}
 
 	const handleHomeClick = (e) => {
 		e.preventDefault();

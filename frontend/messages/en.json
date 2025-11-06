@@ -25,6 +25,17 @@
     "allPriorities": "All priorities",
     "back": "Back"
   },
+  "notFound": {
+    "title": "404 - Page Not Found",
+    "heading": "404",
+    "message": "The page you are looking for does not exist.",
+    "description": "The page may have been moved or deleted.",
+    "goHome": "Go to Home",
+    "suggestions": "Try:",
+    "suggestion1": "Check the address you entered",
+    "suggestion2": "Return to the home page",
+    "suggestion3": "Use the navigation menu"
+  },
   "header": {
     "title": "Eisenhower Matrix",
     "subtitle": "Task management by priorities"
