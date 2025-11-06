@@ -22,7 +22,8 @@
     "completed": "Completadas",
     "filters": "Filtros y ordenamiento",
     "priority": "prioridades",
-    "allPriorities": "Todas las prioridades"
+    "allPriorities": "Todas las prioridades",
+    "back": "Atrás"
   },
   "header": {
     "title": "Matriz de Eisenhower",
@@ -210,5 +211,159 @@
   },
   "confirmations": {
     "deleteTask": "¿Estás seguro de que quieres eliminar esta tarea?"
+  },
+  "footer": {
+    "about": {
+      "title": "Acerca de",
+      "description": "Planificador de tareas en línea gratuito basado en la Matriz de Eisenhower para una gestión eficaz de prioridades.",
+      "link": "Saber más"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio",
+      "cookies": "Política de Cookies"
+    },
+    "contact": {
+      "title": "Contacto",
+      "link": "Contáctenos"
+    },
+    "quickLinks": {
+      "title": "Enlaces Rápidos",
+      "home": "Inicio",
+      "guide": "Guía"
+    },
+    "copyright": "© 2025 Matriz de Eisenhower. Todos los derechos reservados.",
+    "allRightsReserved": "Todos los derechos reservados"
+  },
+  "pages": {
+    "privacy": {
+      "title": "Política de Privacidad",
+      "section1": {
+        "title": "1. Disposiciones Generales",
+        "content": "Esta Política de Privacidad define el procedimiento para el procesamiento y protección de datos personales de los usuarios del sitio web todolist.su (en adelante, el Sitio).",
+        "content2": "Al usar el Sitio, usted acepta los términos de esta Política de Privacidad."
+      },
+      "section2": {
+        "title": "2. Datos Recopilados",
+        "content": "Recopilamos los siguientes datos:",
+        "item1": "Identificador de usuario (almacenado en cookies)",
+        "item2": "Tareas creadas por el usuario (almacenadas localmente en el navegador)",
+        "item3": "Datos técnicos (dirección IP, tipo de navegador, sistema operativo)"
+      },
+      "section3": {
+        "title": "3. Uso de Datos",
+        "content": "Los datos recopilados se utilizan exclusivamente para:",
+        "content2": "Garantizar la funcionalidad del servicio, mejorar la experiencia del usuario y analizar el uso del Sitio. No compartimos sus datos con terceros sin su consentimiento."
+      },
+      "section4": {
+        "title": "4. Cookies",
+        "content": "El Sitio utiliza cookies para identificar usuarios y guardar sus tareas. Puede desactivar las cookies en la configuración de su navegador, pero esto puede afectar la funcionalidad del Sitio.",
+        "content2": "También utilizamos servicios de análisis (Yandex.Metrika, Google Analytics) para recopilar estadísticas de visitas."
+      },
+      "section5": {
+        "title": "5. Seguridad de Datos",
+        "content": "Tomamos medidas para proteger sus datos contra acceso no autorizado, modificación, divulgación o destrucción."
+      },
+      "section6": {
+        "title": "6. Contactos",
+        "content": "Para preguntas relacionadas con el procesamiento de datos personales, puede contactarnos a través de la sección \"Contacto\"."
+      }
+    },
+    "terms": {
+      "title": "Términos de Servicio",
+      "section1": {
+        "title": "1. Aceptación de Términos",
+        "content": "Al usar el sitio web todolist.su, usted acepta los términos de estos Términos de Servicio.",
+        "content2": "Si no está de acuerdo con alguno de los términos, por favor no use el Sitio."
+      },
+      "section2": {
+        "title": "2. Uso del Servicio",
+        "content": "Usted se compromete a:",
+        "item1": "Usar el Sitio solo para fines legales",
+        "item2": "No violar los derechos de otros usuarios",
+        "item3": "No intentar obtener acceso no autorizado al sistema",
+        "item4": "No usar el Sitio para distribuir contenido malicioso"
+      },
+      "section3": {
+        "title": "3. Propiedad Intelectual",
+        "content": "Todos los materiales del Sitio, incluido el diseño, textos, gráficos y software, son propiedad de los propietarios del Sitio y están protegidos por las leyes de propiedad intelectual.",
+        "content2": "Puede usar el Sitio para fines personales, pero no puede copiar, distribuir o usar materiales del Sitio con fines comerciales sin permiso escrito."
+      },
+      "section4": {
+        "title": "4. Limitación de Responsabilidad",
+        "content": "El Sitio se proporciona \"tal cual\" sin garantías. No somos responsables de ninguna pérdida derivada del uso o la imposibilidad de usar el Sitio.",
+        "content2": "Nos reservamos el derecho de modificar, suspender o discontinuar el Sitio en cualquier momento sin previo aviso."
+      },
+      "section5": {
+        "title": "5. Cambios en el Acuerdo",
+        "content": "Nos reservamos el derecho de modificar estos Términos de Servicio en cualquier momento. Los cambios entran en vigor desde el momento de su publicación en el Sitio."
+      }
+    },
+    "cookies": {
+      "title": "Política de Cookies",
+      "section1": {
+        "title": "1. Qué son las Cookies",
+        "content": "Las cookies son pequeños archivos de texto que se guardan en su dispositivo cuando visita un sitio web.",
+        "content2": "El sitio web todolist.su utiliza cookies para garantizar la funcionalidad y mejorar la experiencia del usuario."
+      },
+      "section2": {
+        "title": "2. Tipos de Cookies Utilizadas",
+        "content": "Utilizamos los siguientes tipos de cookies:",
+        "item1": "Cookies necesarias — para la identificación de usuarios y el guardado de tareas",
+        "item2": "Cookies analíticas — para recopilar estadísticas de visitas (Yandex.Metrika, Google Analytics)",
+        "item3": "Cookies publicitarias — para mostrar anuncios relevantes (Google AdSense, Yandex.Direct)"
+      },
+      "section3": {
+        "title": "3. Gestión de Cookies",
+        "content": "Puede gestionar las cookies a través de la configuración de su navegador. Sin embargo, desactivar las cookies puede afectar la funcionalidad del Sitio.",
+        "content2": "Para gestionar las cookies publicitarias, puede usar la configuración de las redes publicitarias de Google y Yandex."
+      },
+      "section4": {
+        "title": "4. Servicios de Terceros",
+        "content": "El Sitio utiliza servicios de terceros que pueden establecer sus propias cookies:",
+        "content2": "Yandex.Metrika, Google Analytics, Google AdSense, Yandex.Direct. El uso de estos servicios se rige por sus propias políticas de privacidad."
+      }
+    },
+    "about": {
+      "title": "Acerca de Nosotros",
+      "section1": {
+        "title": "Acerca del Proyecto",
+        "content": "La Matriz de Eisenhower es una herramienta en línea gratuita para la gestión de tareas y prioridades, basada en el famoso método del 34º Presidente de los Estados Unidos, Dwight Eisenhower.",
+        "content2": "Nuestro servicio ayuda a organizar tareas de manera efectiva, dividiéndolas en cuatro cuadrantes por importancia y urgencia."
+      },
+      "section2": {
+        "title": "Nuestras Características",
+        "item1": "Crear y gestionar tareas con drag & drop",
+        "item2": "Filtrar y ordenar tareas por prioridad y estado",
+        "item3": "Estadísticas visuales de distribución de tareas",
+        "item4": "Exportar tareas a formato CSV",
+        "item5": "Soporte multilingüe (ruso, inglés, alemán, español, chino)"
+      },
+      "section3": {
+        "title": "Seguridad y Privacidad",
+        "content": "Valoramos su privacidad. Todos los datos se almacenan localmente en su navegador usando cookies para identificación.",
+        "content2": "Sus tareas son visibles solo para usted. No compartimos sus datos con terceros sin su consentimiento."
+      },
+      "section4": {
+        "title": "Contactos",
+        "content": "Si tiene preguntas, sugerencias o comentarios, por favor contáctenos a través de la sección \"Contacto\"."
+      }
+    },
+    "contact": {
+      "title": "Contacto",
+      "section1": {
+        "title": "Póngase en Contacto",
+        "content": "Siempre estamos contentos de recibir sus comentarios, sugerencias y preguntas sobre el servicio.",
+        "content2": "Use el formulario a continuación para contactar al autor del proyecto."
+      },
+      "section2": {
+        "title": "Información de Contacto"
+      },
+      "section3": {
+        "title": "Tiempo de Respuesta",
+        "content": "Intentamos responder a todos los mensajes dentro de 24-48 horas."
+      }
+    }
   }
 }

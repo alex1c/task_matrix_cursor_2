@@ -22,7 +22,8 @@
     "completed": "已完成",
     "filters": "筛选和排序",
     "priority": "优先级",
-    "allPriorities": "所有优先级"
+    "allPriorities": "所有优先级",
+    "back": "返回"
   },
   "header": {
     "title": "艾森豪威尔矩阵",
@@ -210,5 +211,159 @@
   },
   "confirmations": {
     "deleteTask": "您确定要删除此任务吗？"
+  },
+  "footer": {
+    "about": {
+      "title": "关于",
+      "description": "基于艾森豪威尔矩阵的免费在线任务规划器，用于有效的优先级管理。",
+      "link": "了解更多"
+    },
+    "legal": {
+      "title": "法律信息",
+      "privacy": "隐私政策",
+      "terms": "服务条款",
+      "cookies": "Cookie政策"
+    },
+    "contact": {
+      "title": "联系方式",
+      "link": "联系我们"
+    },
+    "quickLinks": {
+      "title": "快速链接",
+      "home": "首页",
+      "guide": "指南"
+    },
+    "copyright": "© 2025 艾森豪威尔矩阵。保留所有权利。",
+    "allRightsReserved": "保留所有权利"
+  },
+  "pages": {
+    "privacy": {
+      "title": "隐私政策",
+      "section1": {
+        "title": "1. 总则",
+        "content": "本隐私政策定义了网站 todolist.su（以下简称“网站”）用户个人数据的处理和保护程序。",
+        "content2": "使用网站即表示您同意本隐私政策的条款。"
+      },
+      "section2": {
+        "title": "2. 收集的数据",
+        "content": "我们收集以下数据：",
+        "item1": "用户标识符（存储在cookies中）",
+        "item2": "用户创建的任务（本地存储在浏览器中）",
+        "item3": "技术数据（IP地址、浏览器类型、操作系统）"
+      },
+      "section3": {
+        "title": "3. 数据使用",
+        "content": "收集的数据仅用于：",
+        "content2": "确保服务功能、改善用户体验和分析网站使用情况。未经您同意，我们不会与第三方共享您的数据。"
+      },
+      "section4": {
+        "title": "4. Cookies",
+        "content": "网站使用cookies来识别用户并保存其任务。您可以在浏览器设置中禁用cookies，但这可能会影响网站的功能。",
+        "content2": "我们还使用分析服务（Yandex.Metrika、Google Analytics）来收集访问统计信息。"
+      },
+      "section5": {
+        "title": "5. 数据安全",
+        "content": "我们采取措施保护您的数据免受未经授权的访问、修改、披露或破坏。"
+      },
+      "section6": {
+        "title": "6. 联系方式",
+        "content": "有关个人数据处理的问题，您可以通过“联系方式”部分与我们联系。"
+      }
+    },
+    "terms": {
+      "title": "服务条款",
+      "section1": {
+        "title": "1. 接受条款",
+        "content": "使用 todolist.su 网站即表示您同意本服务条款。",
+        "content2": "如果您不同意任何条款，请不要使用本网站。"
+      },
+      "section2": {
+        "title": "2. 服务使用",
+        "content": "您同意：",
+        "item1": "仅将网站用于合法目的",
+        "item2": "不侵犯其他用户的权利",
+        "item3": "不试图未经授权访问系统",
+        "item4": "不使用网站传播恶意内容"
+      },
+      "section3": {
+        "title": "3. 知识产权",
+        "content": "网站的所有材料，包括设计、文本、图形和软件，均为网站所有者所有，受知识产权法保护。",
+        "content2": "您可以将网站用于个人目的，但未经书面许可，不得复制、分发或将网站材料用于商业目的。"
+      },
+      "section4": {
+        "title": "4. 责任限制",
+        "content": "网站按“原样”提供，不提供任何保证。我们对因使用或无法使用网站而产生的任何损失不承担责任。",
+        "content2": "我们保留随时修改、暂停或停止网站的权利，恕不另行通知。"
+      },
+      "section5": {
+        "title": "5. 协议变更",
+        "content": "我们保留随时修改本服务条款的权利。变更自发布在网站上之日起生效。"
+      }
+    },
+    "cookies": {
+      "title": "Cookie政策",
+      "section1": {
+        "title": "1. 什么是Cookies",
+        "content": "Cookies是访问网站时保存在您设备上的小文本文件。",
+        "content2": "todolist.su 网站使用cookies来确保功能并改善用户体验。"
+      },
+      "section2": {
+        "title": "2. 使用的Cookie类型",
+        "content": "我们使用以下类型的cookies：",
+        "item1": "必要的cookies — 用于用户识别和任务保存",
+        "item2": "分析cookies — 用于收集访问统计信息（Yandex.Metrika、Google Analytics）",
+        "item3": "广告cookies — 用于显示相关广告（Google AdSense、Yandex.Direct）"
+      },
+      "section3": {
+        "title": "3. Cookie管理",
+        "content": "您可以通过浏览器设置管理cookies。但是，禁用cookies可能会影响网站的功能。",
+        "content2": "要管理广告cookies，您可以使用Google和Yandex广告网络的设置。"
+      },
+      "section4": {
+        "title": "4. 第三方服务",
+        "content": "网站使用可能设置自己的cookies的第三方服务：",
+        "content2": "Yandex.Metrika、Google Analytics、Google AdSense、Yandex.Direct。这些服务的使用受其各自的隐私政策约束。"
+      }
+    },
+    "about": {
+      "title": "关于我们",
+      "section1": {
+        "title": "关于项目",
+        "content": "艾森豪威尔矩阵是一个免费的在线任务和优先级管理工具，基于美国第34任总统德怀特·艾森豪威尔的著名方法。",
+        "content2": "我们的服务通过将任务按重要性和紧急性分为四个象限来帮助有效组织任务。"
+      },
+      "section2": {
+        "title": "我们的功能",
+        "item1": "使用拖放创建和管理任务",
+        "item2": "按优先级和状态筛选和排序任务",
+        "item3": "任务分布的可视化统计",
+        "item4": "将任务导出为CSV格式",
+        "item5": "多语言支持（俄语、英语、德语、西班牙语、中文）"
+      },
+      "section3": {
+        "title": "安全和隐私",
+        "content": "我们重视您的隐私。所有数据都使用cookies进行识别，本地存储在您的浏览器中。",
+        "content2": "您的任务仅对您可见。未经您同意，我们不会与第三方共享您的数据。"
+      },
+      "section4": {
+        "title": "联系方式",
+        "content": "如果您有任何问题、建议或反馈，请通过“联系方式”部分与我们联系。"
+      }
+    },
+    "contact": {
+      "title": "联系方式",
+      "section1": {
+        "title": "联系我们",
+        "content": "我们很高兴收到您对服务的反馈、建议和问题。",
+        "content2": "请使用下面的表单联系项目作者。"
+      },
+      "section2": {
+        "title": "联系信息"
+      },
+      "section3": {
+        "title": "响应时间",
+        "content": "我们努力在24-48小时内回复所有消息。"
+      }
+    }
   }
 }

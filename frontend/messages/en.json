@@ -22,7 +22,8 @@
     "completed": "Completed",
     "filters": "Filters and sorting",
     "priority": "priorities",
-    "allPriorities": "All priorities"
+    "allPriorities": "All priorities",
+    "back": "Back"
   },
   "header": {
     "title": "Eisenhower Matrix",
@@ -210,5 +211,159 @@
   },
   "confirmations": {
     "deleteTask": "Are you sure you want to delete this task?"
+  },
+  "footer": {
+    "about": {
+      "title": "About",
+      "description": "Free online task planner based on the Eisenhower Matrix for effective priority management.",
+      "link": "Learn more"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy"
+    },
+    "contact": {
+      "title": "Contact",
+      "link": "Contact Us"
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "home": "Home",
+      "guide": "Guide"
+    },
+    "copyright": "© 2025 Eisenhower Matrix. All rights reserved.",
+    "allRightsReserved": "All rights reserved"
+  },
+  "pages": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "section1": {
+        "title": "1. General Provisions",
+        "content": "This Privacy Policy defines the procedure for processing and protecting personal data of users of the website todolist.su (hereinafter referred to as the Site).",
+        "content2": "By using the Site, you agree to the terms of this Privacy Policy."
+      },
+      "section2": {
+        "title": "2. Data Collected",
+        "content": "We collect the following data:",
+        "item1": "User identifier (stored in cookies)",
+        "item2": "Tasks created by the user (stored locally in the browser)",
+        "item3": "Technical data (IP address, browser type, operating system)"
+      },
+      "section3": {
+        "title": "3. Use of Data",
+        "content": "The collected data is used exclusively for:",
+        "content2": "Ensuring the functionality of the service, improving user experience, and analyzing Site usage. We do not share your data with third parties without your consent."
+      },
+      "section4": {
+        "title": "4. Cookies",
+        "content": "The Site uses cookies to identify users and save their tasks. You can disable cookies in your browser settings, but this may affect the Site's functionality.",
+        "content2": "We also use analytics services (Yandex.Metrika, Google Analytics) to collect visit statistics."
+      },
+      "section5": {
+        "title": "5. Data Security",
+        "content": "We take measures to protect your data from unauthorized access, modification, disclosure, or destruction."
+      },
+      "section6": {
+        "title": "6. Contacts",
+        "content": "For questions related to the processing of personal data, you can contact us through the \"Contact\" section."
+      }
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "section1": {
+        "title": "1. Acceptance of Terms",
+        "content": "By using the todolist.su website, you agree to the terms of this Terms of Service.",
+        "content2": "If you do not agree with any of the terms, please do not use the Site."
+      },
+      "section2": {
+        "title": "2. Use of Service",
+        "content": "You agree to:",
+        "item1": "Use the Site only for lawful purposes",
+        "item2": "Not violate the rights of other users",
+        "item3": "Not attempt to gain unauthorized access to the system",
+        "item4": "Not use the Site to distribute malicious content"
+      },
+      "section3": {
+        "title": "3. Intellectual Property",
+        "content": "All Site materials, including design, texts, graphics, and software, are the property of the Site owners and are protected by intellectual property laws.",
+        "content2": "You may use the Site for personal purposes, but may not copy, distribute, or use Site materials for commercial purposes without written permission."
+      },
+      "section4": {
+        "title": "4. Limitation of Liability",
+        "content": "The Site is provided \"as is\" without any warranties. We are not responsible for any losses arising from the use or inability to use the Site.",
+        "content2": "We reserve the right to modify, suspend, or discontinue the Site at any time without prior notice."
+      },
+      "section5": {
+        "title": "5. Changes to Agreement",
+        "content": "We reserve the right to modify this Terms of Service at any time. Changes take effect from the moment they are published on the Site."
+      }
+    },
+    "cookies": {
+      "title": "Cookie Policy",
+      "section1": {
+        "title": "1. What are Cookies",
+        "content": "Cookies are small text files that are saved on your device when you visit a website.",
+        "content2": "The todolist.su website uses cookies to ensure functionality and improve user experience."
+      },
+      "section2": {
+        "title": "2. Types of Cookies Used",
+        "content": "We use the following types of cookies:",
+        "item1": "Necessary cookies — for user identification and task saving",
+        "item2": "Analytics cookies — for collecting visit statistics (Yandex.Metrika, Google Analytics)",
+        "item3": "Advertising cookies — for showing relevant ads (Google AdSense, Yandex.Direct)"
+      },
+      "section3": {
+        "title": "3. Cookie Management",
+        "content": "You can manage cookies through your browser settings. However, disabling cookies may affect the Site's functionality.",
+        "content2": "To manage advertising cookies, you can use the settings of Google and Yandex advertising networks."
+      },
+      "section4": {
+        "title": "4. Third-Party Services",
+        "content": "The Site uses third-party services that may set their own cookies:",
+        "content2": "Yandex.Metrika, Google Analytics, Google AdSense, Yandex.Direct. The use of these services is governed by their own privacy policies."
+      }
+    },
+    "about": {
+      "title": "About Us",
+      "section1": {
+        "title": "About the Project",
+        "content": "Eisenhower Matrix is a free online tool for task and priority management, based on the famous method of the 34th President of the United States, Dwight Eisenhower.",
+        "content2": "Our service helps effectively organize tasks by dividing them into four quadrants by importance and urgency."
+      },
+      "section2": {
+        "title": "Our Features",
+        "item1": "Creating and managing tasks with drag & drop",
+        "item2": "Filtering and sorting tasks by priority and status",
+        "item3": "Visual statistics of task distribution",
+        "item4": "Export tasks to CSV format",
+        "item5": "Multilingual support (Russian, English, German, Spanish, Chinese)"
+      },
+      "section3": {
+        "title": "Security and Privacy",
+        "content": "We value your privacy. All data is stored locally in your browser using cookies for identification.",
+        "content2": "Your tasks are visible only to you. We do not share your data with third parties without your consent."
+      },
+      "section4": {
+        "title": "Contacts",
+        "content": "If you have questions, suggestions, or feedback, please contact us through the \"Contact\" section."
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "section1": {
+        "title": "Get in Touch",
+        "content": "We are always happy to receive your feedback, suggestions, and questions about the service.",
+        "content2": "Use the form below to contact the project author."
+      },
+      "section2": {
+        "title": "Contact Information"
+      },
+      "section3": {
+        "title": "Response Time",
+        "content": "We try to respond to all messages within 24-48 hours."
+      }
+    }
   }
 }

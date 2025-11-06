@@ -41,10 +41,29 @@ const SemanticStructure = () => {
 		);
 		hreflangTags.forEach((tag) => {
 			const hreflang = tag.getAttribute('hreflang');
-			const baseUrl = 'https://eisenhower-matrix.ru';
+			const baseUrl = 'https://todolist.su';
 			const url = hreflang === 'ru' ? baseUrl : `${baseUrl}/${hreflang}/`;
 			tag.setAttribute('href', url);
 		});
+
+		// Обновляем canonical URL в зависимости от текущей страницы
+		const updateCanonical = () => {
+			const currentPath = window.location.hash.slice(1) || '/';
+			const canonicalUrl = currentPath === '/' 
+				? 'https://todolist.su/' 
+				: `https://todolist.su${currentPath}`;
+			
+			let canonicalTag = document.querySelector('link[rel="canonical"]');
+			if (!canonicalTag) {
+				canonicalTag = document.createElement('link');
+				canonicalTag.setAttribute('rel', 'canonical');
+				document.head.appendChild(canonicalTag);
+			}
+			canonicalTag.setAttribute('href', canonicalUrl);
+		};
+
+		updateCanonical();
+		window.addEventListener('hashchange', updateCanonical);
 
 		// Обновляем og:locale
 		const ogLocale = document.querySelector('meta[property="og:locale"]');
@@ -58,6 +77,10 @@ const SemanticStructure = () => {
 			};
 			ogLocale.setAttribute('content', locales[locale] || 'ru_RU');
 		}
+
+		return () => {
+			window.removeEventListener('hashchange', updateCanonical);
+		};
 	}, [locale]);
 
 	return (
@@ -120,56 +143,115 @@ const SemanticStructure = () => {
 						name: t('seo.author'),
 						logo: {
 							'@type': 'ImageObject',
-							url: 'https://eisenhower-matrix.ru/logo.png',
+							url: 'https://todolist.su/logo.png',
 						},
 					},
 					datePublished: '2024-01-15',
 					dateModified: new Date().toISOString().split('T')[0],
 					mainEntityOfPage: {
 						'@type': 'WebPage',
-						'@id': `https://eisenhower-matrix.ru/${
+						'@id': `https://todolist.su/${
 							locale === 'ru' ? '' : locale + '/'
 						}`,
 					},
-					image: 'https://eisenhower-matrix.ru/og-image.jpg',
+					image: 'https://todolist.su/og-image.jpg',
 					articleSection: t('seo.section'),
 					keywords: t('seo.keywordsList'),
 					inLanguage: locale,
 				})}
 			</script>
 
-			{/* FAQ Schema */}
+			{/* FAQ Schema - Extended with 15 questions */}
 			<script type='application/ld+json'>
 				{JSON.stringify({
 					'@context': 'https://schema.org',
 					'@type': 'FAQPage',
-					mainEntity: [
+					mainEntity: Array.from({ length: 15 }, (_, i) => ({
+						'@type': 'Question',
+						name: t(`seoContent.faq.question${i + 1}`) || t(`seo.faq${i + 1}.question`),
+						acceptedAnswer: {
+							'@type': 'Answer',
+							text: t(`seoContent.faq.answer${i + 1}`) || t(`seo.faq${i + 1}.answer`),
+						},
+					})).filter(q => q.name && q.acceptedAnswer.text),
+					inLanguage: locale,
+				})}
+			</script>
+
+			{/* HowTo Schema */}
+			<script type='application/ld+json'>
+				{JSON.stringify({
+					'@context': 'https://schema.org',
+					'@type': 'HowTo',
+					name: t('seoContent.howTo.title') || t('seo.howToUse'),
+					description: t('seoContent.howTo.section1.content') || t('seo.description'),
+					step: [
 						{
-							'@type': 'Question',
-							name: t('seo.faq1.question'),
-							acceptedAnswer: {
-								'@type': 'Answer',
-								text: t('seo.faq1.answer'),
-							},
+							'@type': 'HowToStep',
+							position: 1,
+							name: t('seoContent.howTo.section1.step1') || t('seo.step1'),
+							text: t('seoContent.howTo.section1.step1') || t('seo.step1'),
 						},
 						{
-							'@type': 'Question',
-							name: t('seo.faq2.question'),
-							acceptedAnswer: {
-								'@type': 'Answer',
-								text: t('seo.faq2.answer'),
-							},
+							'@type': 'HowToStep',
+							position: 2,
+							name: t('seoContent.howTo.section1.step2') || t('seo.step2'),
+							text: t('seoContent.howTo.section1.step2') || t('seo.step2'),
 						},
 						{
-							'@type': 'Question',
-							name: t('seo.faq3.question'),
-							acceptedAnswer: {
-								'@type': 'Answer',
-								text: t('seo.faq3.answer'),
-							},
+							'@type': 'HowToStep',
+							position: 3,
+							name: t('seoContent.howTo.section1.step3') || t('seo.step3'),
+							text: t('seoContent.howTo.section1.step3') || t('seo.step3'),
+						},
+						{
+							'@type': 'HowToStep',
+							position: 4,
+							name: t('seoContent.howTo.section1.step4') || t('seo.step4'),
+							text: t('seoContent.howTo.section1.step4') || t('seo.step4'),
+						},
+						{
+							'@type': 'HowToStep',
+							position: 5,
+							name: t('seoContent.howTo.section1.step5') || t('seo.step5'),
+							text: t('seoContent.howTo.section1.step5') || t('seo.step5'),
 						},
 					],
+					totalTime: 'PT30M',
 					inLanguage: locale,
+				})}
+			</script>
+
+			{/* Breadcrumbs Schema */}
+			<script type='application/ld+json'>
+				{JSON.stringify({
+					'@context': 'https://schema.org',
+					'@type': 'BreadcrumbList',
+					itemListElement: [
+						{
+							'@type': 'ListItem',
+							position: 1,
+							name: t('seo.title') || 'Главная',
+							item: 'https://todolist.su/',
+						},
+					],
+				})}
+			</script>
+
+			{/* Organization Schema */}
+			<script type='application/ld+json'>
+				{JSON.stringify({
+					'@context': 'https://schema.org',
+					'@type': 'Organization',
+					name: t('seo.author'),
+					url: 'https://todolist.su/',
+					logo: 'https://todolist.su/logo.png',
+					sameAs: [],
+					contactPoint: {
+						'@type': 'ContactPoint',
+						contactType: 'Customer Service',
+						availableLanguage: ['ru', 'en', 'de', 'es', 'zh'],
+					},
 				})}
 			</script>
 		</>

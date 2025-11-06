@@ -22,7 +22,8 @@
     "completed": "Abgeschlossen",
     "filters": "Filter und Sortierung",
     "priority": "Prioritäten",
-    "allPriorities": "Alle Prioritäten"
+    "allPriorities": "Alle Prioritäten",
+    "back": "Zurück"
   },
   "header": {
     "title": "Eisenhower-Matrix",
@@ -210,5 +211,159 @@
   },
   "confirmations": {
     "deleteTask": "Sind Sie sicher, dass Sie diese Aufgabe löschen möchten?"
+  },
+  "footer": {
+    "about": {
+      "title": "Über uns",
+      "description": "Kostenloser Online-Aufgabenplaner basierend auf der Eisenhower-Matrix für effektives Prioritätsmanagement.",
+      "link": "Mehr erfahren"
+    },
+    "legal": {
+      "title": "Rechtliches",
+      "privacy": "Datenschutzerklärung",
+      "terms": "Nutzungsbedingungen",
+      "cookies": "Cookie-Richtlinie"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "link": "Kontaktieren Sie uns"
+    },
+    "quickLinks": {
+      "title": "Schnelllinks",
+      "home": "Startseite",
+      "guide": "Anleitung"
+    },
+    "copyright": "© 2025 Eisenhower-Matrix. Alle Rechte vorbehalten.",
+    "allRightsReserved": "Alle Rechte vorbehalten"
+  },
+  "pages": {
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "section1": {
+        "title": "1. Allgemeine Bestimmungen",
+        "content": "Diese Datenschutzerklärung legt das Verfahren zur Verarbeitung und zum Schutz personenbezogener Daten der Benutzer der Website todolist.su (im Folgenden: Website) fest.",
+        "content2": "Durch die Nutzung der Website stimmen Sie den Bedingungen dieser Datenschutzerklärung zu."
+      },
+      "section2": {
+        "title": "2. Erhobene Daten",
+        "content": "Wir erheben folgende Daten:",
+        "item1": "Benutzerkennung (in Cookies gespeichert)",
+        "item2": "Vom Benutzer erstellte Aufgaben (lokal im Browser gespeichert)",
+        "item3": "Technische Daten (IP-Adresse, Browsertyp, Betriebssystem)"
+      },
+      "section3": {
+        "title": "3. Verwendung der Daten",
+        "content": "Die erhobenen Daten werden ausschließlich verwendet für:",
+        "content2": "Gewährleistung der Funktionalität des Dienstes, Verbesserung der Benutzererfahrung und Analyse der Website-Nutzung. Wir geben Ihre Daten nicht ohne Ihre Zustimmung an Dritte weiter."
+      },
+      "section4": {
+        "title": "4. Cookies",
+        "content": "Die Website verwendet Cookies zur Identifizierung von Benutzern und zum Speichern ihrer Aufgaben. Sie können Cookies in Ihren Browsereinstellungen deaktivieren, dies kann jedoch die Funktionalität der Website beeinträchtigen.",
+        "content2": "Wir verwenden auch Analysedienste (Yandex.Metrika, Google Analytics) zur Erfassung von Besuchsstatistiken."
+      },
+      "section5": {
+        "title": "5. Datensicherheit",
+        "content": "Wir ergreifen Maßnahmen zum Schutz Ihrer Daten vor unbefugtem Zugriff, Änderung, Offenlegung oder Zerstörung."
+      },
+      "section6": {
+        "title": "6. Kontakte",
+        "content": "Bei Fragen zur Verarbeitung personenbezogener Daten können Sie uns über den Abschnitt \"Kontakt\" kontaktieren."
+      }
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen",
+      "section1": {
+        "title": "1. Annahme der Bedingungen",
+        "content": "Durch die Nutzung der Website todolist.su stimmen Sie den Bedingungen dieser Nutzungsbedingungen zu.",
+        "content2": "Wenn Sie mit einer der Bedingungen nicht einverstanden sind, verwenden Sie bitte die Website nicht."
+      },
+      "section2": {
+        "title": "2. Nutzung des Dienstes",
+        "content": "Sie verpflichten sich:",
+        "item1": "Die Website nur für rechtmäßige Zwecke zu nutzen",
+        "item2": "Die Rechte anderer Benutzer nicht zu verletzen",
+        "item3": "Nicht zu versuchen, unbefugten Zugriff auf das System zu erhalten",
+        "item4": "Die Website nicht zur Verbreitung schädlicher Inhalte zu verwenden"
+      },
+      "section3": {
+        "title": "3. Geistiges Eigentum",
+        "content": "Alle Materialien der Website, einschließlich Design, Texte, Grafiken und Software, sind Eigentum der Website-Besitzer und durch Gesetze zum geistigen Eigentum geschützt.",
+        "content2": "Sie können die Website für persönliche Zwecke nutzen, dürfen jedoch Materialien der Website nicht ohne schriftliche Genehmigung kopieren, verbreiten oder für kommerzielle Zwecke verwenden."
+      },
+      "section4": {
+        "title": "4. Haftungsbeschränkung",
+        "content": "Die Website wird \"wie besehen\" ohne Gewährleistungen bereitgestellt. Wir übernehmen keine Verantwortung für Verluste, die durch die Nutzung oder Unfähigkeit zur Nutzung der Website entstehen.",
+        "content2": "Wir behalten uns das Recht vor, die Website jederzeit ohne vorherige Ankündigung zu ändern, auszusetzen oder einzustellen."
+      },
+      "section5": {
+        "title": "5. Änderungen der Vereinbarung",
+        "content": "Wir behalten uns das Recht vor, diese Nutzungsbedingungen jederzeit zu ändern. Änderungen treten ab dem Zeitpunkt ihrer Veröffentlichung auf der Website in Kraft."
+      }
+    },
+    "cookies": {
+      "title": "Cookie-Richtlinie",
+      "section1": {
+        "title": "1. Was sind Cookies",
+        "content": "Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden, wenn Sie eine Website besuchen.",
+        "content2": "Die Website todolist.su verwendet Cookies, um die Funktionalität sicherzustellen und die Benutzererfahrung zu verbessern."
+      },
+      "section2": {
+        "title": "2. Verwendete Cookie-Typen",
+        "content": "Wir verwenden folgende Cookie-Typen:",
+        "item1": "Notwendige Cookies — zur Benutzeridentifizierung und Aufgabenspeicherung",
+        "item2": "Analytische Cookies — zur Erfassung von Besuchsstatistiken (Yandex.Metrika, Google Analytics)",
+        "item3": "Werbe-Cookies — zur Anzeige relevanter Werbung (Google AdSense, Yandex.Direct)"
+      },
+      "section3": {
+        "title": "3. Cookie-Verwaltung",
+        "content": "Sie können Cookies über Ihre Browsereinstellungen verwalten. Das Deaktivieren von Cookies kann jedoch die Funktionalität der Website beeinträchtigen.",
+        "content2": "Zur Verwaltung von Werbe-Cookies können Sie die Einstellungen der Werbenetzwerke von Google und Yandex verwenden."
+      },
+      "section4": {
+        "title": "4. Drittanbieter-Dienste",
+        "content": "Die Website verwendet Drittanbieter-Dienste, die ihre eigenen Cookies setzen können:",
+        "content2": "Yandex.Metrika, Google Analytics, Google AdSense, Yandex.Direct. Die Nutzung dieser Dienste unterliegt ihren eigenen Datenschutzrichtlinien."
+      }
+    },
+    "about": {
+      "title": "Über uns",
+      "section1": {
+        "title": "Über das Projekt",
+        "content": "Die Eisenhower-Matrix ist ein kostenloses Online-Tool zur Aufgaben- und Prioritätsverwaltung, basierend auf der berühmten Methode des 34. Präsidenten der Vereinigten Staaten, Dwight Eisenhower.",
+        "content2": "Unser Dienst hilft dabei, Aufgaben effektiv zu organisieren, indem sie nach Wichtigkeit und Dringlichkeit in vier Quadranten unterteilt werden."
+      },
+      "section2": {
+        "title": "Unsere Funktionen",
+        "item1": "Erstellen und Verwalten von Aufgaben mit Drag & Drop",
+        "item2": "Filtern und Sortieren von Aufgaben nach Priorität und Status",
+        "item3": "Visuelle Statistiken der Aufgabenverteilung",
+        "item4": "Export von Aufgaben in CSV-Format",
+        "item5": "Mehrsprachige Unterstützung (Russisch, Englisch, Deutsch, Spanisch, Chinesisch)"
+      },
+      "section3": {
+        "title": "Sicherheit und Datenschutz",
+        "content": "Wir schätzen Ihre Privatsphäre. Alle Daten werden lokal in Ihrem Browser unter Verwendung von Cookies zur Identifizierung gespeichert.",
+        "content2": "Ihre Aufgaben sind nur für Sie sichtbar. Wir geben Ihre Daten nicht ohne Ihre Zustimmung an Dritte weiter."
+      },
+      "section4": {
+        "title": "Kontakte",
+        "content": "Wenn Sie Fragen, Vorschläge oder Feedback haben, kontaktieren Sie uns bitte über den Abschnitt \"Kontakt\"."
+      }
+    },
+    "contact": {
+      "title": "Kontakt",
+      "section1": {
+        "title": "Kontaktieren Sie uns",
+        "content": "Wir freuen uns immer über Ihr Feedback, Vorschläge und Fragen zum Dienst.",
+        "content2": "Verwenden Sie das untenstehende Formular, um den Projektautor zu kontaktieren."
+      },
+      "section2": {
+        "title": "Kontaktinformationen"
+      },
+      "section3": {
+        "title": "Antwortzeit",
+        "content": "Wir bemühen uns, auf alle Nachrichten innerhalb von 24-48 Stunden zu antworten."
+      }
+    }
   }
 }
