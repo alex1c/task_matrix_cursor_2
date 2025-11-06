@@ -1,0 +1,68 @@
+# robots.txt для todolist.su
+# Матрица Эйзенхауэра - Управление задачами
+
+User-agent: *
+Allow: /
+Allow: /seo
+Allow: /privacy
+Allow: /terms
+Allow: /cookies
+Allow: /about
+Allow: /contact
+
+# Разрешить изображения для индексации
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+
+# Запрещенные директории
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /assets/*.map$
+
+# Sitemap
+Sitemap: https://todolist.su/sitemap.xml
+
+# Дополнительные настройки
+Crawl-delay: 1
+
+# Специальные боты
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /og-image.jpg
+Allow: /twitter-image.jpg
+Allow: /logo.png
+Allow: /screenshot.jpg
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Блокировка агрессивных ботов
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10

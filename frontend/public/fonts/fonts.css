@@ -1,0 +1,115 @@
+/* Локальные шрифты для приложения Матрица Эйзенхауэра */
+
+/* Inter Font Family - используем Google Fonts как основной источник */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Fallback для системных шрифтов */
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: local('Inter Light'), local('Inter-Light'),
+		local('SF Pro Display Light'), local('Segoe UI Light'),
+		local('Roboto Light'), local('Helvetica Neue Light'),
+		local('Arial Light'), system-ui, -apple-system, BlinkMacSystemFont,
+		sans-serif;
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local('Inter Regular'), local('Inter-Regular'), local('SF Pro Display'),
+		local('Segoe UI'), local('Roboto'), local('Helvetica Neue'),
+		local('Arial'), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: local('Inter Medium'), local('Inter-Medium'),
+		local('SF Pro Display Medium'), local('Segoe UI Semibold'),
+		local('Roboto Medium'), local('Helvetica Neue Medium'),
+		local('Arial Medium'), system-ui, -apple-system, BlinkMacSystemFont,
+		sans-serif;
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: local('Inter SemiBold'), local('Inter-SemiBold'),
+		local('SF Pro Display Semibold'), local('Segoe UI Bold'),
+		local('Roboto Bold'), local('Helvetica Neue Bold'), local('Arial Bold'),
+		system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: local('Inter Bold'), local('Inter-Bold'), local('SF Pro Display Bold'),
+		local('Segoe UI Bold'), local('Roboto Bold'),
+		local('Helvetica Neue Bold'), local('Arial Bold'), system-ui,
+		-apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 800;
+	font-display: swap;
+	src: local('Inter ExtraBold'), local('Inter-ExtraBold'),
+		local('SF Pro Display Heavy'), local('Segoe UI Black'),
+		local('Roboto Black'), local('Helvetica Neue Black'),
+		local('Arial Black'), system-ui, -apple-system, BlinkMacSystemFont,
+		sans-serif;
+}
+
+/* JetBrains Mono Font Family - для моноширинного текста */
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local('JetBrains Mono Regular'), local('JetBrainsMono-Regular'),
+		local('SF Mono'), local('Monaco'), local('Consolas'),
+		local('Liberation Mono'), local('Courier New'), monospace;
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: local('JetBrains Mono Medium'), local('JetBrainsMono-Medium'),
+		local('SF Mono Medium'), local('Monaco'), local('Consolas'),
+		local('Liberation Mono'), local('Courier New'), monospace;
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: local('JetBrains Mono SemiBold'), local('JetBrainsMono-SemiBold'),
+		local('SF Mono Semibold'), local('Monaco'), local('Consolas'),
+		local('Liberation Mono'), local('Courier New'), monospace;
+}
+
+/* Fallback для случаев, когда локальные шрифты недоступны */
+.font-inter {
+	font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+		'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.font-mono {
+	font-family: 'JetBrains Mono', 'SF Mono', Monaco, Consolas,
+		'Liberation Mono', 'Courier New', monospace;
+}

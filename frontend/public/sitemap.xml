@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Главная страница (Русский) -->
+  <url>
+    <loc>https://todolist.su/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://todolist.su/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://todolist.su/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://todolist.su/de/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://todolist.su/es/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://todolist.su/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://todolist.su/" />
+    <image:image>
+      <image:loc>https://todolist.su/og-image.jpg</image:loc>
+      <image:title>Матрица Эйзенхауэра - Управление задачами</image:title>
+      <image:caption>Бесплатный онлайн-планировщик задач на основе матрицы Эйзенхауэра</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Английская версия главной -->
+  <url>
+    <loc>https://todolist.su/en/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://todolist.su/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://todolist.su/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://todolist.su/de/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://todolist.su/es/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://todolist.su/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://todolist.su/" />
+  </url>
+
+  <!-- Немецкая версия главной -->
+  <url>
+    <loc>https://todolist.su/de/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://todolist.su/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://todolist.su/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://todolist.su/de/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://todolist.su/es/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://todolist.su/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://todolist.su/" />
+  </url>
+
+  <!-- Испанская версия главной -->
+  <url>
+    <loc>https://todolist.su/es/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://todolist.su/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://todolist.su/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://todolist.su/de/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://todolist.su/es/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://todolist.su/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://todolist.su/" />
+  </url>
+
+  <!-- Китайская версия главной -->
+  <url>
+    <loc>https://todolist.su/zh/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://todolist.su/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://todolist.su/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://todolist.su/de/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://todolist.su/es/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://todolist.su/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://todolist.su/" />
+  </url>
+
+  <!-- SEO Руководство -->
+  <url>
+    <loc>https://todolist.su/seo</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://todolist.su/seo" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://todolist.su/seo" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://todolist.su/seo" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://todolist.su/seo" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://todolist.su/seo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://todolist.su/seo" />
+  </url>
+
+  <!-- Политика конфиденциальности -->
+  <url>
+    <loc>https://todolist.su/privacy</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://todolist.su/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://todolist.su/privacy" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://todolist.su/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://todolist.su/privacy" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://todolist.su/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://todolist.su/privacy" />
+  </url>
+
+  <!-- Пользовательское соглашение -->
+  <url>
+    <loc>https://todolist.su/terms</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://todolist.su/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://todolist.su/terms" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://todolist.su/terms" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://todolist.su/terms" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://todolist.su/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://todolist.su/terms" />
+  </url>
+
+  <!-- Политика использования cookies -->
+  <url>
+    <loc>https://todolist.su/cookies</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://todolist.su/cookies" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://todolist.su/cookies" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://todolist.su/cookies" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://todolist.su/cookies" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://todolist.su/cookies" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://todolist.su/cookies" />
+  </url>
+
+  <!-- О нас -->
+  <url>
+    <loc>https://todolist.su/about</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://todolist.su/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://todolist.su/about" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://todolist.su/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://todolist.su/about" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://todolist.su/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://todolist.su/about" />
+  </url>
+
+  <!-- Контакты -->
+  <url>
+    <loc>https://todolist.su/contact</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://todolist.su/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://todolist.su/contact" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://todolist.su/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://todolist.su/contact" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://todolist.su/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://todolist.su/contact" />
+  </url>
+
+</urlset>

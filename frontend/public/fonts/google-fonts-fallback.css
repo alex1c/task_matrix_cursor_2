@@ -1,0 +1,26 @@
+/* Альтернативный способ загрузки Google Fonts с fallback */
+
+/* Preconnect для ускорения загрузки */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* Fallback шрифты на случай проблем с Google Fonts */
+.font-inter-fallback {
+	font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+		'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.font-mono-fallback {
+	font-family: 'JetBrains Mono', 'SF Mono', Monaco, Consolas,
+		'Liberation Mono', 'Courier New', monospace;
+}
+
+/* Системные шрифты как основной fallback */
+.font-system {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.font-system-mono {
+	font-family: 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New',
+		monospace;
+}

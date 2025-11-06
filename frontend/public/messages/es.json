@@ -1,0 +1,413 @@
+{
+  "common": {
+    "add": "Agregar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "confirm": "Confirmar",
+    "yes": "Sí",
+    "no": "No",
+    "export": "Exportar a CSV",
+    "sort": "Ordenar",
+    "byPriority": "Por prioridad",
+    "byDate": "Por fecha",
+    "byName": "Por nombre",
+    "all": "Todos",
+    "incomplete": "No completadas",
+    "completed": "Completadas",
+    "filters": "Filtros y ordenamiento",
+    "priority": "prioridades",
+    "allPriorities": "Todas las prioridades",
+    "back": "Atrás"
+  },
+  "header": {
+    "title": "Matriz de Eisenhower",
+    "subtitle": "Gestión de tareas por prioridades"
+  },
+  "task": {
+    "title": "Título de la tarea",
+    "description": "Descripción",
+    "priority": "Prioridad",
+    "dueDate": "Fecha de vencimiento",
+    "quadrant": "Cuadrante",
+    "completed": "Completada",
+    "newTask": "Nueva tarea",
+    "createTask": "Crear tarea",
+    "editTask": "Editar tarea",
+    "deleteTask": "Eliminar tarea",
+    "moveTask": "Mover tarea",
+    "markComplete": "Marcar como completada",
+    "markIncomplete": "Marcar como no completada",
+    "noTasks": "No hay tareas",
+    "dragHere": "Arrastre una tarea aquí o cree una nueva",
+    "status": "Estado de las tareas",
+    "tasks": "tareas",
+    "taskCount": {
+      "one": "tarea",
+      "few": "tareas",
+      "many": "tareas"
+    }
+  },
+  "priorities": {
+    "high": "Alta",
+    "medium": "Media",
+    "low": "Baja"
+  },
+  "modal": {
+    "createTask": "Crear nueva tarea",
+    "editTask": "Editar tarea",
+    "required": "Campo obligatorio",
+    "optional": "Opcional",
+    "titleRequired": "Por favor ingrese un título para la tarea",
+    "titlePlaceholder": "Ingrese el título de la tarea",
+    "descriptionPlaceholder": "Descripción adicional (opcional)"
+  },
+  "statistics": {
+    "title": "Estadísticas",
+    "totalTasks": "Total de tareas",
+    "completedTasks": "Completadas",
+    "pendingTasks": "Pendientes",
+    "completionRate": "Tasa de finalización",
+    "chartTitle": "A dónde va el tiempo",
+    "noTasksToDisplay": "No hay tareas para mostrar",
+    "completed": "Completadas",
+    "whatIsEisenhowerMatrix": "¿Qué es la Matriz de Eisenhower?",
+    "eisenhowerMatrix": "Matriz de Eisenhower",
+    "description": "es una herramienta para priorizar tareas desarrollada por el 34º presidente de EE.UU., Dwight Eisenhower. Ayuda a organizar tareas por importancia y urgencia.",
+    "urgentImportantDesc": "Crisis, problemas urgentes, plazos. Haga inmediatamente.",
+    "importantNotUrgentDesc": "Planificación, desarrollo, relaciones. Programe tiempo para hacerlo.",
+    "urgentNotImportantDesc": "Distracciones, algunas llamadas, reuniones. Delegue o minimice.",
+    "notUrgentNotImportantDesc": "Pérdida de tiempo, distracciones. Elimine o posponga.",
+    "usageTip": "Consejo de uso",
+    "usageTipText": "Trate de pasar más tiempo en el cuadrante 'Importante pero no Urgente'. Esto ayudará a prevenir que aparezcan tareas en el cuadrante 'Importante y Urgente'."
+  },
+  "quadrants": {
+    "urgentImportant": {
+      "title": "Importante y Urgente",
+      "subtitle": "Hacer inmediatamente"
+    },
+    "importantNotUrgent": {
+      "title": "Importante, pero no Urgente",
+      "subtitle": "Planificar con anticipación"
+    },
+    "urgentNotImportant": {
+      "title": "Urgente, pero no Importante",
+      "subtitle": "Delegar a otros"
+    },
+    "notUrgentNotImportant": {
+      "title": "No Importante y no Urgente",
+      "subtitle": "Eliminar de la lista"
+    }
+  },
+  "share": {
+    "title": "Matriz de Eisenhower - Gestión de Tareas",
+    "description": "Planificación efectiva de tareas con la Matriz de Eisenhower. Divida las tareas por importancia y urgencia.",
+    "shareTitle": "Compartir",
+    "shareDescription": "Ayude a amigos y colegas a gestionar tareas eficazmente con la Matriz de Eisenhower",
+    "shareIn": "Compartir en {platform}",
+    "linkCopied": "¡Enlace copiado!",
+    "copyError": "No se pudo copiar el enlace",
+    "copied": "¡Copiado!",
+    "copyLink": "Copiar enlace",
+    "additionalInfo": "La Matriz de Eisenhower le ayudará a establecer prioridades y aumentar la productividad"
+  },
+  "author": {
+    "contactTitle": "Contactar al autor",
+    "contactDescription": "¿Tiene preguntas sobre el proyecto o sugerencias de mejora? Contacte al autor",
+    "emailLabel": "Email del autor:",
+    "showEmail": "Mostrar email",
+    "hideEmail": "Ocultar email",
+    "copyEmail": "Copiar email",
+    "copied": "¡Copiado!",
+    "emailCopied": "¡Email copiado!",
+    "copyError": "No se pudo copiar el email",
+    "responseTime": "El autor responde a todos los mensajes dentro de 24-48 horas"
+  },
+  "theme": {
+    "standard": "Estándar",
+    "retro": "Retro",
+    "neon": "Neón",
+    "switchToLight": "Cambiar a tema claro",
+    "switchToDark": "Cambiar a tema oscuro"
+  },
+  "serviceInfo": {
+    "title": "Gestor de tareas simple y seguro",
+    "subtitle": "Use el servicio gratis para propósitos personales.",
+    "feature1": "Creación y movimiento de tareas (drag & drop)",
+    "feature2": "Filtrado por estado y prioridad",
+    "feature3": "Modos: todas, completadas, incompletas",
+    "feature4": "Cookies para identificación — solo usted ve sus tareas",
+    "guideButton": "Guía detallada de uso"
+  },
+  "seo": {
+    "title": "Matriz de Eisenhower - Gestión de Tareas y Prioridades",
+    "subtitle": "Planificación efectiva de tareas",
+    "whatIs": "¿Qué es la Matriz de Eisenhower?",
+    "description": "La Matriz de Eisenhower es una herramienta de gestión del tiempo que ayuda a dividir las tareas en cuatro categorías por importancia y urgencia: importantes y urgentes, importantes pero no urgentes, urgentes pero no importantes, no importantes y no urgentes.",
+    "benefits": "Beneficios de usar la Matriz de Eisenhower",
+    "benefit1": "Mayor productividad",
+    "benefit2": "Gestión efectiva del tiempo",
+    "benefit3": "Establecimiento correcto de prioridades",
+    "benefit4": "Reducción del estrés por sobrecarga de tareas",
+    "benefit5": "Mejor calidad en la toma de decisiones",
+    "howToUse": "Cómo usar la Matriz de Eisenhower",
+    "step1": "Escriba todas sus tareas",
+    "step2": "Determine la importancia de cada tarea",
+    "step3": "Determine la urgencia de cada tarea",
+    "step4": "Coloque las tareas en los cuadrantes correspondientes",
+    "step5": "Comience con las tareas del primer cuadrante",
+    "quadrants": "Cuadrantes de la Matriz de Eisenhower",
+    "quadrant1": "Cuadrante 1: Importante y urgente",
+    "quadrant1Desc": "Crisis, problemas urgentes, tareas con plazos.",
+    "quadrant2": "Cuadrante 2: Importante, pero no urgente",
+    "quadrant2Desc": "Planificación, desarrollo, prevención, aprendizaje.",
+    "quadrant3": "Cuadrante 3: Urgente, pero no importante",
+    "quadrant3Desc": "Distracciones, algunas llamadas, algunas reuniones.",
+    "quadrant4": "Cuadrante 4: No importante y no urgente",
+    "quadrant4Desc": "Pérdida de tiempo, entretenimiento excesivo.",
+    "keywords": "Palabras clave para SEO",
+    "keywordsList": "matriz de eisenhower, gestión de tareas, planificación, prioridades, productividad, gestión del tiempo, planificador de tareas, tareas importantes, tareas urgentes, eficiencia, organización del tiempo, gestión del tiempo, planificador, organizador de tareas, sistema de prioridades, matriz de prioridades, cuadrantes de eisenhower, método de eisenhower, herramientas de productividad",
+    "author": "Matriz de Eisenhower",
+    "section": "Productividad",
+    "faq1": {
+      "question": "¿Qué es la Matriz de Eisenhower?",
+      "answer": "La Matriz de Eisenhower es una herramienta de gestión del tiempo que ayuda a dividir las tareas en cuatro categorías por importancia y urgencia."
+    },
+    "faq2": {
+      "question": "¿Cómo usar la Matriz de Eisenhower?",
+      "answer": "Escriba todas las tareas, determine su importancia y urgencia, colóquelas en los cuadrantes correspondientes y comience con las tareas importantes y urgentes."
+    },
+    "faq3": {
+      "question": "¿Qué beneficios ofrece la Matriz de Eisenhower?",
+      "answer": "Mayor productividad, gestión efectiva del tiempo, establecimiento correcto de prioridades, reducción del estrés y mejor calidad en la toma de decisiones."
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "Sobre el sitio",
+      "description": "Planificador de tareas en línea gratuito basado en la Matriz de Eisenhower para una gestión efectiva de prioridades.",
+      "link": "Saber más"
+    },
+    "legal": {
+      "title": "Información legal",
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio",
+      "cookies": "Política de Cookies"
+    },
+    "contact": {
+      "title": "Contacto",
+      "link": "Contáctenos"
+    },
+    "quickLinks": {
+      "title": "Enlaces rápidos",
+      "home": "Inicio",
+      "guide": "Guía"
+    },
+    "copyright": "© 2025 Matriz de Eisenhower. Todos los derechos reservados.",
+    "allRightsReserved": "Todos los derechos reservados"
+  },
+  "pages": {
+    "privacy": {
+      "title": "Política de Privacidad",
+      "section1": {
+        "title": "1. Disposiciones Generales",
+        "content": "Esta Política de Privacidad define el procedimiento para el procesamiento y protección de datos personales de los usuarios del sitio web todolist.su (en adelante, el Sitio).",
+        "content2": "Al usar el Sitio, usted acepta los términos de esta Política de Privacidad."
+      },
+      "section2": {
+        "title": "2. Datos Recopilados",
+        "content": "Recopilamos los siguientes datos:",
+        "item1": "Identificador de usuario (almacenado en cookies)",
+        "item2": "Tareas creadas por el usuario (almacenadas localmente en el navegador)",
+        "item3": "Datos técnicos (dirección IP, tipo de navegador, sistema operativo)"
+      },
+      "section3": {
+        "title": "3. Uso de los Datos",
+        "content": "Los datos recopilados se utilizan exclusivamente para:",
+        "content2": "Garantizar el funcionamiento del servicio, mejorar la experiencia del usuario y analizar el uso del Sitio. No compartimos sus datos con terceros sin su consentimiento."
+      },
+      "section4": {
+        "title": "4. Cookies",
+        "content": "El Sitio utiliza cookies para identificar al usuario y guardar sus tareas. Puede desactivar las cookies en la configuración del navegador, sin embargo, esto puede afectar la funcionalidad del Sitio.",
+        "content2": "También utilizamos servicios de análisis (Yandex.Metrika, Google Analytics) para recopilar estadísticas de visitas."
+      },
+      "section5": {
+        "title": "5. Seguridad de los Datos",
+        "content": "Tomamos medidas para proteger sus datos contra acceso no autorizado, alteración, divulgación o destrucción."
+      },
+      "section6": {
+        "title": "6. Contactos",
+        "content": "Para preguntas relacionadas con el procesamiento de datos personales, puede contactarnos a través de la sección \"Contacto\"."
+      }
+    },
+    "terms": {
+      "title": "Términos de Servicio",
+      "section1": {
+        "title": "1. Aceptación de Términos",
+        "content": "Al usar el Sitio todolist.su, usted acepta los términos de estos Términos de Servicio.",
+        "content2": "Si no está de acuerdo con alguno de los términos, por favor no use el Sitio."
+      },
+      "section2": {
+        "title": "2. Uso del Servicio",
+        "content": "Usted se compromete a:",
+        "item1": "Usar el Sitio solo para fines legales",
+        "item2": "No violar los derechos de otros usuarios",
+        "item3": "No intentar obtener acceso no autorizado al sistema",
+        "item4": "No usar el Sitio para distribuir contenido malicioso"
+      },
+      "section3": {
+        "title": "3. Propiedad Intelectual",
+        "content": "Todos los materiales del Sitio, incluido el diseño, textos, gráficos y software, son propiedad de los propietarios del Sitio y están protegidos por las leyes de propiedad intelectual.",
+        "content2": "Puede usar el Sitio para fines personales, pero no puede copiar, distribuir o usar los materiales del Sitio con fines comerciales sin permiso por escrito."
+      },
+      "section4": {
+        "title": "4. Limitación de Responsabilidad",
+        "content": "El Sitio se proporciona \"tal cual\" sin garantías. No somos responsables de ninguna pérdida resultante del uso o imposibilidad de usar el Sitio.",
+        "content2": "Nos reservamos el derecho de modificar, suspender o discontinuar el Sitio en cualquier momento sin previo aviso."
+      },
+      "section5": {
+        "title": "5. Cambios en los Términos",
+        "content": "Nos reservamos el derecho de modificar estos Términos de Servicio en cualquier momento. Los cambios entrarán en vigor desde el momento de su publicación en el Sitio."
+      }
+    },
+    "cookies": {
+      "title": "Política de Cookies",
+      "section1": {
+        "title": "1. ¿Qué son las Cookies?",
+        "content": "Las cookies son pequeños archivos de texto que se guardan en su dispositivo cuando visita un sitio web.",
+        "content2": "El sitio todolist.su utiliza cookies para garantizar la funcionalidad y mejorar la experiencia del usuario."
+      },
+      "section2": {
+        "title": "2. Tipos de Cookies Utilizadas",
+        "content": "Utilizamos los siguientes tipos de cookies:",
+        "item1": "Cookies necesarias — para identificar al usuario y guardar tareas",
+        "item2": "Cookies analíticas — para recopilar estadísticas de visitas (Yandex.Metrika, Google Analytics)",
+        "item3": "Cookies publicitarias — para mostrar publicidad relevante (Google AdSense, Yandex.Direct)"
+      },
+      "section3": {
+        "title": "3. Gestión de Cookies",
+        "content": "Puede gestionar las cookies a través de la configuración de su navegador. Sin embargo, desactivar las cookies puede afectar la funcionalidad del Sitio.",
+        "content2": "Para gestionar las cookies publicitarias, puede usar la configuración de las redes publicitarias de Google y Yandex."
+      },
+      "section4": {
+        "title": "4. Servicios de Terceros",
+        "content": "El Sitio utiliza servicios de terceros que pueden establecer sus propias cookies:",
+        "content2": "Yandex.Metrika, Google Analytics, Google AdSense, Yandex.Direct. El uso de estos servicios se rige por sus propias políticas de privacidad."
+      }
+    },
+    "about": {
+      "title": "Acerca de nosotros",
+      "section1": {
+        "title": "Sobre el proyecto",
+        "content": "La Matriz de Eisenhower es una herramienta en línea gratuita para gestionar tareas y prioridades, basada en el famoso método del 34º presidente de EE.UU., Dwight Eisenhower.",
+        "content2": "Nuestro servicio ayuda a organizar tareas eficazmente, dividiéndolas por importancia y urgencia en cuatro cuadrantes."
+      },
+      "section2": {
+        "title": "Nuestras capacidades",
+        "item1": "Creación y gestión de tareas con drag & drop",
+        "item2": "Filtrado y ordenamiento de tareas por prioridad y estado",
+        "item3": "Estadísticas visuales de distribución de tareas",
+        "item4": "Exportación de tareas a formato CSV",
+        "item5": "Soporte multilingüe (español, inglés, alemán, chino, ruso)"
+      },
+      "section3": {
+        "title": "Seguridad y privacidad",
+        "content": "Valoramos su privacidad. Todos los datos se almacenan localmente en su navegador usando cookies para identificación.",
+        "content2": "Sus tareas son visibles solo para usted. No compartimos sus datos con terceros sin su consentimiento."
+      },
+      "section4": {
+        "title": "Contactos",
+        "content": "Si tiene preguntas, sugerencias o comentarios, por favor contáctenos a través de la sección \"Contacto\"."
+      }
+    },
+    "contact": {
+      "title": "Contacto",
+      "section1": {
+        "title": "Contáctenos",
+        "content": "Siempre estamos contentos de recibir sus comentarios, sugerencias y preguntas sobre el servicio.",
+        "content2": "Use el formulario a continuación para contactar al autor del proyecto."
+      },
+      "section2": {
+        "title": "Información de Contacto"
+      },
+      "section3": {
+        "title": "Tiempo de Respuesta",
+        "content": "Intentamos responder a todos los mensajes dentro de 24-48 horas."
+      }
+    },
+    "seoContent": {
+      "title": "Guía de la Matriz de Eisenhower: Cómo gestionar tareas eficazmente",
+      "howTo": {
+        "title": "Cómo usar la Matriz de Eisenhower para gestionar tareas",
+        "section1": {
+          "title": "Cómo aplicar correctamente la matriz de prioridades de Eisenhower",
+          "content": "La Matriz de Eisenhower es una poderosa herramienta de gestión del tiempo para aumentar la productividad y gestionar tareas eficazmente. Aprenda a usar este método de planificación para organizar su flujo de trabajo y alcanzar objetivos.",
+          "step1": "Haga una lista completa de todas sus tareas y asuntos que requieren atención. Use un planificador de tareas u organizador para sistematizar.",
+          "step2": "Determine la importancia de cada tarea: las tareas importantes afectan el logro de sus objetivos a largo plazo, el desarrollo profesional o el crecimiento personal.",
+          "step3": "Evalúe la urgencia: las tareas urgentes tienen plazos claros o requieren ejecución inmediata.",
+          "step4": "Distribuya las tareas en los cuatro cuadrantes de la matriz de prioridades: importante y urgente, importante pero no urgente, urgente pero no importante, no importante y no urgente.",
+          "step5": "Comience la ejecución con el primer cuadrante (importante y urgente), luego pase al segundo cuadrante para la planificación estratégica."
+        },
+        "section2": {
+          "title": "Cómo aumentar la productividad con el sistema de prioridades",
+          "content": "La gestión eficaz del tiempo comienza con la correcta priorización. La Matriz de Eisenhower ayuda a organizar tareas y mejorar la gestión del tiempo.",
+          "item1": "Use un planificador de tareas en línea para visualizar la matriz de prioridades y rastrear el progreso de ejecución de tareas.",
+          "item2": "Revise y actualice regularmente la lista de tareas, moviéndolas entre cuadrantes a medida que cambian la importancia y la urgencia.",
+          "item3": "Enfóquese en las tareas del segundo cuadrante (importante, pero no urgente) para prevenir situaciones de crisis y mejorar la calidad del trabajo.",
+          "item4": "Delegue o minimice las tareas del tercer cuadrante para liberar tiempo para asuntos realmente importantes."
+        },
+        "section3": {
+          "title": "Cómo organizar tareas con el método de Eisenhower",
+          "content": "Organizar tareas según la Matriz de Eisenhower permite gestionar eficazmente el tiempo de trabajo y aumentar la eficiencia personal. Esta herramienta de productividad ayuda a tomar decisiones correctas sobre cómo gastar el tiempo.",
+          "content2": "Al aplicar la técnica de priorización de tareas, podrá controlar mejor su flujo de trabajo, reducir el estrés por sobrecarga y alcanzar los objetivos establecidos más rápido."
+        },
+        "section4": {
+          "title": "Cómo usar el planificador de tareas para gestionar prioridades",
+          "content": "Las herramientas modernas de planificación de tareas permiten aplicar fácilmente la Matriz de Eisenhower en el trabajo diario. Use nuestro planificador gratuito para gestionar tareas eficazmente.",
+          "item1": "Cree tareas y distribúyalas automáticamente en los cuadrantes de la matriz según la importancia y urgencia.",
+          "item2": "Use filtros y ordenamiento para acceso rápido a tareas de cierta prioridad o estado de ejecución.",
+          "item3": "Rastree estadísticas de distribución de tareas por cuadrantes para analizar la eficiencia de su gestión del tiempo.",
+          "item4": "Exporte datos a CSV para análisis adicional y planificación en otras herramientas."
+        }
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre la Matriz de Eisenhower",
+        "question1": "¿Qué es la Matriz de Eisenhower y cómo ayuda en la gestión de tareas?",
+        "answer1": "La Matriz de Eisenhower es una herramienta de gestión del tiempo desarrollada por el 34º presidente de EE.UU., Dwight Eisenhower. Ayuda a dividir tareas en cuatro categorías por importancia y urgencia, lo que permite gestionar prioridades eficazmente y aumentar la productividad.",
+        "question2": "¿Cómo determinar correctamente la importancia y urgencia de una tarea?",
+        "answer2": "Las tareas importantes afectan el logro de sus objetivos a largo plazo, el desarrollo profesional o el crecimiento personal. Las tareas urgentes tienen plazos claros o requieren ejecución inmediata. Use un planificador de tareas para sistematizar y visualizar prioridades.",
+        "question3": "¿Qué tareas pertenecen al cuadrante 'Importante y urgente'?",
+        "answer3": "Al primer cuadrante pertenecen situaciones de crisis, problemas urgentes, tareas con plazos y asuntos urgentes que requieren atención inmediata. Son tareas que no se pueden posponer y que son críticamente importantes para alcanzar objetivos.",
+        "question4": "¿Cómo usar la matriz de prioridades para aumentar la productividad?",
+        "answer4": "Use regularmente la Matriz de Eisenhower para organizar tareas, enfóquese en el segundo cuadrante (importante, pero no urgente) para prevenir crisis, delegue tareas del tercer cuadrante y minimice el tiempo en el cuarto cuadrante. Use un planificador en línea para rastrear el progreso.",
+        "question5": "¿Se puede usar la Matriz de Eisenhower en equipo?",
+        "answer5": "Sí, la matriz de prioridades es excelente para el trabajo en equipo. Ayuda al equipo a coordinar prioridades, distribuir tareas y mejorar la comunicación. Use un planificador de tareas colaborativo para coordinar el trabajo del equipo.",
+        "question6": "¿Con qué frecuencia revisar las tareas en la matriz?",
+        "answer6": "Se recomienda revisar y actualizar la matriz de prioridades diaria o semanalmente. Las tareas pueden cambiar su importancia y urgencia con el tiempo, por lo que la revisión regular ayuda a mantener la relevancia de los planes y la eficiencia de la gestión de tareas.",
+        "question7": "¿Cuál es la diferencia entre importancia y urgencia de una tarea?",
+        "answer7": "La importancia de una tarea está determinada por su impacto en el logro de objetivos a largo plazo y resultados. La urgencia está relacionada con limitaciones de tiempo y plazos. Las tareas importantes requieren atención independientemente de la urgencia, y las tareas urgentes requieren respuesta rápida.",
+        "question8": "¿Cómo ayuda la Matriz de Eisenhower a reducir el estrés por sobrecarga de tareas?",
+        "answer8": "La matriz de prioridades ayuda a visualizar todas las tareas, determinar claramente qué es realmente importante y organizar el trabajo para prevenir la acumulación de tareas urgentes. Esto reduce el estrés y mejora la calidad de las decisiones tomadas.",
+        "question9": "¿Qué herramientas usar mejor para aplicar la Matriz de Eisenhower?",
+        "answer9": "Puede usar nuestro planificador de tareas en línea gratuito, diseñado específicamente para trabajar con la Matriz de Eisenhower. También son adecuados cualquier organizador de tareas que permita dividir visualmente las tareas en cuadrantes de prioridades.",
+        "question10": "¿Cómo delegar tareas del cuadrante 'Urgente, pero no importante'?",
+        "answer10": "Las tareas del tercer cuadrante a menudo se pueden delegar a otros miembros del equipo o automatizar. Determine quién puede realizar la tarea más eficazmente, transfiera autoridad y establezca expectativas claras sobre el resultado y los plazos.",
+        "question11": "¿Por qué es importante enfocarse en el cuadrante 'Importante, pero no urgente'?",
+        "answer11": "El segundo cuadrante contiene tareas de planificación estratégica, desarrollo y prevención de problemas. El enfoque en este cuadrante ayuda a prevenir la aparición de tareas en el primer cuadrante (crisis), lo que aumenta significativamente la eficiencia y reduce el estrés.",
+        "question12": "¿Cómo exportar datos de la Matriz de Eisenhower?",
+        "answer12": "Nuestro planificador de tareas permite exportar todas las tareas en formato CSV. Es conveniente para análisis en Excel, creación de informes o respaldo de datos. Use la función de exportación en el menú del planificador.",
+        "question13": "¿Se puede usar la Matriz de Eisenhower para objetivos personales, no solo para trabajo?",
+        "answer13": "¡Absolutamente! La matriz de prioridades es universal y excelente para gestionar tanto tareas laborales como personales. Ayuda a equilibrar diversas esferas de la vida y tomar decisiones correctas sobre cómo gastar el tiempo.",
+        "question14": "¿Cómo comenzar a usar la Matriz de Eisenhower desde cero?",
+        "answer14": "Comience haciendo una lista completa de todas sus tareas. Luego evalúe cada tarea por importancia y urgencia, distribúyalas en cuadrantes y comience la ejecución con el primer cuadrante. Use nuestro planificador gratuito para visualización y seguimiento del progreso.",
+        "question15": "¿Qué errores se cometen más a menudo al usar la Matriz de Eisenhower?",
+        "answer15": "Errores comunes: sobreestimar la urgencia de tareas, ignorar el segundo cuadrante, falta de revisión regular de prioridades e intentar realizar todas las tareas solo sin delegar. Evite estos errores para máxima eficiencia."
+      }
+    }
+  }
+}
