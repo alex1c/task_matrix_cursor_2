@@ -3,7 +3,21 @@ import { FileText, Shield, Cookie, Info, Mail, Home } from 'lucide-react';
 import { useTranslations } from '../context/I18nContext';
 
 const Footer = ({ onNavigate }) => {
-	const { t } = useTranslations();
+	const { t, locale } = useTranslations();
+
+	// Debug: log current locale and translations
+	React.useEffect(() => {
+		const aboutTitle = t('footer.about.title');
+		const legalTitle = t('footer.legal.title');
+		const contactTitle = t('footer.contact.title');
+		console.log(`[Footer] Rendering with locale: ${locale}`, {
+			aboutTitle,
+			legalTitle,
+			contactTitle,
+			isKey: aboutTitle === 'footer.about.title',
+			allMessagesKeys: Object.keys(t('footer') || {}),
+		});
+	}, [locale, t]);
 
 	const handleLinkClick = (path) => {
 		if (onNavigate) {

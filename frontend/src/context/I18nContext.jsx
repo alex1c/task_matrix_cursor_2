@@ -472,6 +472,15 @@ export const I18nProvider = ({ children }) => {
 				// Use timestamp and random number for cache busting
 				const cacheBuster = `${Date.now()}_${Math.random().toString(36).substring(7)}`;
 				const url = `/messages/${locale}.json?t=${cacheBuster}`;
+				
+				// Debug logging
+				console.log(`[I18n] ===== Loading translations =====`);
+				console.log(`[I18n] Locale: ${locale}`);
+				console.log(`[I18n] URL: ${url}`);
+				console.log(`[I18n] Full URL: ${window.location.origin}${url}`);
+				console.log(`[I18n] Current path: ${window.location.pathname}`);
+				console.log(`[I18n] Current hash: ${window.location.hash}`);
+				
 				const response = await fetch(url, {
 					cache: 'no-cache',
 					headers: {
@@ -479,33 +488,67 @@ export const I18nProvider = ({ children }) => {
 					},
 				});
 
+				console.log(`[I18n] Response status: ${response.status}`);
+				console.log(`[I18n] Response statusText: ${response.statusText}`);
+				console.log(`[I18n] Response URL: ${response.url}`);
+				console.log(`[I18n] Response headers:`, {
+					'content-type': response.headers.get('content-type'),
+					'content-length': response.headers.get('content-length'),
+				});
+
 				if (response.ok) {
 					const text = await response.text();
+					console.log(`[I18n] Response text length: ${text.length}`);
+					console.log(`[I18n] Response text preview (first 200 chars):`, text.substring(0, 200));
 					
 					let data;
 					try {
 						data = JSON.parse(text);
+						console.log(`[I18n] Parsed JSON successfully`);
+						console.log(`[I18n] JSON keys:`, Object.keys(data));
+						console.log(`[I18n] Has footer:`, !!data.footer);
+						console.log(`[I18n] Has pages:`, !!data.pages);
+						if (data.footer) {
+							console.log(`[I18n] Footer keys:`, Object.keys(data.footer));
+							console.log(`[I18n] Footer.about.title:`, data.footer?.about?.title);
+						}
+						if (data.pages) {
+							console.log(`[I18n] Pages keys:`, Object.keys(data.pages));
+						}
 					} catch (parseError) {
 						console.error(`[I18n] Failed to parse JSON for ${locale}:`, parseError);
+						console.error(`[I18n] Response text (first 1000 chars):`, text.substring(0, 1000));
 						throw parseError;
 					}
 					
 					// Always merge with fallback to ensure all keys are present
 					// Loaded translations have priority, fallback fills missing keys
 					const merged = deepMerge(data, fallbackMessages);
+					console.log(`[I18n] Merged translations`);
+					console.log(`[I18n] Merged has footer:`, !!merged.footer);
+					console.log(`[I18n] Merged footer.about.title:`, merged.footer?.about?.title);
 					setMessages(merged);
+					console.log(`[I18n] Messages set successfully`);
 				} else {
+					console.error(`[I18n] Failed to load ${locale}, status: ${response.status}`);
+					console.error(`[I18n] Response URL: ${response.url}`);
+					console.error(`[I18n] Response statusText: ${response.statusText}`);
+					
 					// Fallback to default locale
 					if (locale !== defaultLocale) {
+						console.log(`[I18n] Attempting fallback to default locale: ${defaultLocale}`);
 						try {
 							const fallbackResponse = await fetch(
 								`/messages/${defaultLocale}.json?t=${Date.now()}`
 							);
+							console.log(`[I18n] Fallback response status: ${fallbackResponse.status}`);
 							if (fallbackResponse.ok) {
 								const fallbackData = await fallbackResponse.json();
 								const merged = deepMerge(fallbackData, fallbackMessages);
 								setMessages(merged);
+								console.log(`[I18n] Using fallback locale translations`);
 							} else {
+								console.warn(`[I18n] Fallback locale also failed, using fallbackMessages`);
 								setMessages(fallbackMessages);
 							}
 						} catch (err) {
@@ -513,14 +556,21 @@ export const I18nProvider = ({ children }) => {
 							setMessages(fallbackMessages);
 						}
 					} else {
+						console.warn(`[I18n] Already on default locale, using fallbackMessages`);
 						setMessages(fallbackMessages);
 					}
 				}
 			} catch (error) {
 				console.error('[I18n] Failed to load translations:', error);
+				console.error('[I18n] Error details:', {
+					message: error.message,
+					stack: error.stack,
+					name: error.name,
+				});
 				setMessages(fallbackMessages);
 			} finally {
 				setIsLoading(false);
+				console.log(`[I18n] ===== Loading completed =====`);
 			}
 		};
 
