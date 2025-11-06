@@ -14,15 +14,25 @@ RUN npm ci
 COPY frontend/ ./
 
 # Verify translation files exist before build
-RUN ls -la public/messages/ || echo "WARNING: messages directory not found in public/"
-RUN ls -la public/messages/*.json || echo "WARNING: JSON files not found in public/messages/"
+RUN echo "=== Checking files before build ===" && \
+    ls -la public/messages/ 2>/dev/null || echo "WARNING: messages directory not found in public/" && \
+    ls -la public/messages/*.json 2>/dev/null || echo "WARNING: JSON files not found in public/messages/"
 
 # Build the application
 RUN npm run build
 
 # Verify translation files exist after build
-RUN ls -la dist/messages/ || echo "ERROR: messages directory not found in dist/"
-RUN ls -la dist/messages/*.json || echo "ERROR: JSON files not found in dist/messages/"
+RUN echo "=== Checking files after build ===" && \
+    ls -la dist/messages/ 2>/dev/null || echo "ERROR: messages directory not found in dist/" && \
+    ls -la dist/messages/*.json 2>/dev/null || echo "ERROR: JSON files not found in dist/messages/"
+
+# If messages directory doesn't exist in dist, copy it manually
+RUN if [ ! -d "dist/messages" ]; then \
+        echo "=== Copying messages directory manually ===" && \
+        mkdir -p dist/messages && \
+        cp -r public/messages/* dist/messages/ && \
+        ls -la dist/messages/; \
+    fi
 
 # Production stage with nginx
 FROM nginx:alpine
@@ -34,8 +44,9 @@ RUN apk add --no-cache wget
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Verify files are copied correctly
-RUN ls -la /usr/share/nginx/html/messages/ || echo "ERROR: messages directory not found in nginx html/"
-RUN ls -la /usr/share/nginx/html/messages/*.json || echo "ERROR: JSON files not found in nginx html/messages/"
+RUN echo "=== Checking files in nginx container ===" && \
+    ls -la /usr/share/nginx/html/messages/ 2>/dev/null || echo "ERROR: messages directory not found in nginx html/" && \
+    ls -la /usr/share/nginx/html/messages/*.json 2>/dev/null || echo "ERROR: JSON files not found in nginx html/messages/"
 
 # Copy nginx configuration
 COPY nginx-docker.conf /etc/nginx/conf.d/default.conf
