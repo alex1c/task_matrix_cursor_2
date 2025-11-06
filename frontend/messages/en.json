@@ -149,7 +149,8 @@
     "feature1": "Creating and moving tasks (drag & drop)",
     "feature2": "Filtering by status and priority",
     "feature3": "Modes: all, completed, incomplete",
-    "feature4": "Cookies for identification — only you see your tasks"
+    "feature4": "Cookies for identification — only you see your tasks",
+    "guideButton": "Detailed usage guide"
   },
   "seo": {
     "title": "Eisenhower Matrix - Task Management and Priorities",
@@ -363,6 +364,75 @@
       "section3": {
         "title": "Response Time",
         "content": "We try to respond to all messages within 24-48 hours."
+      }
+    },
+    "seoContent": {
+      "title": "Eisenhower Matrix Guide: How to Effectively Manage Tasks",
+      "howTo": {
+        "title": "How to Use the Eisenhower Matrix for Task Management",
+        "section1": {
+          "title": "How to Properly Apply the Eisenhower Priority Matrix",
+          "content": "The Eisenhower Matrix is a powerful time management tool for increasing productivity and effectively managing tasks. Learn to use this planning method to organize your workflow and achieve goals.",
+          "step1": "Make a complete list of all your tasks and matters that require attention. Use a task planner or organizer to systematize.",
+          "step2": "Determine the importance of each task: important tasks affect the achievement of your long-term goals, career development, or personal growth.",
+          "step3": "Assess urgency: urgent tasks have clear deadlines or require immediate execution.",
+          "step4": "Distribute tasks across the four quadrants of the priority matrix: important and urgent, important but not urgent, urgent but not important, not important and not urgent.",
+          "step5": "Start execution with the first quadrant (important and urgent), then move to the second quadrant for strategic planning."
+        },
+        "section2": {
+          "title": "How to Increase Productivity with the Priority System",
+          "content": "Effective time management begins with proper prioritization. The Eisenhower Matrix helps organize tasks and improve time management.",
+          "item1": "Use an online task planner to visualize the priority matrix and track task execution progress.",
+          "item2": "Regularly review and update the task list, moving them between quadrants as importance and urgency change.",
+          "item3": "Focus on tasks from the second quadrant (important, but not urgent) to prevent crisis situations and improve work quality.",
+          "item4": "Delegate or minimize tasks from the third quadrant to free up time for truly important matters."
+        },
+        "section3": {
+          "title": "How to Organize Tasks Using the Eisenhower Method",
+          "content": "Organizing tasks according to the Eisenhower Matrix allows you to effectively manage work time and increase personal efficiency. This productivity tool helps make the right decisions about how to spend time.",
+          "content2": "By applying task prioritization techniques, you can better control your workflow, reduce stress from overload, and achieve set goals faster."
+        },
+        "section4": {
+          "title": "How to Use a Task Planner for Priority Management",
+          "content": "Modern task planning tools make it easy to apply the Eisenhower Matrix in daily work. Use our free planner for effective task management.",
+          "item1": "Create tasks and automatically distribute them across matrix quadrants based on importance and urgency.",
+          "item2": "Use filters and sorting for quick access to tasks of a certain priority or execution status.",
+          "item3": "Track statistics on task distribution by quadrants to analyze the effectiveness of your time management.",
+          "item4": "Export data to CSV for further analysis and planning in other tools."
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About the Eisenhower Matrix",
+        "question1": "What is the Eisenhower Matrix and how does it help in task management?",
+        "answer1": "The Eisenhower Matrix is a time management tool developed by the 34th President of the United States, Dwight Eisenhower. It helps divide tasks into four categories by importance and urgency, allowing you to effectively manage priorities and increase productivity.",
+        "question2": "How to correctly determine the importance and urgency of a task?",
+        "answer2": "Important tasks affect the achievement of your long-term goals, career development, or personal growth. Urgent tasks have clear deadlines or require immediate execution. Use a task planner to systematize and visualize priorities.",
+        "question3": "What tasks belong to the 'Important and Urgent' quadrant?",
+        "answer3": "The first quadrant includes crisis situations, urgent problems, tasks with deadlines, and urgent matters that require immediate attention. These are tasks that cannot be postponed and are critically important for achieving goals.",
+        "question4": "How to use the priority matrix to increase productivity?",
+        "answer4": "Regularly use the Eisenhower Matrix to organize tasks, focus on the second quadrant (important, but not urgent) to prevent crises, delegate tasks from the third quadrant, and minimize time on the fourth quadrant. Use an online planner to track progress.",
+        "question5": "Can the Eisenhower Matrix be used in a team?",
+        "answer5": "Yes, the priority matrix is excellent for teamwork. It helps the team coordinate priorities, distribute tasks, and improve communication. Use a collaborative task planner to coordinate team work.",
+        "question6": "How often should tasks in the matrix be reviewed?",
+        "answer6": "It is recommended to review and update the priority matrix daily or weekly. Tasks can change their importance and urgency over time, so regular review helps maintain plan relevance and task management efficiency.",
+        "question7": "What is the difference between importance and urgency of a task?",
+        "answer7": "Task importance is determined by its impact on achieving long-term goals and results. Urgency is related to time constraints and deadlines. Important tasks require attention regardless of urgency, and urgent tasks require quick response.",
+        "question8": "How does the Eisenhower Matrix help reduce stress from task overload?",
+        "answer8": "The priority matrix helps visualize all tasks, clearly determine what is truly important, and organize work to prevent the accumulation of urgent tasks. This reduces stress and improves the quality of decisions made.",
+        "question9": "What tools are best to use for applying the Eisenhower Matrix?",
+        "answer9": "You can use our free online task planner, specifically designed to work with the Eisenhower Matrix. Any task organizers that allow visual separation of tasks by priority quadrants are also suitable.",
+        "question10": "How to delegate tasks from the 'Urgent but Not Important' quadrant?",
+        "answer10": "Tasks from the third quadrant can often be delegated to other team members or automated. Determine who can perform the task more effectively, transfer authority, and set clear expectations for results and deadlines.",
+        "question11": "Why is it important to focus on the 'Important but Not Urgent' quadrant?",
+        "answer11": "The second quadrant contains strategic planning, development, and problem prevention tasks. Focusing on this quadrant helps prevent tasks from appearing in the first quadrant (crises), which significantly increases efficiency and reduces stress.",
+        "question12": "How to export data from the Eisenhower Matrix?",
+        "answer12": "Our task planner allows you to export all tasks to CSV format. This is convenient for analysis in Excel, report creation, or data backup. Use the export function in the planner menu.",
+        "question13": "Can the Eisenhower Matrix be used for personal goals, not just work?",
+        "answer13": "Absolutely! The priority matrix is universal and excellent for managing both work and personal tasks. It helps balance different areas of life and make the right decisions about how to spend time.",
+        "question14": "How to start using the Eisenhower Matrix from scratch?",
+        "answer14": "Start by making a complete list of all your tasks. Then evaluate each task by importance and urgency, distribute them into quadrants, and start execution with the first quadrant. Use our free planner for visualization and progress tracking.",
+        "question15": "What mistakes are most often made when using the Eisenhower Matrix?",
+        "answer15": "Common mistakes: overestimating task urgency, ignoring the second quadrant, lack of regular priority review, and trying to complete all tasks alone without delegation. Avoid these mistakes for maximum efficiency."
       }
     }
   }

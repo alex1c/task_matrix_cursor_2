@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 
 // Supported locales
 export const locales = {
@@ -50,6 +50,7 @@ const fallbackMessages = {
 		filters: 'Фильтры и сортировка',
 		priority: 'приоритеты',
 		allPriorities: 'Все приоритеты',
+		back: 'Назад',
 	},
 	header: {
 		title: 'Матрица Эйзенхауэра',
@@ -179,6 +180,31 @@ const fallbackMessages = {
 		feature3: 'Режимы: все, выполненные, невыполненные',
 		feature4: 'Cookies для идентификации — задачи видите только вы',
 	},
+	footer: {
+		about: {
+			title: 'О сайте',
+			description:
+				'Бесплатный онлайн-планировщик задач на основе матрицы Эйзенхауэра для эффективного управления приоритетами.',
+			link: 'Узнать больше',
+		},
+		legal: {
+			title: 'Правовая информация',
+			privacy: 'Политика конфиденциальности',
+			terms: 'Пользовательское соглашение',
+			cookies: 'Политика использования файлов cookie',
+		},
+		contact: {
+			title: 'Контакты',
+			link: 'Связаться с нами',
+		},
+		quickLinks: {
+			title: 'Быстрые ссылки',
+			home: 'Главная',
+			guide: 'Руководство',
+		},
+		copyright: '© 2025 Матрица Эйзенхауэра. Все права защищены.',
+		allRightsReserved: 'Все права защищены',
+	},
 	seo: {
 		title: 'Матрица Эйзенхауэра - Управление задачами и приоритетами',
 		subtitle: 'Эффективное планирование задач',
@@ -224,6 +250,173 @@ const fallbackMessages = {
 			answer: 'Повышение продуктивности, эффективное управление временем, правильная расстановка приоритетов, снижение стресса и улучшение качества решений.',
 		},
 	},
+	pages: {
+		privacy: {
+			title: 'Политика конфиденциальности',
+			section1: {
+				title: '1. Общие положения',
+				content:
+					'Настоящая Политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей веб-сайта todolist.su (далее — Сайт).',
+				content2:
+					'Используя Сайт, вы соглашаетесь с условиями настоящей Политики конфиденциальности.',
+			},
+			section2: {
+				title: '2. Собираемые данные',
+				content: 'Мы собираем следующие данные:',
+				item1: 'Идентификатор пользователя (хранится в cookies)',
+				item2:
+					'Задачи, созданные пользователем (хранятся локально в браузере)',
+				item3:
+					'Технические данные (IP-адрес, тип браузера, операционная система)',
+			},
+			section3: {
+				title: '3. Использование данных',
+				content: 'Собранные данные используются исключительно для:',
+				content2:
+					'Обеспечения функционирования сервиса, улучшения пользовательского опыта и анализа использования Сайта. Мы не передаем ваши данные третьим лицам без вашего согласия.',
+			},
+			section4: {
+				title: '4. Cookies',
+				content:
+					'Сайт использует cookies для идентификации пользователя и сохранения его задач. Вы можете отключить cookies в настройках браузера, однако это может повлиять на функциональность Сайта.',
+				content2:
+					'Мы также используем сервисы аналитики (Яндекс.Метрика, Google Analytics) для сбора статистики посещений.',
+			},
+			section5: {
+				title: '5. Безопасность данных',
+				content:
+					'Мы принимаем меры для защиты ваших данных от несанкционированного доступа, изменения, раскрытия или уничтожения.',
+			},
+			section6: {
+				title: '6. Контакты',
+				content:
+					'По вопросам, связанным с обработкой персональных данных, вы можете связаться с нами через раздел "Контакты".',
+			},
+		},
+		terms: {
+			title: 'Пользовательское соглашение',
+			section1: {
+				title: '1. Принятие условий',
+				content:
+					'Используя Сайт todolist.su, вы соглашаетесь с условиями настоящего Пользовательского соглашения.',
+				content2:
+					'Если вы не согласны с какими-либо условиями, пожалуйста, не используйте Сайт.',
+			},
+			section2: {
+				title: '2. Использование сервиса',
+				content: 'Вы обязуетесь:',
+				item1: 'Использовать Сайт только в законных целях',
+				item2: 'Не нарушать права других пользователей',
+				item3: 'Не пытаться получить несанкционированный доступ к системе',
+				item4:
+					'Не использовать Сайт для распространения вредоносного контента',
+			},
+			section3: {
+				title: '3. Интеллектуальная собственность',
+				content:
+					'Все материалы Сайта, включая дизайн, тексты, графику и программное обеспечение, являются собственностью владельцев Сайта и защищены законами об интеллектуальной собственности.',
+				content2:
+					'Вы можете использовать Сайт для личных целей, но не можете копировать, распространять или использовать материалы Сайта в коммерческих целях без письменного разрешения.',
+			},
+			section4: {
+				title: '4. Ограничение ответственности',
+				content:
+					'Сайт предоставляется "как есть" без каких-либо гарантий. Мы не несем ответственности за любые убытки, возникшие в результате использования или невозможности использования Сайта.',
+				content2:
+					'Мы оставляем за собой право изменять, приостанавливать или прекращать работу Сайта в любое время без предварительного уведомления.',
+			},
+			section5: {
+				title: '5. Изменения в соглашении',
+				content:
+					'Мы оставляем за собой право изменять настоящее Пользовательское соглашение в любое время. Изменения вступают в силу с момента их публикации на Сайте.',
+			},
+		},
+		cookies: {
+			title: 'Политика использования файлов cookie',
+			section1: {
+				title: '1. Что такое cookies',
+				content:
+					'Cookies — это небольшие текстовые файлы, которые сохраняются на вашем устройстве при посещении веб-сайта.',
+				content2:
+					'Сайт todolist.su использует cookies для обеспечения функциональности и улучшения пользовательского опыта.',
+			},
+			section2: {
+				title: '2. Типы используемых cookies',
+				content: 'Мы используем следующие типы cookies:',
+				item1:
+					'Необходимые cookies — для идентификации пользователя и сохранения задач',
+				item2:
+					'Аналитические cookies — для сбора статистики посещений (Яндекс.Метрика, Google Analytics)',
+				item3:
+					'Рекламные cookies — для показа релевантной рекламы (Google AdSense, Яндекс.Директ)',
+			},
+			section3: {
+				title: '3. Управление cookies',
+				content:
+					'Вы можете управлять cookies через настройки вашего браузера. Однако отключение cookies может повлиять на функциональность Сайта.',
+				content2:
+					'Для управления рекламными cookies вы можете использовать настройки рекламных сетей Google и Яндекс.',
+			},
+			section4: {
+				title: '4. Сторонние сервисы',
+				content:
+					'Сайт использует сторонние сервисы, которые могут устанавливать свои cookies:',
+				content2:
+					'Яндекс.Метрика, Google Analytics, Google AdSense, Яндекс.Директ. Использование этих сервисов регулируется их собственными политиками конфиденциальности.',
+			},
+		},
+		about: {
+			title: 'О нас',
+			section1: {
+				title: 'О проекте',
+				content:
+					'Матрица Эйзенхауэра — это бесплатный онлайн-инструмент для управления задачами и приоритетами, основанный на знаменитой методике 34-го президента США Дуайта Эйзенхауэра.',
+				content2:
+					'Наш сервис помогает эффективно организовывать задачи, разделяя их по важности и срочности на четыре квадранта.',
+			},
+			section2: {
+				title: 'Наши возможности',
+				item1:
+					'Создание и управление задачами с помощью drag & drop',
+				item2:
+					'Фильтрация и сортировка задач по приоритету и статусу',
+				item3: 'Визуальная статистика распределения задач',
+				item4: 'Экспорт задач в CSV формат',
+				item5:
+					'Мультиязычная поддержка (русский, английский, немецкий, испанский, китайский)',
+			},
+			section3: {
+				title: 'Безопасность и конфиденциальность',
+				content:
+					'Мы ценим вашу конфиденциальность. Все данные хранятся локально в вашем браузере с использованием cookies для идентификации.',
+				content2:
+					'Ваши задачи видны только вам. Мы не передаем ваши данные третьим лицам без вашего согласия.',
+			},
+			section4: {
+				title: 'Контакты',
+				content:
+					'Если у вас есть вопросы, предложения или отзывы, пожалуйста, свяжитесь с нами через раздел "Контакты".',
+			},
+		},
+		contact: {
+			title: 'Контакты',
+			section1: {
+				title: 'Свяжитесь с нами',
+				content:
+					'Мы всегда рады получить ваши отзывы, предложения и вопросы о работе сервиса.',
+				content2:
+					'Используйте форму ниже для связи с автором проекта.',
+			},
+			section2: {
+				title: 'Контактная информация',
+			},
+			section3: {
+				title: 'Время ответа',
+				content:
+					'Мы стараемся отвечать на все сообщения в течение 24-48 часов.',
+			},
+		},
+	},
 };
 
 // Provider component
@@ -232,30 +425,99 @@ export const I18nProvider = ({ children }) => {
 	const [messages, setMessages] = useState(fallbackMessages);
 	const [isLoading, setIsLoading] = useState(true);
 
+	// Deep merge function for translations
+	// target = base (loaded translations), source = fallback (for missing keys)
+	// Target (loaded translations) has complete priority, source only fills missing keys
+	const deepMerge = (target, source) => {
+		// If target is not an object, use source if target is missing
+		if (!isObject(target)) {
+			return target !== undefined && target !== null ? target : source;
+		}
+		
+		// If source is not an object, return target
+		if (!isObject(source)) {
+			return target;
+		}
+		
+		// Start with target (loaded translations) as base - it has priority
+		const output = { ...target };
+		
+		// Add missing keys from source (fallback)
+		Object.keys(source).forEach((key) => {
+			const sourceValue = source[key];
+			const targetValue = target[key];
+			
+			// If key doesn't exist in target, use source
+			if (targetValue === undefined) {
+				output[key] = sourceValue;
+			} else if (isObject(targetValue) && isObject(sourceValue) && !Array.isArray(targetValue)) {
+				// If both are objects, merge recursively (target still has priority)
+				output[key] = deepMerge(targetValue, sourceValue);
+			}
+			// If key exists in target, keep target value (don't override)
+		});
+		
+		return output;
+	};
+
+	const isObject = (item) => {
+		return item && typeof item === 'object' && !Array.isArray(item);
+	};
+
 	// Load messages for the current locale
 	useEffect(() => {
 		const loadMessages = async () => {
 			setIsLoading(true);
 			try {
-				const url = `/messages/${locale}.json?t=${Date.now()}`;
-				const response = await fetch(url);
+				// Use timestamp and random number for cache busting
+				const cacheBuster = `${Date.now()}_${Math.random().toString(36).substring(7)}`;
+				const url = `/messages/${locale}.json?t=${cacheBuster}`;
+				const response = await fetch(url, {
+					cache: 'no-cache',
+					headers: {
+						'Cache-Control': 'no-cache',
+					},
+				});
 
 				if (response.ok) {
-					const data = await response.json();
-					setMessages(data);
+					const text = await response.text();
+					
+					let data;
+					try {
+						data = JSON.parse(text);
+					} catch (parseError) {
+						console.error(`[I18n] Failed to parse JSON for ${locale}:`, parseError);
+						throw parseError;
+					}
+					
+					// Always merge with fallback to ensure all keys are present
+					// Loaded translations have priority, fallback fills missing keys
+					const merged = deepMerge(data, fallbackMessages);
+					setMessages(merged);
 				} else {
 					// Fallback to default locale
 					if (locale !== defaultLocale) {
-						const fallbackResponse = await fetch(
-							`/messages/${defaultLocale}.json?t=${Date.now()}`
-						);
-						if (fallbackResponse.ok) {
-							const fallbackData = await fallbackResponse.json();
-							setMessages(fallbackData);
+						try {
+							const fallbackResponse = await fetch(
+								`/messages/${defaultLocale}.json?t=${Date.now()}`
+							);
+							if (fallbackResponse.ok) {
+								const fallbackData = await fallbackResponse.json();
+								const merged = deepMerge(fallbackData, fallbackMessages);
+								setMessages(merged);
+							} else {
+								setMessages(fallbackMessages);
+							}
+						} catch (err) {
+							console.error(`[I18n] Error loading fallback:`, err);
+							setMessages(fallbackMessages);
 						}
+					} else {
+						setMessages(fallbackMessages);
 					}
 				}
 			} catch (error) {
+				console.error('[I18n] Failed to load translations:', error);
 				setMessages(fallbackMessages);
 			} finally {
 				setIsLoading(false);
@@ -265,8 +527,8 @@ export const I18nProvider = ({ children }) => {
 		loadMessages();
 	}, [locale]);
 
-	// Function to get translation
-	const t = (key, params = {}) => {
+	// Function to get translation - use useCallback to update when messages change
+	const t = useCallback((key, params = {}) => {
 		// If still loading, return the key to avoid console warnings
 		if (isLoading) {
 			return key;
@@ -291,7 +553,7 @@ export const I18nProvider = ({ children }) => {
 		}
 
 		return value || key;
-	};
+	}, [messages, isLoading, locale]);
 
 	// Function to change locale
 	const changeLocale = (newLocale) => {

@@ -49,18 +49,27 @@ const Header = () => {
 		{ value: 'low', label: 'Низкий' },
 	];
 
+	const handleHomeClick = () => {
+		// Navigate to home page using hash routing
+		window.location.hash = '';
+	};
+
 	return (
 		<header className='mb-8'>
 			<div className='flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4'>
 				{/* Заголовок */}
-				<div className='text-center lg:text-left'>
+				<button
+					onClick={handleHomeClick}
+					className='text-center lg:text-left cursor-pointer hover:opacity-80 transition-opacity duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-lg p-2 -m-2'
+					title={t('footer.quickLinks.home') || 'Главная'}
+				>
 					<h1 className='text-3xl lg:text-4xl font-bold bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 bg-clip-text text-transparent leading-tight'>
 						{t('header.title')}
 					</h1>
 					<p className='text-sm text-gray-600 dark:text-gray-300 mt-2 font-medium'>
 						{t('header.subtitle')}
 					</p>
-				</div>
+				</button>
 
 				{/* Контролы */}
 				<div className='flex flex-wrap items-center justify-center lg:justify-end gap-3'>

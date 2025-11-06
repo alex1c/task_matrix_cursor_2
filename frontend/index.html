@@ -5,6 +5,17 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Preconnect для внешних ресурсов (улучшение производительности) -->
+    <link rel="preconnect" href="https://mc.yandex.ru" crossorigin />
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+    <link rel="preconnect" href="https://an.yandex.ru" crossorigin />
+    <link rel="dns-prefetch" href="https://mc.yandex.ru" />
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+    <link rel="dns-prefetch" href="https://an.yandex.ru" />
+    
+    <!-- Preload критичных ресурсов -->
+    <link rel="preload" href="/fonts/fonts.css" as="style" />
+    
     <!-- Основные мета-теги -->
     <title>Матрица Эйзенхауэра - Управление задачами и приоритетами | Бесплатный планировщик</title>
     <meta name="description" content="Эффективное планирование задач с помощью матрицы Эйзенхауэра. Разделяйте задачи по важности и срочности. Бесплатный онлайн-планировщик для повышения продуктивности." />
@@ -57,6 +68,25 @@
     <meta name="apple-mobile-web-app-title" content="Матрица Эйзенхауэра" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    
+    <!-- Geo targeting -->
+    <meta name="geo.region" content="RU" />
+    <meta name="geo.placename" content="Russia" />
+    
+    <!-- Rating -->
+    <meta name="rating" content="general" />
+    
+    <!-- Revisit -->
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Language -->
+    <meta http-equiv="content-language" content="ru" />
+    
+    <!-- Referrer Policy -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    
+    <!-- Format detection -->
+    <meta name="format-detection" content="telephone=no" />
     
     <!-- PWA Manifest -->
     <link rel="manifest" href="/manifest.json" />

@@ -7,8 +7,8 @@ import Statistics from './components/Statistics';
 import ServiceInfo from './components/ServiceInfo';
 import TaskModal from './components/TaskModal';
 import ShareBlock from './components/ShareBlock';
-import AuthorContact from './components/AuthorContact';
 import SemanticStructure from './components/SemanticStructure';
+import Breadcrumbs from './components/Breadcrumbs';
 import SEOContent from './components/pages/SEOContent';
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import TermsOfService from './components/pages/TermsOfService';
@@ -81,7 +81,6 @@ function AppContent() {
 						<Statistics />
 						<ServiceInfo />
 						<ShareBlock />
-						<AuthorContact />
 					</>
 				);
 		}
@@ -89,12 +88,13 @@ function AppContent() {
 
 	return (
 		<>
-			<SemanticStructure />
+			<SemanticStructure currentPage={currentPage} />
 			<div
 				className={`min-h-screen transition-all duration-300 theme-${theme} flex flex-col`}
 			>
 				<div className='container mx-auto px-4 py-6 flex-grow'>
 					<Header />
+					<Breadcrumbs currentPage={currentPage} />
 					{renderPage()}
 				</div>
 				<Footer onNavigate={handleNavigate} />

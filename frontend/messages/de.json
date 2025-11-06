@@ -6,20 +6,20 @@
     "save": "Speichern",
     "cancel": "Abbrechen",
     "close": "Schließen",
-    "loading": "Laden...",
+    "loading": "Lädt...",
     "error": "Fehler",
-    "success": "Erfolg",
+    "success": "Erfolgreich",
     "confirm": "Bestätigen",
     "yes": "Ja",
     "no": "Nein",
     "export": "Als CSV exportieren",
-    "sort": "Sortierung",
+    "sort": "Sortieren",
     "byPriority": "Nach Priorität",
     "byDate": "Nach Datum",
     "byName": "Nach Name",
     "all": "Alle",
-    "incomplete": "Unvollständig",
-    "completed": "Abgeschlossen",
+    "incomplete": "Nicht erledigt",
+    "completed": "Erledigt",
     "filters": "Filter und Sortierung",
     "priority": "Prioritäten",
     "allPriorities": "Alle Prioritäten",
@@ -29,38 +29,20 @@
     "title": "Eisenhower-Matrix",
     "subtitle": "Aufgabenverwaltung nach Prioritäten"
   },
-  "quadrants": {
-    "urgentImportant": {
-      "title": "Dringend und Wichtig",
-      "subtitle": "Sofort erledigen"
-    },
-    "importantNotUrgent": {
-      "title": "Wichtig, aber nicht Dringend",
-      "subtitle": "Vorausplanen"
-    },
-    "urgentNotImportant": {
-      "title": "Dringend, aber nicht Wichtig",
-      "subtitle": "An andere delegieren"
-    },
-    "notUrgentNotImportant": {
-      "title": "Nicht Dringend und nicht Wichtig",
-      "subtitle": "Aus der Liste streichen"
-    }
-  },
   "task": {
     "title": "Aufgabentitel",
     "description": "Beschreibung",
     "priority": "Priorität",
     "dueDate": "Fälligkeitsdatum",
     "quadrant": "Quadrant",
-    "completed": "Abgeschlossen",
+    "completed": "Erledigt",
     "newTask": "Neue Aufgabe",
     "createTask": "Aufgabe erstellen",
     "editTask": "Aufgabe bearbeiten",
     "deleteTask": "Aufgabe löschen",
     "moveTask": "Aufgabe verschieben",
-    "markComplete": "Als abgeschlossen markieren",
-    "markIncomplete": "Als unvollständig markieren",
+    "markComplete": "Als erledigt markieren",
+    "markIncomplete": "Als nicht erledigt markieren",
     "noTasks": "Keine Aufgaben",
     "dragHere": "Aufgabe hierher ziehen oder neue erstellen",
     "status": "Aufgabenstatus",
@@ -81,40 +63,50 @@
     "editTask": "Aufgabe bearbeiten",
     "required": "Pflichtfeld",
     "optional": "Optional",
-    "titleRequired": "Bitte geben Sie den Aufgabentitel ein",
+    "titleRequired": "Bitte geben Sie einen Aufgabentitel ein",
     "titlePlaceholder": "Aufgabentitel eingeben",
     "descriptionPlaceholder": "Zusätzliche Beschreibung (optional)"
   },
   "statistics": {
     "title": "Statistiken",
-    "totalTasks": "Gesamtaufgaben",
-    "completedTasks": "Abgeschlossen",
+    "totalTasks": "Gesamt Aufgaben",
+    "completedTasks": "Erledigt",
     "pendingTasks": "Ausstehend",
-    "completionRate": "Abschlussrate",
+    "completionRate": "Erledigungsrate",
     "chartTitle": "Wohin die Zeit geht",
     "noTasksToDisplay": "Keine Aufgaben zum Anzeigen",
-    "completed": "Abgeschlossen",
+    "completed": "Erledigt",
     "whatIsEisenhowerMatrix": "Was ist die Eisenhower-Matrix?",
     "eisenhowerMatrix": "Eisenhower-Matrix",
-    "description": "ist ein Werkzeug zur Aufgabenpriorisierung, entwickelt vom 34. Präsidenten der Vereinigten Staaten, Dwight Eisenhower. Es hilft dabei, Aufgaben nach Wichtigkeit und Dringlichkeit zu organisieren.",
+    "description": "ist ein Tool zur Priorisierung von Aufgaben, entwickelt vom 34. Präsidenten der USA, Dwight Eisenhower. Es hilft, Aufgaben nach Wichtigkeit und Dringlichkeit zu organisieren.",
     "urgentImportantDesc": "Krisen, dringende Probleme, Fristen. Sofort erledigen.",
-    "importantNotUrgentDesc": "Planung, Entwicklung, Beziehungen. Zeit für die Erledigung einplanen.",
+    "importantNotUrgentDesc": "Planung, Entwicklung, Beziehungen. Zeit für die Ausführung einplanen.",
     "urgentNotImportantDesc": "Ablenkungen, einige Anrufe, Meetings. Delegieren oder minimieren.",
-    "notUrgentNotImportantDesc": "Zeitverschwendung, ablenkende Faktoren. Löschen oder verschieben.",
+    "notUrgentNotImportantDesc": "Zeitverschwendung, Ablenkungen. Entfernen oder verschieben.",
     "usageTip": "Nutzungstipp",
-    "usageTipText": "Versuchen Sie, mehr Zeit im Quadranten \"Wichtig, aber nicht Dringend\" zu verbringen. Dies wird helfen zu verhindern, dass Aufgaben im Quadranten \"Dringend und Wichtig\" erscheinen."
+    "usageTipText": "Versuchen Sie, mehr Zeit im Quadranten 'Wichtig, aber nicht Dringend' zu verbringen. Dies hilft, Aufgaben im Quadranten 'Wichtig und Dringend' zu vermeiden."
   },
-  "language": {
-    "switch": "Sprache",
-    "russian": "Русский",
-    "english": "English",
-    "german": "Deutsch",
-    "spanish": "Español",
-    "chinese": "中文"
+  "quadrants": {
+    "urgentImportant": {
+      "title": "Wichtig und Dringend",
+      "subtitle": "Sofort erledigen"
+    },
+    "importantNotUrgent": {
+      "title": "Wichtig, aber nicht Dringend",
+      "subtitle": "Vorausplanen"
+    },
+    "urgentNotImportant": {
+      "title": "Dringend, aber nicht Wichtig",
+      "subtitle": "An andere delegieren"
+    },
+    "notUrgentNotImportant": {
+      "title": "Nicht Wichtig und nicht Dringend",
+      "subtitle": "Aus Liste entfernen"
+    }
   },
   "share": {
     "title": "Eisenhower-Matrix - Aufgabenverwaltung",
-    "description": "Effektive Aufgabenplanung mit der Eisenhower-Matrix. Organisieren Sie Aufgaben nach Wichtigkeit und Dringlichkeit.",
+    "description": "Effektive Aufgabenplanung mit der Eisenhower-Matrix. Aufgaben nach Wichtigkeit und Dringlichkeit aufteilen.",
     "shareTitle": "Teilen",
     "shareDescription": "Helfen Sie Freunden und Kollegen, Aufgaben effektiv mit der Eisenhower-Matrix zu verwalten",
     "shareIn": "Auf {platform} teilen",
@@ -125,11 +117,11 @@
     "additionalInfo": "Die Eisenhower-Matrix hilft Ihnen, Prioritäten zu setzen und die Produktivität zu steigern"
   },
   "author": {
-    "contactTitle": "Kontakt zum Autor",
+    "contactTitle": "Autor kontaktieren",
     "contactDescription": "Haben Sie Fragen zum Projekt oder Verbesserungsvorschläge? Kontaktieren Sie den Autor",
     "emailLabel": "E-Mail des Autors:",
     "showEmail": "E-Mail anzeigen",
-    "hideEmail": "E-Mail verbergen",
+    "hideEmail": "E-Mail ausblenden",
     "copyEmail": "E-Mail kopieren",
     "copied": "Kopiert!",
     "emailCopied": "E-Mail kopiert!",
@@ -149,7 +141,8 @@
     "feature1": "Erstellen und Verschieben von Aufgaben (drag & drop)",
     "feature2": "Filterung nach Status und Priorität",
     "feature3": "Modi: alle, abgeschlossen, unvollständig",
-    "feature4": "Cookies zur Identifikation — nur Sie sehen Ihre Aufgaben"
+    "feature4": "Cookies zur Identifikation — nur Sie sehen Ihre Aufgaben",
+    "guideButton": "Detaillierte Anleitung zur Verwendung"
   },
   "seo": {
     "title": "Eisenhower-Matrix - Aufgabenmanagement und Prioritäten",
@@ -178,7 +171,7 @@
     "quadrant4": "Quadrant 4: Nicht wichtig und nicht dringend",
     "quadrant4Desc": "Zeitverschwendung, übermäßige Unterhaltung.",
     "keywords": "SEO-Schlüsselwörter",
-    "keywordsList": "eisenhower-matrix, aufgabenmanagement, planung, prioritäten, produktivität, zeitmanagement, aufgabenplaner, wichtige aufgaben, dringende aufgaben, effizienz, zeitorganisation, zeitmanagement, planer, aufgabenorganisator, prioritätensystem, prioritätenmatrix, eisenhower-quadranten, eisenhower-methode, produktivitätstools",
+    "keywordsList": "Eisenhower-Matrix, Aufgabenmanagement, Planung, Prioritäten, Produktivität, Zeitmanagement, Aufgabenplaner, wichtige Aufgaben, dringende Aufgaben, Effizienz, Zeitorganisation, Zeitmanagement, Planer, Aufgabenorganisator, Prioritätensystem, Prioritätsmatrix, Eisenhower-Quadranten, Eisenhower-Methode, Produktivitätstools",
     "author": "Eisenhower-Matrix",
     "section": "Produktivität",
     "faq1": {
@@ -193,24 +186,6 @@
       "question": "Welche Vorteile bietet die Eisenhower-Matrix?",
       "answer": "Erhöhte Produktivität, effektives Zeitmanagement, richtige Prioritätensetzung, reduzierter Stress und verbesserte Entscheidungsqualität."
     }
-  },
-  "errors": {
-    "taskCreationFailed": "Fehler beim Erstellen der Aufgabe",
-    "taskUpdateFailed": "Fehler beim Aktualisieren der Aufgabe",
-    "taskDeleteFailed": "Fehler beim Löschen der Aufgabe",
-    "taskMoveFailed": "Fehler beim Verschieben der Aufgabe",
-    "loadTasksFailed": "Fehler beim Laden der Aufgaben",
-    "exportFailed": "Fehler beim Exportieren der Aufgaben"
-  },
-  "success": {
-    "taskCreated": "Aufgabe erstellt",
-    "taskUpdated": "Aufgabe aktualisiert",
-    "taskDeleted": "Aufgabe gelöscht",
-    "taskMoved": "Aufgabe verschoben",
-    "tasksExported": "Aufgaben in CSV exportiert"
-  },
-  "confirmations": {
-    "deleteTask": "Sind Sie sicher, dass Sie diese Aufgabe löschen möchten?"
   },
   "footer": {
     "about": {
@@ -258,7 +233,7 @@
       },
       "section4": {
         "title": "4. Cookies",
-        "content": "Die Website verwendet Cookies zur Identifizierung von Benutzern und zum Speichern ihrer Aufgaben. Sie können Cookies in Ihren Browsereinstellungen deaktivieren, dies kann jedoch die Funktionalität der Website beeinträchtigen.",
+        "content": "Die Website verwendet Cookies zur Identifikation des Benutzers und zur Speicherung seiner Aufgaben. Sie können Cookies in den Browsereinstellungen deaktivieren, dies kann jedoch die Funktionalität der Website beeinträchtigen.",
         "content2": "Wir verwenden auch Analysedienste (Yandex.Metrika, Google Analytics) zur Erfassung von Besuchsstatistiken."
       },
       "section5": {
@@ -267,7 +242,7 @@
       },
       "section6": {
         "title": "6. Kontakte",
-        "content": "Bei Fragen zur Verarbeitung personenbezogener Daten können Sie uns über den Abschnitt \"Kontakt\" kontaktieren."
+        "content": "Bei Fragen zur Verarbeitung personenbezogener Daten können Sie uns über den Abschnitt \"Kontakt\" erreichen."
       }
     },
     "terms": {
@@ -275,7 +250,7 @@
       "section1": {
         "title": "1. Annahme der Bedingungen",
         "content": "Durch die Nutzung der Website todolist.su stimmen Sie den Bedingungen dieser Nutzungsbedingungen zu.",
-        "content2": "Wenn Sie mit einer der Bedingungen nicht einverstanden sind, verwenden Sie bitte die Website nicht."
+        "content2": "Wenn Sie mit den Bedingungen nicht einverstanden sind, verwenden Sie bitte die Website nicht."
       },
       "section2": {
         "title": "2. Nutzung des Dienstes",
@@ -287,13 +262,13 @@
       },
       "section3": {
         "title": "3. Geistiges Eigentum",
-        "content": "Alle Materialien der Website, einschließlich Design, Texte, Grafiken und Software, sind Eigentum der Website-Besitzer und durch Gesetze zum geistigen Eigentum geschützt.",
+        "content": "Alle Materialien der Website, einschließlich Design, Texte, Grafiken und Software, sind Eigentum der Website-Inhaber und durch Gesetze zum Schutz des geistigen Eigentums geschützt.",
         "content2": "Sie können die Website für persönliche Zwecke nutzen, dürfen jedoch Materialien der Website nicht ohne schriftliche Genehmigung kopieren, verbreiten oder für kommerzielle Zwecke verwenden."
       },
       "section4": {
         "title": "4. Haftungsbeschränkung",
-        "content": "Die Website wird \"wie besehen\" ohne Gewährleistungen bereitgestellt. Wir übernehmen keine Verantwortung für Verluste, die durch die Nutzung oder Unfähigkeit zur Nutzung der Website entstehen.",
-        "content2": "Wir behalten uns das Recht vor, die Website jederzeit ohne vorherige Ankündigung zu ändern, auszusetzen oder einzustellen."
+        "content": "Die Website wird \"wie besehen\" ohne Gewährleistung bereitgestellt. Wir übernehmen keine Verantwortung für Verluste, die durch die Nutzung oder Unmöglichkeit der Nutzung der Website entstehen.",
+        "content2": "Wir behalten uns das Recht vor, die Website jederzeit ohne Vorankündigung zu ändern, auszusetzen oder einzustellen."
       },
       "section5": {
         "title": "5. Änderungen der Vereinbarung",
@@ -305,19 +280,19 @@
       "section1": {
         "title": "1. Was sind Cookies",
         "content": "Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden, wenn Sie eine Website besuchen.",
-        "content2": "Die Website todolist.su verwendet Cookies, um die Funktionalität sicherzustellen und die Benutzererfahrung zu verbessern."
+        "content2": "Die Website todolist.su verwendet Cookies, um Funktionalität zu gewährleisten und die Benutzererfahrung zu verbessern."
       },
       "section2": {
-        "title": "2. Verwendete Cookie-Typen",
-        "content": "Wir verwenden folgende Cookie-Typen:",
-        "item1": "Notwendige Cookies — zur Benutzeridentifizierung und Aufgabenspeicherung",
+        "title": "2. Arten der verwendeten Cookies",
+        "content": "Wir verwenden folgende Cookie-Arten:",
+        "item1": "Notwendige Cookies — zur Identifikation des Benutzers und Speicherung von Aufgaben",
         "item2": "Analytische Cookies — zur Erfassung von Besuchsstatistiken (Yandex.Metrika, Google Analytics)",
         "item3": "Werbe-Cookies — zur Anzeige relevanter Werbung (Google AdSense, Yandex.Direct)"
       },
       "section3": {
         "title": "3. Cookie-Verwaltung",
-        "content": "Sie können Cookies über Ihre Browsereinstellungen verwalten. Das Deaktivieren von Cookies kann jedoch die Funktionalität der Website beeinträchtigen.",
-        "content2": "Zur Verwaltung von Werbe-Cookies können Sie die Einstellungen der Werbenetzwerke von Google und Yandex verwenden."
+        "content": "Sie können Cookies über die Browsereinstellungen verwalten. Das Deaktivieren von Cookies kann jedoch die Funktionalität der Website beeinträchtigen.",
+        "content2": "Für die Verwaltung von Werbe-Cookies können Sie die Einstellungen der Werbenetzwerke von Google und Yandex verwenden."
       },
       "section4": {
         "title": "4. Drittanbieter-Dienste",
@@ -329,20 +304,20 @@
       "title": "Über uns",
       "section1": {
         "title": "Über das Projekt",
-        "content": "Die Eisenhower-Matrix ist ein kostenloses Online-Tool zur Aufgaben- und Prioritätsverwaltung, basierend auf der berühmten Methode des 34. Präsidenten der Vereinigten Staaten, Dwight Eisenhower.",
-        "content2": "Unser Dienst hilft dabei, Aufgaben effektiv zu organisieren, indem sie nach Wichtigkeit und Dringlichkeit in vier Quadranten unterteilt werden."
+        "content": "Die Eisenhower-Matrix ist ein kostenloses Online-Tool zur Aufgaben- und Prioritätsverwaltung, basierend auf der berühmten Methode des 34. Präsidenten der USA, Dwight Eisenhower.",
+        "content2": "Unser Service hilft, Aufgaben effektiv zu organisieren, indem sie nach Wichtigkeit und Dringlichkeit in vier Quadranten unterteilt werden."
       },
       "section2": {
         "title": "Unsere Funktionen",
         "item1": "Erstellen und Verwalten von Aufgaben mit Drag & Drop",
         "item2": "Filtern und Sortieren von Aufgaben nach Priorität und Status",
-        "item3": "Visuelle Statistiken der Aufgabenverteilung",
+        "item3": "Visuelle Statistiken zur Aufgabenverteilung",
         "item4": "Export von Aufgaben in CSV-Format",
         "item5": "Mehrsprachige Unterstützung (Russisch, Englisch, Deutsch, Spanisch, Chinesisch)"
       },
       "section3": {
         "title": "Sicherheit und Datenschutz",
-        "content": "Wir schätzen Ihre Privatsphäre. Alle Daten werden lokal in Ihrem Browser unter Verwendung von Cookies zur Identifizierung gespeichert.",
+        "content": "Wir schätzen Ihre Privatsphäre. Alle Daten werden lokal in Ihrem Browser unter Verwendung von Cookies zur Identifikation gespeichert.",
         "content2": "Ihre Aufgaben sind nur für Sie sichtbar. Wir geben Ihre Daten nicht ohne Ihre Zustimmung an Dritte weiter."
       },
       "section4": {
@@ -363,6 +338,75 @@
       "section3": {
         "title": "Antwortzeit",
         "content": "Wir bemühen uns, auf alle Nachrichten innerhalb von 24-48 Stunden zu antworten."
+      }
+    },
+    "seoContent": {
+      "title": "Eisenhower-Matrix-Anleitung: Aufgaben effektiv verwalten",
+      "howTo": {
+        "title": "Wie man die Eisenhower-Matrix zur Aufgabenverwaltung verwendet",
+        "section1": {
+          "title": "Wie man die Eisenhower-Prioritätsmatrix richtig anwendet",
+          "content": "Die Eisenhower-Matrix ist ein leistungsstarkes Zeitmanagement-Tool zur Steigerung der Produktivität und effektiven Aufgabenverwaltung. Lernen Sie, diese Planungsmethode zu verwenden, um Ihren Arbeitsablauf zu organisieren und Ziele zu erreichen.",
+          "step1": "Erstellen Sie eine vollständige Liste aller Ihrer Aufgaben und Angelegenheiten, die Aufmerksamkeit erfordern. Verwenden Sie einen Aufgabenplaner oder Organizer zur Systematisierung.",
+          "step2": "Bestimmen Sie die Wichtigkeit jeder Aufgabe: Wichtige Aufgaben beeinflussen die Erreichung Ihrer langfristigen Ziele, die Karriereentwicklung oder das persönliche Wachstum.",
+          "step3": "Bewerten Sie die Dringlichkeit: Dringende Aufgaben haben klare Fristen oder erfordern sofortige Ausführung.",
+          "step4": "Verteilen Sie Aufgaben auf die vier Quadranten der Prioritätsmatrix: wichtig und dringend, wichtig aber nicht dringend, dringend aber nicht wichtig, nicht wichtig und nicht dringend.",
+          "step5": "Beginnen Sie die Ausführung mit dem ersten Quadranten (wichtig und dringend), dann wechseln Sie zum zweiten Quadranten für die strategische Planung."
+        },
+        "section2": {
+          "title": "Wie man die Produktivität mit dem Prioritätensystem steigert",
+          "content": "Effektives Zeitmanagement beginnt mit der richtigen Priorisierung. Die Eisenhower-Matrix hilft, Aufgaben zu organisieren und das Zeitmanagement zu verbessern.",
+          "item1": "Verwenden Sie einen Online-Aufgabenplaner, um die Prioritätsmatrix zu visualisieren und den Fortschritt der Aufgabenausführung zu verfolgen.",
+          "item2": "Überprüfen und aktualisieren Sie regelmäßig die Aufgabenliste und verschieben Sie Aufgaben zwischen Quadranten, wenn sich Wichtigkeit und Dringlichkeit ändern.",
+          "item3": "Konzentrieren Sie sich auf Aufgaben aus dem zweiten Quadranten (wichtig, aber nicht dringend), um Krisensituationen zu vermeiden und die Arbeitsqualität zu verbessern.",
+          "item4": "Delegieren oder minimieren Sie Aufgaben aus dem dritten Quadranten, um Zeit für wirklich wichtige Angelegenheiten freizumachen."
+        },
+        "section3": {
+          "title": "Wie man Aufgaben mit der Eisenhower-Methode organisiert",
+          "content": "Die Organisation von Aufgaben nach der Eisenhower-Matrix ermöglicht es, die Arbeitszeit effektiv zu verwalten und die persönliche Effizienz zu steigern. Dieses Produktivitätstool hilft, richtige Entscheidungen darüber zu treffen, wie Zeit verwendet wird.",
+          "content2": "Durch die Anwendung von Aufgabenpriorisierungstechniken können Sie Ihren Arbeitsablauf besser kontrollieren, Stress durch Überlastung reduzieren und gesetzte Ziele schneller erreichen."
+        },
+        "section4": {
+          "title": "Wie man einen Aufgabenplaner zur Prioritätsverwaltung verwendet",
+          "content": "Moderne Aufgabenplanungstools ermöglichen es, die Eisenhower-Matrix im täglichen Arbeitsleben einfach anzuwenden. Verwenden Sie unseren kostenlosen Planer für effektives Aufgabenmanagement.",
+          "item1": "Erstellen Sie Aufgaben und verteilen Sie sie automatisch auf Matrix-Quadranten basierend auf Wichtigkeit und Dringlichkeit.",
+          "item2": "Verwenden Sie Filter und Sortierung für schnellen Zugriff auf Aufgaben bestimmter Priorität oder Ausführungsstatus.",
+          "item3": "Verfolgen Sie Statistiken zur Aufgabenverteilung nach Quadranten, um die Effizienz Ihres Zeitmanagements zu analysieren.",
+          "item4": "Exportieren Sie Daten nach CSV für weitere Analyse und Planung in anderen Tools."
+        }
+      },
+      "faq": {
+        "title": "Häufig gestellte Fragen zur Eisenhower-Matrix",
+        "question1": "Was ist die Eisenhower-Matrix und wie hilft sie bei der Aufgabenverwaltung?",
+        "answer1": "Die Eisenhower-Matrix ist ein Zeitmanagement-Tool, das vom 34. Präsidenten der USA, Dwight Eisenhower, entwickelt wurde. Es hilft, Aufgaben in vier Kategorien nach Wichtigkeit und Dringlichkeit zu unterteilen, was eine effektive Prioritätsverwaltung und Produktivitätssteigerung ermöglicht.",
+        "question2": "Wie bestimmt man richtig die Wichtigkeit und Dringlichkeit einer Aufgabe?",
+        "answer2": "Wichtige Aufgaben beeinflussen die Erreichung Ihrer langfristigen Ziele, die Karriereentwicklung oder das persönliche Wachstum. Dringende Aufgaben haben klare Fristen oder erfordern sofortige Ausführung. Verwenden Sie einen Aufgabenplaner zur Systematisierung und Visualisierung von Prioritäten.",
+        "question3": "Welche Aufgaben gehören zum Quadranten 'Wichtig und dringend'?",
+        "answer3": "Zum ersten Quadranten gehören Krisensituationen, dringende Probleme, Aufgaben mit Fristen und dringende Angelegenheiten, die sofortige Aufmerksamkeit erfordern. Dies sind Aufgaben, die nicht verschoben werden können und für die Zielerreichung kritisch wichtig sind.",
+        "question4": "Wie verwendet man die Prioritätsmatrix zur Produktivitätssteigerung?",
+        "answer4": "Verwenden Sie die Eisenhower-Matrix regelmäßig zur Aufgabenorganisation, konzentrieren Sie sich auf den zweiten Quadranten (wichtig, aber nicht dringend), um Krisen zu vermeiden, delegieren Sie Aufgaben aus dem dritten Quadranten und minimieren Sie die Zeit im vierten Quadranten. Verwenden Sie einen Online-Planer zur Fortschrittsverfolgung.",
+        "question5": "Kann die Eisenhower-Matrix im Team verwendet werden?",
+        "answer5": "Ja, die Prioritätsmatrix eignet sich hervorragend für Teamarbeit. Sie hilft dem Team, Prioritäten zu koordinieren, Aufgaben zu verteilen und die Kommunikation zu verbessern. Verwenden Sie einen gemeinsamen Aufgabenplaner zur Teamkoordination.",
+        "question6": "Wie oft sollten Aufgaben in der Matrix überprüft werden?",
+        "answer6": "Es wird empfohlen, die Prioritätsmatrix täglich oder wöchentlich zu überprüfen und zu aktualisieren. Aufgaben können ihre Wichtigkeit und Dringlichkeit im Laufe der Zeit ändern, daher hilft eine regelmäßige Überprüfung, die Relevanz der Pläne und die Effizienz der Aufgabenverwaltung aufrechtzuerhalten.",
+        "question7": "Was ist der Unterschied zwischen Wichtigkeit und Dringlichkeit einer Aufgabe?",
+        "answer7": "Die Wichtigkeit einer Aufgabe wird durch ihren Einfluss auf die Erreichung langfristiger Ziele und Ergebnisse bestimmt. Dringlichkeit steht im Zusammenhang mit Zeitbeschränkungen und Fristen. Wichtige Aufgaben erfordern Aufmerksamkeit unabhängig von der Dringlichkeit, und dringende Aufgaben erfordern schnelle Reaktion.",
+        "question8": "Wie hilft die Eisenhower-Matrix, Stress durch Aufgabenüberlastung zu reduzieren?",
+        "answer8": "Die Prioritätsmatrix hilft, alle Aufgaben zu visualisieren, klar zu bestimmen, was wirklich wichtig ist, und die Arbeit so zu organisieren, dass die Ansammlung dringender Aufgaben verhindert wird. Dies reduziert Stress und verbessert die Qualität der getroffenen Entscheidungen.",
+        "question9": "Welche Tools sind am besten für die Anwendung der Eisenhower-Matrix?",
+        "answer9": "Sie können unseren kostenlosen Online-Aufgabenplaner verwenden, der speziell für die Arbeit mit der Eisenhower-Matrix entwickelt wurde. Auch alle Aufgabenorganisatoren, die eine visuelle Trennung von Aufgaben nach Prioritätsquadranten ermöglichen, sind geeignet.",
+        "question10": "Wie delegiert man Aufgaben aus dem Quadranten 'Dringend, aber nicht wichtig'?",
+        "answer10": "Aufgaben aus dem dritten Quadranten können oft an andere Teammitglieder delegiert oder automatisiert werden. Bestimmen Sie, wer die Aufgabe effektiver ausführen kann, übertragen Sie die Befugnisse und setzen Sie klare Erwartungen für Ergebnisse und Fristen.",
+        "question11": "Warum ist es wichtig, sich auf den Quadranten 'Wichtig, aber nicht dringend' zu konzentrieren?",
+        "answer11": "Der zweite Quadrant enthält Aufgaben der strategischen Planung, Entwicklung und Problemprävention. Der Fokus auf diesen Quadranten hilft, das Auftreten von Aufgaben im ersten Quadranten (Krisen) zu verhindern, was die Effizienz erheblich steigert und Stress reduziert.",
+        "question12": "Wie exportiert man Daten aus der Eisenhower-Matrix?",
+        "answer12": "Unser Aufgabenplaner ermöglicht den Export aller Aufgaben in CSV-Format. Dies ist praktisch für die Analyse in Excel, die Erstellung von Berichten oder die Datensicherung. Verwenden Sie die Exportfunktion im Planermenü.",
+        "question13": "Kann die Eisenhower-Matrix für persönliche Ziele verwendet werden, nicht nur für die Arbeit?",
+        "answer13": "Absolut! Die Prioritätsmatrix ist universell und eignet sich hervorragend für die Verwaltung sowohl beruflicher als auch persönlicher Aufgaben. Sie hilft, verschiedene Lebensbereiche auszugleichen und richtige Entscheidungen darüber zu treffen, wie Zeit verwendet wird.",
+        "question14": "Wie beginnt man mit der Verwendung der Eisenhower-Matrix von Grund auf?",
+        "answer14": "Beginnen Sie mit einer vollständigen Liste aller Ihrer Aufgaben. Bewerten Sie dann jede Aufgabe nach Wichtigkeit und Dringlichkeit, verteilen Sie sie auf Quadranten und beginnen Sie die Ausführung mit dem ersten Quadranten. Verwenden Sie unseren kostenlosen Planer zur Visualisierung und Fortschrittsverfolgung.",
+        "question15": "Welche Fehler werden am häufigsten bei der Verwendung der Eisenhower-Matrix gemacht?",
+        "answer15": "Häufige Fehler: Überschätzung der Dringlichkeit von Aufgaben, Ignorieren des zweiten Quadranten, fehlende regelmäßige Überprüfung von Prioritäten und Versuch, alle Aufgaben allein ohne Delegation zu erledigen. Vermeiden Sie diese Fehler für maximale Effizienz."
       }
     }
   }

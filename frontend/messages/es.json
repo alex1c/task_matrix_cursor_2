@@ -149,7 +149,8 @@
     "feature1": "Creación y movimiento de tareas (drag & drop)",
     "feature2": "Filtrado por estado y prioridad",
     "feature3": "Modos: todas, completadas, incompletas",
-    "feature4": "Cookies para identificación — solo usted ve sus tareas"
+    "feature4": "Cookies para identificación — solo usted ve sus tareas",
+    "guideButton": "Guía detallada de uso"
   },
   "seo": {
     "title": "Matriz de Eisenhower - Gestión de Tareas y Prioridades",
@@ -363,6 +364,75 @@
       "section3": {
         "title": "Tiempo de Respuesta",
         "content": "Intentamos responder a todos los mensajes dentro de 24-48 horas."
+      }
+    },
+    "seoContent": {
+      "title": "Guía de la Matriz de Eisenhower: Cómo gestionar tareas eficazmente",
+      "howTo": {
+        "title": "Cómo usar la Matriz de Eisenhower para gestionar tareas",
+        "section1": {
+          "title": "Cómo aplicar correctamente la matriz de prioridades de Eisenhower",
+          "content": "La Matriz de Eisenhower es una poderosa herramienta de gestión del tiempo para aumentar la productividad y gestionar tareas eficazmente. Aprenda a usar este método de planificación para organizar su flujo de trabajo y alcanzar objetivos.",
+          "step1": "Haga una lista completa de todas sus tareas y asuntos que requieren atención. Use un planificador de tareas u organizador para sistematizar.",
+          "step2": "Determine la importancia de cada tarea: las tareas importantes afectan el logro de sus objetivos a largo plazo, el desarrollo profesional o el crecimiento personal.",
+          "step3": "Evalúe la urgencia: las tareas urgentes tienen plazos claros o requieren ejecución inmediata.",
+          "step4": "Distribuya las tareas en los cuatro cuadrantes de la matriz de prioridades: importante y urgente, importante pero no urgente, urgente pero no importante, no importante y no urgente.",
+          "step5": "Comience la ejecución con el primer cuadrante (importante y urgente), luego pase al segundo cuadrante para la planificación estratégica."
+        },
+        "section2": {
+          "title": "Cómo aumentar la productividad con el sistema de prioridades",
+          "content": "La gestión eficaz del tiempo comienza con la correcta priorización. La Matriz de Eisenhower ayuda a organizar tareas y mejorar la gestión del tiempo.",
+          "item1": "Use un planificador de tareas en línea para visualizar la matriz de prioridades y rastrear el progreso de ejecución de tareas.",
+          "item2": "Revise y actualice regularmente la lista de tareas, moviéndolas entre cuadrantes a medida que cambian la importancia y la urgencia.",
+          "item3": "Enfóquese en las tareas del segundo cuadrante (importante, pero no urgente) para prevenir situaciones de crisis y mejorar la calidad del trabajo.",
+          "item4": "Delegue o minimice las tareas del tercer cuadrante para liberar tiempo para asuntos realmente importantes."
+        },
+        "section3": {
+          "title": "Cómo organizar tareas con el método de Eisenhower",
+          "content": "Organizar tareas según la Matriz de Eisenhower permite gestionar eficazmente el tiempo de trabajo y aumentar la eficiencia personal. Esta herramienta de productividad ayuda a tomar decisiones correctas sobre cómo gastar el tiempo.",
+          "content2": "Al aplicar la técnica de priorización de tareas, podrá controlar mejor su flujo de trabajo, reducir el estrés por sobrecarga y alcanzar los objetivos establecidos más rápido."
+        },
+        "section4": {
+          "title": "Cómo usar el planificador de tareas para gestionar prioridades",
+          "content": "Las herramientas modernas de planificación de tareas permiten aplicar fácilmente la Matriz de Eisenhower en el trabajo diario. Use nuestro planificador gratuito para gestionar tareas eficazmente.",
+          "item1": "Cree tareas y distribúyalas automáticamente en los cuadrantes de la matriz según la importancia y urgencia.",
+          "item2": "Use filtros y ordenamiento para acceso rápido a tareas de cierta prioridad o estado de ejecución.",
+          "item3": "Rastree estadísticas de distribución de tareas por cuadrantes para analizar la eficiencia de su gestión del tiempo.",
+          "item4": "Exporte datos a CSV para análisis adicional y planificación en otras herramientas."
+        }
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre la Matriz de Eisenhower",
+        "question1": "¿Qué es la Matriz de Eisenhower y cómo ayuda en la gestión de tareas?",
+        "answer1": "La Matriz de Eisenhower es una herramienta de gestión del tiempo desarrollada por el 34º presidente de EE.UU., Dwight Eisenhower. Ayuda a dividir tareas en cuatro categorías por importancia y urgencia, lo que permite gestionar prioridades eficazmente y aumentar la productividad.",
+        "question2": "¿Cómo determinar correctamente la importancia y urgencia de una tarea?",
+        "answer2": "Las tareas importantes afectan el logro de sus objetivos a largo plazo, el desarrollo profesional o el crecimiento personal. Las tareas urgentes tienen plazos claros o requieren ejecución inmediata. Use un planificador de tareas para sistematizar y visualizar prioridades.",
+        "question3": "¿Qué tareas pertenecen al cuadrante 'Importante y urgente'?",
+        "answer3": "Al primer cuadrante pertenecen situaciones de crisis, problemas urgentes, tareas con plazos y asuntos urgentes que requieren atención inmediata. Son tareas que no se pueden posponer y que son críticamente importantes para alcanzar objetivos.",
+        "question4": "¿Cómo usar la matriz de prioridades para aumentar la productividad?",
+        "answer4": "Use regularmente la Matriz de Eisenhower para organizar tareas, enfóquese en el segundo cuadrante (importante, pero no urgente) para prevenir crisis, delegue tareas del tercer cuadrante y minimice el tiempo en el cuarto cuadrante. Use un planificador en línea para rastrear el progreso.",
+        "question5": "¿Se puede usar la Matriz de Eisenhower en equipo?",
+        "answer5": "Sí, la matriz de prioridades es excelente para el trabajo en equipo. Ayuda al equipo a coordinar prioridades, distribuir tareas y mejorar la comunicación. Use un planificador de tareas colaborativo para coordinar el trabajo del equipo.",
+        "question6": "¿Con qué frecuencia revisar las tareas en la matriz?",
+        "answer6": "Se recomienda revisar y actualizar la matriz de prioridades diaria o semanalmente. Las tareas pueden cambiar su importancia y urgencia con el tiempo, por lo que la revisión regular ayuda a mantener la relevancia de los planes y la eficiencia de la gestión de tareas.",
+        "question7": "¿Cuál es la diferencia entre importancia y urgencia de una tarea?",
+        "answer7": "La importancia de una tarea está determinada por su impacto en el logro de objetivos a largo plazo y resultados. La urgencia está relacionada con limitaciones de tiempo y plazos. Las tareas importantes requieren atención independientemente de la urgencia, y las tareas urgentes requieren respuesta rápida.",
+        "question8": "¿Cómo ayuda la Matriz de Eisenhower a reducir el estrés por sobrecarga de tareas?",
+        "answer8": "La matriz de prioridades ayuda a visualizar todas las tareas, determinar claramente qué es realmente importante y organizar el trabajo para prevenir la acumulación de tareas urgentes. Esto reduce el estrés y mejora la calidad de las decisiones tomadas.",
+        "question9": "¿Qué herramientas usar mejor para aplicar la Matriz de Eisenhower?",
+        "answer9": "Puede usar nuestro planificador de tareas en línea gratuito, diseñado específicamente para trabajar con la Matriz de Eisenhower. También son adecuados cualquier organizador de tareas que permita dividir visualmente las tareas en cuadrantes de prioridades.",
+        "question10": "¿Cómo delegar tareas del cuadrante 'Urgente, pero no importante'?",
+        "answer10": "Las tareas del tercer cuadrante a menudo se pueden delegar a otros miembros del equipo o automatizar. Determine quién puede realizar la tarea más eficazmente, transfiera autoridad y establezca expectativas claras sobre el resultado y los plazos.",
+        "question11": "¿Por qué es importante enfocarse en el cuadrante 'Importante, pero no urgente'?",
+        "answer11": "El segundo cuadrante contiene tareas de planificación estratégica, desarrollo y prevención de problemas. El enfoque en este cuadrante ayuda a prevenir la aparición de tareas en el primer cuadrante (crisis), lo que aumenta significativamente la eficiencia y reduce el estrés.",
+        "question12": "¿Cómo exportar datos de la Matriz de Eisenhower?",
+        "answer12": "Nuestro planificador de tareas permite exportar todas las tareas en formato CSV. Es conveniente para análisis en Excel, creación de informes o respaldo de datos. Use la función de exportación en el menú del planificador.",
+        "question13": "¿Se puede usar la Matriz de Eisenhower para objetivos personales, no solo para trabajo?",
+        "answer13": "¡Absolutamente! La matriz de prioridades es universal y excelente para gestionar tanto tareas laborales como personales. Ayuda a equilibrar diversas esferas de la vida y tomar decisiones correctas sobre cómo gastar el tiempo.",
+        "question14": "¿Cómo comenzar a usar la Matriz de Eisenhower desde cero?",
+        "answer14": "Comience haciendo una lista completa de todas sus tareas. Luego evalúe cada tarea por importancia y urgencia, distribúyalas en cuadrantes y comience la ejecución con el primer cuadrante. Use nuestro planificador gratuito para visualización y seguimiento del progreso.",
+        "question15": "¿Qué errores se cometen más a menudo al usar la Matriz de Eisenhower?",
+        "answer15": "Errores comunes: sobreestimar la urgencia de tareas, ignorar el segundo cuadrante, falta de revisión regular de prioridades e intentar realizar todas las tareas solo sin delegar. Evite estos errores para máxima eficiencia."
       }
     }
   }
