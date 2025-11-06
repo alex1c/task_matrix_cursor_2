@@ -10,9 +10,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
+// CORS configuration for Docker - allow requests from frontend container or configured origin
+const corsOrigin = process.env.CORS_ORIGIN || 'http://localhost';
 app.use(
 	cors({
-		origin: 'http://localhost:3000',
+		origin: corsOrigin,
 		credentials: true,
 	})
 );
@@ -23,9 +25,13 @@ app.use(express.json());
 app.use(express.static('frontend/public'));
 
 // Инициализация базы данных
-const db = new sqlite3.Database('./database.sqlite', (err) => {
+// Use DB_PATH from environment or default to current directory
+const dbPath = process.env.DB_PATH || './database.sqlite';
+const db = new sqlite3.Database(dbPath, (err) => {
 	if (err) {
+		console.error('Database error:', err);
 	} else {
+		console.log('Database connected:', dbPath);
 		initDatabase();
 	}
 });
@@ -362,7 +368,11 @@ app.use((err, req, res, next) => {
 });
 
 // Запуск сервера
-app.listen(PORT, () => {});
+app.listen(PORT, () => {
+	console.log(`Server running on port ${PORT}`);
+	console.log(`CORS origin: ${corsOrigin}`);
+	console.log(`Database path: ${dbPath}`);
+});
 
 // Graceful shutdown
 process.on('SIGINT', () => {
