@@ -85,7 +85,8 @@ for i in $(seq 1 30); do
 	fi
 	if [ "${i}" -eq 30 ]; then
 		log "ERROR: health check failed"
-		docker compose -f "${COMPOSE_FILE}" logs --tail=80 todolist | tee -a "${REPORT}" || true
+		docker inspect todolist-app --format 'status={{.State.Status}} exit={{.State.ExitCode}} error={{.State.Error}}' 2>&1 | tee -a "${REPORT}" || true
+		docker compose -f "${COMPOSE_FILE}" logs --no-color --tail=120 todolist 2>&1 | tee -a "${REPORT}" || true
 		exit 1
 	fi
 	sleep 2
