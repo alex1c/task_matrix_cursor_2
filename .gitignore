@@ -76,10 +76,12 @@ dist
 
 # Gatsby files
 .cache/
-# Ignore public directories except frontend/public
+# Ignore generic public dirs, but keep the Vite frontend source tree.
 public
 !frontend/
-frontend/*
+frontend/dist/
+frontend/node_modules/
+# Keep frontend/public assets needed at build/runtime
 !frontend/public/
 frontend/public/*
 !frontend/public/messages/
