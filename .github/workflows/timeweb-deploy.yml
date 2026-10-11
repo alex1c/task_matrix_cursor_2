@@ -94,6 +94,7 @@ jobs:
           # Include only what Timeweb needs (no webhook runtime).
           tar -czf /tmp/todolist-release.tgz \
             Dockerfile \
+            docker-entrypoint.sh \
             docker-compose.timeweb.yml \
             .env.timeweb \
             backend \
