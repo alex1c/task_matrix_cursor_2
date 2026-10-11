@@ -1,29 +1,23 @@
-name: Deploy to Server
+name: Legacy DigitalOcean Deploy (DISABLED)
+
+# Auto-deploy on push is disabled for safety on shared hosts.
+# Use workflow "Timeweb Deploy Todolist" (workflow_dispatch) instead.
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: This legacy path is disabled. Use Timeweb Deploy Todolist.
+        required: true
+        default: 'disabled'
 
 jobs:
-  deploy:
+  disabled:
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Deploy to server
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd /var/www/eisenhower-matrix
-            git pull origin main
-            docker-compose down
-            docker-compose build --no-cache
-            docker-compose up -d
-            docker system prune -f
-
+      - name: Refuse legacy deploy
+        run: |
+          echo "Legacy DigitalOcean auto-deploy is disabled."
+          echo "It used docker-compose down and docker system prune -f."
+          echo "Use Actions → Timeweb Deploy Todolist with confirm=deploy-todolist-timeweb."
+          exit 1

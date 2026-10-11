@@ -1,0 +1,33 @@
+# Timeweb-only compose. Binds ONLY 127.0.0.1:3004 (Apache terminates TLS).
+# Never publish 80/443. Never use down -v / system prune from deploy scripts.
+name: todolist
+
+services:
+  todolist:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: todolist:local
+    container_name: todolist-app
+    restart: unless-stopped
+    env_file:
+      - .env.timeweb
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DB_PATH: /app/data/database.sqlite
+      FRONTEND_DIST: /app/public
+      CORS_ORIGIN: ${CORS_ORIGIN:-https://todolist.su}
+    ports:
+      - "127.0.0.1:3004:3000"
+    volumes:
+      - todolist-data:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  todolist-data:

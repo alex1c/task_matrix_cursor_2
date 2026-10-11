@@ -1,0 +1,144 @@
+name: Timeweb Deploy Todolist
+
+# Manual-only deploy to Timeweb via OLD jump host.
+# Never auto-deploys on push. Never runs docker prune / down -v.
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: Type deploy-todolist-timeweb to confirm
+        required: true
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    concurrency:
+      group: todolist-timeweb-deploy
+      cancel-in-progress: false
+    steps:
+      - name: Confirm intentional deploy
+        run: |
+          set -euo pipefail
+          if [ "${{ inputs.confirm }}" != "deploy-todolist-timeweb" ]; then
+            echo "Refusing deploy without confirm=deploy-todolist-timeweb"
+            exit 1
+          fi
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate scripts
+        run: |
+          set -euo pipefail
+          bash -n scripts/timeweb-deploy.sh
+          bash -n scripts/timeweb-smoke.sh
+          if grep -q $'\r' scripts/timeweb-deploy.sh scripts/timeweb-smoke.sh; then
+            echo "ERROR: CRLF in shell scripts"
+            exit 1
+          fi
+
+      - name: Setup Node and run security tests
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Backend security tests
+        working-directory: backend
+        run: |
+          set -euo pipefail
+          npm ci
+          node test-security.js
+
+      - name: Build frontend
+        working-directory: frontend
+        run: |
+          set -euo pipefail
+          npm ci
+          npm run build
+          test -f dist/index.html
+          # Ensure locale JSON present for Cyrillic UI
+          test -f dist/messages/ru.json || test -f public/messages/ru.json
+
+      - name: Setup SSH to OLD jump host
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          set -euo pipefail
+          test -n "${SSH_PRIVATE_KEY}"
+          test -f .github/workflows/_known_hosts_seed.txt
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "${SSH_PRIVATE_KEY}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keygen -y -f ~/.ssh/deploy_key >/dev/null
+          grep -E '^(165\.227\.171\.143|188\.225\.26\.192) ' \
+            .github/workflows/_known_hosts_seed.txt > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Package release and deploy via jump
+        env:
+          RELEASE_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          OLD_HOST='165.227.171.143'
+          NEW_HOST='188.225.26.192'
+          SSH_OLD=(ssh -i ~/.ssh/deploy_key -o BatchMode=yes -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o StrictHostKeyChecking=yes -o ConnectTimeout=15)
+
+          # Include only what Timeweb needs (no webhook runtime).
+          tar -czf /tmp/todolist-release.tgz \
+            Dockerfile \
+            docker-compose.timeweb.yml \
+            .env.timeweb \
+            backend \
+            frontend \
+            deploy \
+            scripts/timeweb-deploy.sh \
+            scripts/timeweb-smoke.sh
+
+          scp -i ~/.ssh/deploy_key -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
+            /tmp/todolist-release.tgz \
+            scripts/timeweb-deploy.sh \
+            "root@${OLD_HOST}:/tmp/"
+
+          set +e
+          "${SSH_OLD[@]}" "root@${OLD_HOST}" \
+            "env NEW_HOST='${NEW_HOST}' RELEASE_SHA='${RELEASE_SHA}' bash -se" <<'REMOTE' | tee deploy-report.txt
+          set -euo pipefail
+          scp -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=10 \
+            -i /root/.ssh/timeweb_migration \
+            /tmp/todolist-release.tgz /tmp/timeweb-deploy.sh \
+            "root@${NEW_HOST}:/tmp/"
+          ssh -n -o BatchMode=yes -o IdentitiesOnly=yes -o PreferredAuthentications=publickey \
+            -o StrictHostKeyChecking=yes -o ConnectTimeout=20 \
+            -i /root/.ssh/timeweb_migration \
+            "root@${NEW_HOST}" \
+            "chmod +x /tmp/timeweb-deploy.sh && mv /tmp/timeweb-deploy.sh /tmp/todolist-timeweb-deploy.sh && RELEASE_SHA='${RELEASE_SHA}' TARGET_IP='188.225.26.192' bash /tmp/todolist-timeweb-deploy.sh"
+          REMOTE
+          jump_rc=${PIPESTATUS[0]}
+          set -e
+
+          if ! grep -q 'TODOLIST_DEPLOY_DONE' deploy-report.txt; then
+            echo "ERROR: deploy marker missing (jump_rc=${jump_rc})"
+            exit 1
+          fi
+          # Only our deploy script's hard failures (log "ERROR: ...").
+          if grep -E '^ERROR:' deploy-report.txt; then
+            echo "Deploy script reported ERROR lines"
+            exit 1
+          fi
+          echo "Deploy finished (jump_rc=${jump_rc})"
+
+      - name: Upload deploy report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: todolist-timeweb-deploy-report
+          path: deploy-report.txt
+          if-no-files-found: warn
